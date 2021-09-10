@@ -1,12 +1,20 @@
 <template>
   <v-footer app>
-    <span>&copy; {{ new Date().getFullYear() }}</span>
+    <switch-theme />
   </v-footer>
 </template>
 
 <script>
-export default {}
+import SwitchTheme from './SwitchTheme.vue'
+
+export default {
+  components: {
+    SwitchTheme,
+  },
+}
 </script>
 
 <style>
 </style>
+
+SwitchTheme

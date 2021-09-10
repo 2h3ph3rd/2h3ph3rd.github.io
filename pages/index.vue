@@ -63,6 +63,14 @@
 import TheHeader from '~/components/TheHeader.vue'
 export default {
   components: { TheHeader },
+  mounted() {
+    const RSS_URL = `https://francesco-pastore.medium.com/feed`
+
+    const xmlHttp = new XMLHttpRequest()
+    xmlHttp.open('GET', RSS_URL, false) // false for synchronous request
+    xmlHttp.send(null)
+    console.log(xmlHttp.responseText)
+  },
 }
 </script>
 

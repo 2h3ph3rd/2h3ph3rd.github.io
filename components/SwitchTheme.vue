@@ -1,5 +1,13 @@
 <template>
-  <v-switch inset :prepend-icon="switchIcon" @change="switchTheme"> </v-switch>
+  <v-switch
+    inset
+    dark
+    hide-details
+    :prepend-icon="switchIcon"
+    :value="$vuetify.theme.dark"
+    @change="switchTheme"
+  >
+  </v-switch>
 </template>
 
 <script>

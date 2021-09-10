@@ -1,8 +1,8 @@
 <template>
   <div class="main-container">
     <div class="floating-text">
-      <h1>Hi there!</h1>
-      <h2>I'm Francesco, a web developer</h2>
+      <p class="title">Hi there!</p>
+      <p class="subtitle">I'm Francesco</p>
     </div>
     <img class="image" src="/header.svg" />
   </div>
@@ -26,6 +26,7 @@ export default {}
   top: 25vh;
   left: 20vw;
   width: 30vw;
+  height: 40vh;
   border-radius: 20px;
   color: white;
 }
@@ -35,5 +36,13 @@ export default {}
   top: 10vh;
   left: 55vw;
   height: 40vh;
+}
+
+.title {
+  font-size: 5em !important;
+}
+
+.subtitle {
+  font-size: 3.5em !important;
 }
 </style>

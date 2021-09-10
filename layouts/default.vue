@@ -1,9 +1,7 @@
 <template>
   <v-app>
     <v-main>
-      <v-container fluid>
-        <Nuxt />
-      </v-container>
+      <Nuxt />
     </v-main>
 
     <the-footer />

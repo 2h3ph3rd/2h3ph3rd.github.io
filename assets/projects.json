@@ -1,0 +1,33 @@
+[
+  {
+    "title": "SN Exporter",
+    "description": "A Standard Notes action to export notes into different file types",
+    "image": "https://standardnotes.com/static/icon-d97ea19281985177f82aa27e9dbe5784.png",
+    "url": "https://github.com/francescopastore/sn-exporter",
+    "icons": [
+      "mdi-nodejs",
+      "mdi-api"
+    ]
+  },
+  {
+    "title": "Awesome Todo",
+    "description": "A simple Quasar app to manage todo",
+    "image": "https://github.com/francescopastore/awesome-todo/raw/master/public/icons/icon-512x512.png",
+    "url": "https://github.com/francescopastore/awesome-todo",
+    "icons": [
+      "mdi-nodejs",
+      "mdi-vuejs",
+      "mdi-firebase"
+    ]
+  },
+  {
+    "title": "Quasar Extension Pack",
+    "description": "Unofficial extension pack with recommended extensions by Quasar",
+    "image": "https://raw.githubusercontent.com/francescopastore/quasar-extension-pack/master/icon.png",
+    "url": "https://github.com/francescopastore/quasar-extension-pack",
+    "icons": [
+      "mdi-microsoft-visual-studio-code",
+      "mdi-code-json"
+    ]
+  }
+]

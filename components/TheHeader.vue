@@ -2,7 +2,7 @@
   <div class="main-container">
     <div class="floating-text">
       <p class="title">Hi there!</p>
-      <p class="subtitle">I'm Francesco</p>
+      <p class="subtitle">I'm Francesco 👋</p>
     </div>
     <img class="image" src="/header.svg" />
   </div>
@@ -24,8 +24,8 @@ export default {}
   /* background-color: rgb(238, 238, 238); */
   position: absolute;
   top: 25vh;
-  left: 20vw;
-  width: 30vw;
+  left: 15vw;
+  width: 40vw;
   height: 40vh;
   border-radius: 20px;
   color: white;

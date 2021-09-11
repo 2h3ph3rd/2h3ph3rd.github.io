@@ -1,25 +1,41 @@
 <template>
-  <v-app-bar color="secondary" app>
-    <v-spacer></v-spacer>
-
-    <v-btn text>
-      <v-icon left>mdi-code-tags</v-icon>
-      Projects
-    </v-btn>
-
-    <v-btn text>
-      <v-icon left>mdi-newspaper-variant</v-icon>
-      Articles
+  <v-app-bar app>
+    <v-btn v-for="link in links" :key="link.title" text>
+      <v-icon left>{{ link.icon }}</v-icon>
+      {{ link.title }}
     </v-btn>
 
     <v-spacer></v-spacer>
-
     <switch-theme />
   </v-app-bar>
 </template>
 
 <script>
-export default {}
+const Links = [
+  {
+    title: 'Home',
+    link: '/',
+    icon: 'mdi-home-variant',
+  },
+  {
+    title: 'Projects',
+    link: '#projects',
+    icon: 'mdi-code-tags',
+  },
+  {
+    title: 'Articles',
+    link: '#articles',
+    icon: 'mdi-newspaper-variant',
+  },
+]
+
+export default {
+  data() {
+    return {
+      links: Links,
+    }
+  },
+}
 </script>
 
 <style>

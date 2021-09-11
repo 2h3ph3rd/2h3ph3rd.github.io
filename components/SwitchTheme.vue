@@ -1,7 +1,6 @@
 <template>
   <v-switch
     inset
-    dark
     hide-details
     :prepend-icon="switchIcon"
     :value="$vuetify.theme.dark"

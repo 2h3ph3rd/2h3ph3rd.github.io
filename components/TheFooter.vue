@@ -1,5 +1,5 @@
 <template>
-  <v-footer>
+  <v-footer min-height="20vh">
     <switch-theme />
   </v-footer>
 </template>

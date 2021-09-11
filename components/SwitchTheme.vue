@@ -3,7 +3,7 @@
     inset
     hide-details
     :prepend-icon="switchIcon"
-    :value="$vuetify.theme.dark"
+    :value="dark"
     @change="switchTheme"
   >
   </v-switch>
@@ -17,15 +17,22 @@ export default {
   data() {
     return {
       switchIcon: darkThemeIcon,
+      dark: false,
     }
+  },
+  mounted() {
+    this.$vuetify.theme.dark = this.$store.state.settings.theme.dark
+    this.dark = this.$store.state.settings.theme.dark
   },
   methods: {
     switchTheme() {
-      if (this.$vuetify.theme.dark) {
-        this.$vuetify.theme.dark = false
+      this.$store.commit('settings/switchTheme')
+      this.dark = this.$store.state.settings.theme.dark
+      this.$vuetify.theme.dark = this.dark
+
+      if (this.dark) {
         this.switchIcon = darkThemeIcon
       } else {
-        this.$vuetify.theme.dark = true
         this.switchIcon = lightThemeIcon
       }
     },

@@ -4,7 +4,6 @@
       <v-icon left>{{ link.icon }}</v-icon>
       {{ link.title }}
     </v-btn>
-
     <v-spacer></v-spacer>
     <switch-theme />
   </v-app-bar>

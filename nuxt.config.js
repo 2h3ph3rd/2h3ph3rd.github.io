@@ -21,13 +21,10 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: ['~/assets/global.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    { src: '~/plugins/persisted-state.client.js' },
-    { src: '~/plugins/vue-masonry.client.js' },
-  ],
+  plugins: [{ src: '~/plugins/persisted-state.client.js' }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

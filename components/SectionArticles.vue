@@ -5,7 +5,7 @@
         <h1 class="text-center primary--text my-6" style="font-size: 2.5em">
           Articles
         </h1>
-        <v-row v-masonry>
+        <v-row>
           <v-col
             v-for="article in articles.items"
             :key="article.title"

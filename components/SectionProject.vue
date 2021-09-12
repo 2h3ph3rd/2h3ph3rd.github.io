@@ -1,7 +1,7 @@
 <template>
   <section>
     <v-container fluid>
-      <v-col cols="12" md="8" offset-md="2">
+      <v-col cols="12" md="10" offset-md="1" xl="8" offset-xl="2">
         <h1 class="text-center primary--text my-6" style="font-size: 2.5em">
           Projects
         </h1>
@@ -10,7 +10,8 @@
             v-for="project in projects"
             :key="project.title"
             cols="12"
-            md="4"
+            md="6"
+            xl="4"
           >
             <card-project :project="project"></card-project>
           </v-col>

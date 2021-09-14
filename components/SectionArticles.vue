@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section id="articles-section">
     <v-container fluid>
       <v-col cols="12" md="10" offset-md="1" xl="8" offset-xl="2">
         <h1 class="text-center primary--text my-6" style="font-size: 2.5em">

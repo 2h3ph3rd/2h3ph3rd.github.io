@@ -32,7 +32,6 @@
       <v-btn color="primary" large text @click="openLink(article.link)">
         <v-icon left>mdi-open-in-new</v-icon>
         View
-        <v-icon right>mdi-chevron-right</v-icon>
       </v-btn>
     </v-card-actions>
   </v-card>

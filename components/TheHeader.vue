@@ -1,5 +1,5 @@
 <template>
-  <div class="main-container">
+  <div id="header-section" class="main-container">
     <div class="floating-text">
       <h1 class="title">Hi there!</h1>
       <!--<p class="subtitle">I'm Francesco 👋</p>-->

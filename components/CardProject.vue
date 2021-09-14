@@ -20,16 +20,14 @@
     <v-divider></v-divider>
 
     <v-card-actions>
-      <v-btn color="primary" large text>
+      <v-btn color="primary" text>
         <v-icon left>mdi-open-in-new</v-icon>
         View
-        <v-icon right>mdi-chevron-right</v-icon>
       </v-btn>
 
-      <v-btn color="primary" large text @click="openLink(project.url)">
+      <v-btn color="primary" text @click="openLink(project.url)">
         <v-icon left>mdi-github</v-icon>
-        Source code
-        <v-icon right>mdi-chevron-right</v-icon>
+        Source
       </v-btn>
     </v-card-actions>
   </v-card>

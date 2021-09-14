@@ -2,7 +2,6 @@
   {
     "title": "SN Exporter",
     "description": "A Standard Notes action to export notes into different file types",
-    "image": "https://cdn1.iconfinder.com/data/icons/seo-and-web-optimization-25/200/seo_solutions-256.png",
     "url": "https://github.com/francescopastore/sn-exporter",
     "icons": [
       "mdi-nodejs",

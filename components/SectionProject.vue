@@ -11,7 +11,7 @@
             :key="project.title"
             cols="12"
             md="6"
-            xl="4"
+            lg="4"
           >
             <card-project :project="project"></card-project>
           </v-col>

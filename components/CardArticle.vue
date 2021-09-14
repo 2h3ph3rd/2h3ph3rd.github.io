@@ -1,6 +1,6 @@
 <template>
   <v-card class="mx-auto">
-    <v-img :src="article.thumbnail" rounded @load="$redrawVueMasonry()"></v-img>
+    <v-img :src="article.thumbnail" rounded></v-img>
     <v-card-title>{{ article.title }}</v-card-title>
 
     <v-list-item>

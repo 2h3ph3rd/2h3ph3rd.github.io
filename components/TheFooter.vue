@@ -1,17 +1,21 @@
 <template>
   <v-footer min-height="20vh">
-    <switch-theme />
+    <v-container>
+      <v-row class="text-center">
+        <v-col cols="12" md="4"> </v-col>
+        <v-col cols="12" md="4">
+          Made with ♥ using
+          <a href="https://vuejs.org/" target="_blank">Vue</a> and
+          <a href="https://vuetifyjs.com/en/" target="_blank">Vuetify</a>
+        </v-col>
+        <v-col cols="12" md="4"> </v-col>
+      </v-row>
+    </v-container>
   </v-footer>
 </template>
 
 <script>
-import SwitchTheme from './SwitchTheme.vue'
-
-export default {
-  components: {
-    SwitchTheme,
-  },
-}
+export default {}
 </script>
 
 <style>

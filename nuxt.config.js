@@ -6,7 +6,7 @@ export default {
 
   // For Github Pages
   router: {
-    base: '/francescopastore.github.io/',
+    base: '/',
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head

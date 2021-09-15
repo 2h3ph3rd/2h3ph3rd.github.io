@@ -5,7 +5,7 @@
         <p class="header-title">Hi there!</p>
         <p class="header-subtitle">I'm Francesco 👋</p>
       </div>
-      <img class="image" src="/header.svg" />
+      <img class="image" src="~/assets/header.svg" />
     </div>
     <div v-else>
       <div class="mobile-header-container text-center pt-6">

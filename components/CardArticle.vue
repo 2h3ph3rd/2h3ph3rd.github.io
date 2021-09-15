@@ -29,16 +29,21 @@
     <v-divider></v-divider>
 
     <v-card-actions>
-      <v-btn color="primary" large text @click="openLink(article.link)">
-        <v-icon left>mdi-open-in-new</v-icon>
-        View
-      </v-btn>
+      <button-link
+        v-if="article.link"
+        :link="article.link"
+        icon="mdi-open-in-new"
+        text="View"
+      ></button-link>
     </v-card-actions>
   </v-card>
 </template>
 
 <script>
+import ButtonLink from './ButtonLink.vue'
+
 export default {
+  components: { ButtonLink },
   props: {
     article: {
       type: Object,

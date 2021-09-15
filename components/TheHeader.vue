@@ -1,8 +1,8 @@
 <template>
   <div id="header-section" class="main-container">
     <div class="floating-text">
-      <h1 class="title">Hi there!</h1>
-      <!--<p class="subtitle">I'm Francesco 👋</p>-->
+      <p class="title">Hi there!</p>
+      <p class="subtitle">I'm Francesco 👋</p>
     </div>
     <img class="image" src="/header.svg" />
   </div>
@@ -21,10 +21,9 @@ export default {}
 }
 
 .floating-text {
-  /* background-color: rgb(238, 238, 238); */
   position: absolute;
-  top: 25vh;
-  left: 15vw;
+  top: 20vh;
+  left: 20vw;
   width: 30vw;
   height: 40vh;
   border-radius: 20px;
@@ -42,35 +41,9 @@ export default {}
   font-size: 5em !important;
   line-height: 10vh;
   width: 17.5vw;
-
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: 0.06em solid white; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  animation: typing 1.5s steps(18, end) 1s, blink-caret 0.75s step-end infinite;
 }
 
 .subtitle {
   font-size: 3.5em !important;
-}
-
-/* The typing effect */
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 17.5vw;
-  }
-}
-
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: white;
-  }
 }
 </style>

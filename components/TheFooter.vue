@@ -19,6 +19,9 @@ export default {}
 </script>
 
 <style>
+a {
+  text-decoration: none;
+  color: black !important;
+  font-weight: bold;
+}
 </style>
-
-SwitchTheme

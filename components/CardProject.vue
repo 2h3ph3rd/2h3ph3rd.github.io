@@ -6,8 +6,8 @@
         <v-list-item-subtitle>{{ project.description }}</v-list-item-subtitle>
       </v-list-item-content>
 
-      <v-list-item-avatar tile size="80">
-        <v-img :src="project.image" height="100px" contain rounded></v-img>
+      <v-list-item-avatar size="80" rounded>
+        <v-img :src="project.image" height="100px" contain></v-img>
       </v-list-item-avatar>
     </v-list-item>
 
@@ -20,15 +20,19 @@
     <v-divider></v-divider>
 
     <v-card-actions>
-      <v-btn color="primary" text>
-        <v-icon left>mdi-open-in-new</v-icon>
-        View
-      </v-btn>
+      <button-link
+        v-if="project.view"
+        :link="project.view"
+        icon="mdi-open-in-new"
+        text="View"
+      ></button-link>
 
-      <v-btn color="primary" text @click="openLink(project.url)">
-        <v-icon left>mdi-github</v-icon>
-        Source
-      </v-btn>
+      <button-link
+        v-if="project.url"
+        :link="project.url"
+        icon="mdi-github"
+        text="Source"
+      ></button-link>
     </v-card-actions>
   </v-card>
 </template>
@@ -39,11 +43,6 @@ export default {
     project: {
       type: Object,
       required: true,
-    },
-  },
-  methods: {
-    openLink(link) {
-      window.open(link)
     },
   },
 }

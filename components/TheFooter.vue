@@ -18,10 +18,9 @@
 export default {}
 </script>
 
-<style>
+<style lang="scss">
 a {
   text-decoration: none;
-  color: black !important;
   font-weight: bold;
 }
 </style>

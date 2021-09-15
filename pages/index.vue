@@ -16,7 +16,4 @@ export default {
 </script>
 
 <style>
-.title {
-  font-size: 20em;
-}
 </style>

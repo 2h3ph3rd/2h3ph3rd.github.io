@@ -2,6 +2,7 @@
     "conventionalCommits.scopes": [
         "general",
         "formatter",
-        "github-pages"
+        "github-pages",
+        "security"
     ]
 }

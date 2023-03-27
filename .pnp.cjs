@@ -35,7 +35,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["clsx", "npm:1.2.1"],\
             ["prism-react-renderer", "virtual:8b8ee7df476bbf4df25d46674fcac53e8321ca171243380465dbd2f84c6e67d9144bf4726e1594e63d175bc46b3a3adba6fe1d6381051fef9b42af10321d8d84#npm:1.3.5"],\
             ["react", "npm:17.0.2"],\
-            ["react-dom", "virtual:8b8ee7df476bbf4df25d46674fcac53e8321ca171243380465dbd2f84c6e67d9144bf4726e1594e63d175bc46b3a3adba6fe1d6381051fef9b42af10321d8d84#npm:17.0.2"]\
+            ["react-dom", "virtual:8b8ee7df476bbf4df25d46674fcac53e8321ca171243380465dbd2f84c6e67d9144bf4726e1594e63d175bc46b3a3adba6fe1d6381051fef9b42af10321d8d84#npm:17.0.2"],\
+            ["react-gist", "virtual:8b8ee7df476bbf4df25d46674fcac53e8321ca171243380465dbd2f84c6e67d9144bf4726e1594e63d175bc46b3a3adba6fe1d6381051fef9b42af10321d8d84#npm:1.2.4"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -52,7 +53,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["clsx", "npm:1.2.1"],\
             ["prism-react-renderer", "virtual:8b8ee7df476bbf4df25d46674fcac53e8321ca171243380465dbd2f84c6e67d9144bf4726e1594e63d175bc46b3a3adba6fe1d6381051fef9b42af10321d8d84#npm:1.3.5"],\
             ["react", "npm:17.0.2"],\
-            ["react-dom", "virtual:8b8ee7df476bbf4df25d46674fcac53e8321ca171243380465dbd2f84c6e67d9144bf4726e1594e63d175bc46b3a3adba6fe1d6381051fef9b42af10321d8d84#npm:17.0.2"]\
+            ["react-dom", "virtual:8b8ee7df476bbf4df25d46674fcac53e8321ca171243380465dbd2f84c6e67d9144bf4726e1594e63d175bc46b3a3adba6fe1d6381051fef9b42af10321d8d84#npm:17.0.2"],\
+            ["react-gist", "virtual:8b8ee7df476bbf4df25d46674fcac53e8321ca171243380465dbd2f84c6e67d9144bf4726e1594e63d175bc46b3a3adba6fe1d6381051fef9b42af10321d8d84#npm:1.2.4"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -12105,6 +12107,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/react-fast-compare-npm-3.2.1-c0b870cc30-209b4dc3a9.zip/node_modules/react-fast-compare/",\
           "packageDependencies": [\
             ["react-fast-compare", "npm:3.2.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["react-gist", [\
+        ["npm:1.2.4", {\
+          "packageLocation": "./.yarn/cache/react-gist-npm-1.2.4-89bbe5d256-229515fc72.zip/node_modules/react-gist/",\
+          "packageDependencies": [\
+            ["react-gist", "npm:1.2.4"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:8b8ee7df476bbf4df25d46674fcac53e8321ca171243380465dbd2f84c6e67d9144bf4726e1594e63d175bc46b3a3adba6fe1d6381051fef9b42af10321d8d84#npm:1.2.4", {\
+          "packageLocation": "./.yarn/__virtual__/react-gist-virtual-b266cd8da9/0/cache/react-gist-npm-1.2.4-89bbe5d256-229515fc72.zip/node_modules/react-gist/",\
+          "packageDependencies": [\
+            ["react-gist", "virtual:8b8ee7df476bbf4df25d46674fcac53e8321ca171243380465dbd2f84c6e67d9144bf4726e1594e63d175bc46b3a3adba6fe1d6381051fef9b42af10321d8d84#npm:1.2.4"],\
+            ["@types/react", null],\
+            ["react", "npm:17.0.2"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "react"\
           ],\
           "linkType": "HARD"\
         }]\

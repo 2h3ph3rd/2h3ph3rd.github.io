@@ -1,6 +1,7 @@
 {
     "conventionalCommits.scopes": [
         "general",
-        "formatter"
+        "formatter",
+        "github-pages"
     ]
 }

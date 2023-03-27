@@ -3,6 +3,7 @@
         "general",
         "formatter",
         "github-pages",
-        "security"
+        "security",
+        "mida"
     ]
 }

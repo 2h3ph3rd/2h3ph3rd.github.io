@@ -56,79 +56,67 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      // image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
-        logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
-        },
+        title: 'Francesco Pastore',
+        // logo: {
+        //   alt: 'My logo',
+        //   src: 'img/logo.svg',
+        // },
         items: [
           {
             type: 'docSidebar',
             sidebarId: 'securitySidebar',
             position: 'left',
-            label: 'Security',
+            label: '🔒 Security',
           },
           {
             type: 'docSidebar',
             sidebarId: 'universitySidebar',
             position: 'left',
-            label: 'University',
+            label: '🎓 University',
           },
-          { to: '/blog', label: 'Blog', position: 'left' },
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://raindrop.io/francesco0599/cybersecurity-27473312',
+            label: '🔗 Resources',
+            position: 'left',
+          },
+          // { to: '/blog', label: 'Blog', position: 'left' },
+          {
+            href: 'https://github.com/2h3ph3rd/2h3ph3rd.github.io',
+            label: 'Source',
+            position: 'right',
+          },
+          {
+            href: 'https://github.com/2h3ph3rd',
             label: 'GitHub',
+            position: 'right',
+          },
+          {
+            href: 'https://2h3ph3rd.medium.com',
+            label: 'Medium',
             position: 'right',
           },
         ],
       },
       footer: {
         style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        // links: [
+        //   {
+        //     title: 'Docs',
+        //     items: [
+        //       {
+        //         label: 'Security',
+        //         to: '/docs/security',
+        //       },
+        //       {
+        //         label: 'University',
+        //         to: '/docs/university',
+        //       },
+        //     ],
+        //   },
+        // ],
+        copyright: `Made with ❤️ using <a href="https://docusaurus.io/" target="_blank">Docusaurus.</a>`,
       },
       prism: {
         theme: lightCodeTheme,

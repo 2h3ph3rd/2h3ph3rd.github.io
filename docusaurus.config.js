@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Francesco Pastore',
-  tagline: 'Francesco Pastore website',
+  tagline: 'My personal website',
   favicon: 'img/favicon.ico',
 
   url: 'https://2h3ph3rd.github.io',

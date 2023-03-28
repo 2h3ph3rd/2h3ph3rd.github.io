@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import clsx from 'clsx'
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment'
 import styles from './styles.module.scss'
 
 function mobileVersion() {
@@ -46,6 +47,10 @@ function desktopVersion() {
 const getIsMobile = () => window.innerWidth <= 1200
 
 export default function HomepageHeader() {
+  if (!ExecutionEnvironment.canUseDOM) {
+    return desktopVersion()
+  }
+
   const [isMobile, setIsMobile] = useState(getIsMobile())
 
   useEffect(() => {

@@ -33,10 +33,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@docusaurus/preset-classic", "virtual:8b8ee7df476bbf4df25d46674fcac53e8321ca171243380465dbd2f84c6e67d9144bf4726e1594e63d175bc46b3a3adba6fe1d6381051fef9b42af10321d8d84#npm:2.4.0"],\
             ["@mdx-js/react", "virtual:8b8ee7df476bbf4df25d46674fcac53e8321ca171243380465dbd2f84c6e67d9144bf4726e1594e63d175bc46b3a3adba6fe1d6381051fef9b42af10321d8d84#npm:1.6.22"],\
             ["clsx", "npm:1.2.1"],\
+            ["hast-util-is-element", "npm:1.1.0"],\
             ["prism-react-renderer", "virtual:8b8ee7df476bbf4df25d46674fcac53e8321ca171243380465dbd2f84c6e67d9144bf4726e1594e63d175bc46b3a3adba6fe1d6381051fef9b42af10321d8d84#npm:1.3.5"],\
             ["react", "npm:17.0.2"],\
             ["react-dom", "virtual:8b8ee7df476bbf4df25d46674fcac53e8321ca171243380465dbd2f84c6e67d9144bf4726e1594e63d175bc46b3a3adba6fe1d6381051fef9b42af10321d8d84#npm:17.0.2"],\
-            ["react-gist", "virtual:8b8ee7df476bbf4df25d46674fcac53e8321ca171243380465dbd2f84c6e67d9144bf4726e1594e63d175bc46b3a3adba6fe1d6381051fef9b42af10321d8d84#npm:1.2.4"]\
+            ["react-gist", "virtual:8b8ee7df476bbf4df25d46674fcac53e8321ca171243380465dbd2f84c6e67d9144bf4726e1594e63d175bc46b3a3adba6fe1d6381051fef9b42af10321d8d84#npm:1.2.4"],\
+            ["rehype-katex", "npm:5.0.0"],\
+            ["remark-math", "npm:3.0.1"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -51,10 +54,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@docusaurus/preset-classic", "virtual:8b8ee7df476bbf4df25d46674fcac53e8321ca171243380465dbd2f84c6e67d9144bf4726e1594e63d175bc46b3a3adba6fe1d6381051fef9b42af10321d8d84#npm:2.4.0"],\
             ["@mdx-js/react", "virtual:8b8ee7df476bbf4df25d46674fcac53e8321ca171243380465dbd2f84c6e67d9144bf4726e1594e63d175bc46b3a3adba6fe1d6381051fef9b42af10321d8d84#npm:1.6.22"],\
             ["clsx", "npm:1.2.1"],\
+            ["hast-util-is-element", "npm:1.1.0"],\
             ["prism-react-renderer", "virtual:8b8ee7df476bbf4df25d46674fcac53e8321ca171243380465dbd2f84c6e67d9144bf4726e1594e63d175bc46b3a3adba6fe1d6381051fef9b42af10321d8d84#npm:1.3.5"],\
             ["react", "npm:17.0.2"],\
             ["react-dom", "virtual:8b8ee7df476bbf4df25d46674fcac53e8321ca171243380465dbd2f84c6e67d9144bf4726e1594e63d175bc46b3a3adba6fe1d6381051fef9b42af10321d8d84#npm:17.0.2"],\
-            ["react-gist", "virtual:8b8ee7df476bbf4df25d46674fcac53e8321ca171243380465dbd2f84c6e67d9144bf4726e1594e63d175bc46b3a3adba6fe1d6381051fef9b42af10321d8d84#npm:1.2.4"]\
+            ["react-gist", "virtual:8b8ee7df476bbf4df25d46674fcac53e8321ca171243380465dbd2f84c6e67d9144bf4726e1594e63d175bc46b3a3adba6fe1d6381051fef9b42af10321d8d84#npm:1.2.4"],\
+            ["rehype-katex", "npm:5.0.0"],\
+            ["remark-math", "npm:3.0.1"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -4723,6 +4729,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@types/katex", [\
+        ["npm:0.11.1", {\
+          "packageLocation": "./.yarn/cache/@types-katex-npm-0.11.1-00a0d8409c-1e51988b4b.zip/node_modules/@types/katex/",\
+          "packageDependencies": [\
+            ["@types/katex", "npm:0.11.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@types/keyv", [\
         ["npm:3.1.4", {\
           "packageLocation": "./.yarn/cache/@types-keyv-npm-3.1.4-a8082ea56b-e009a2bfb5.zip/node_modules/@types/keyv/",\
@@ -8450,6 +8465,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["hast-util-is-element", [\
+        ["npm:1.1.0", {\
+          "packageLocation": "./.yarn/cache/hast-util-is-element-npm-1.1.0-be10e62fa7-30fad3f65e.zip/node_modules/hast-util-is-element/",\
+          "packageDependencies": [\
+            ["hast-util-is-element", "npm:1.1.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["hast-util-parse-selector", [\
         ["npm:2.2.5", {\
           "packageLocation": "./.yarn/cache/hast-util-parse-selector-npm-2.2.5-cd773533ea-22ee4afbd1.zip/node_modules/hast-util-parse-selector/",\
@@ -8488,6 +8512,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["web-namespaces", "npm:1.1.4"],\
             ["xtend", "npm:4.0.2"],\
             ["zwitch", "npm:1.0.5"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["hast-util-to-text", [\
+        ["npm:2.0.1", {\
+          "packageLocation": "./.yarn/cache/hast-util-to-text-npm-2.0.1-2541ca4a18-4e7960b414.zip/node_modules/hast-util-to-text/",\
+          "packageDependencies": [\
+            ["hast-util-to-text", "npm:2.0.1"],\
+            ["hast-util-is-element", "npm:1.1.0"],\
+            ["repeat-string", "npm:1.6.1"],\
+            ["unist-util-find-after", "npm:3.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -9481,6 +9517,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jsonfile", "npm:6.1.0"],\
             ["graceful-fs", "npm:4.2.11"],\
             ["universalify", "npm:2.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["katex", [\
+        ["npm:0.13.24", {\
+          "packageLocation": "./.yarn/cache/katex-npm-0.13.24-7ca4a080f2-1b7c829586.zip/node_modules/katex/",\
+          "packageDependencies": [\
+            ["katex", "npm:0.13.24"],\
+            ["commander", "npm:8.3.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -12584,6 +12630,32 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["rehype-katex", [\
+        ["npm:5.0.0", {\
+          "packageLocation": "./.yarn/cache/rehype-katex-npm-5.0.0-e4d09d3648-b20e24c532.zip/node_modules/rehype-katex/",\
+          "packageDependencies": [\
+            ["rehype-katex", "npm:5.0.0"],\
+            ["@types/katex", "npm:0.11.1"],\
+            ["hast-util-to-text", "npm:2.0.1"],\
+            ["katex", "npm:0.13.24"],\
+            ["rehype-parse", "npm:7.0.1"],\
+            ["unified", "npm:9.2.2"],\
+            ["unist-util-visit", "npm:2.0.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["rehype-parse", [\
+        ["npm:7.0.1", {\
+          "packageLocation": "./.yarn/cache/rehype-parse-npm-7.0.1-6af956500f-c3c914aa92.zip/node_modules/rehype-parse/",\
+          "packageDependencies": [\
+            ["rehype-parse", "npm:7.0.1"],\
+            ["hast-util-from-parse5", "npm:6.0.1"],\
+            ["parse5", "npm:6.0.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["relateurl", [\
         ["npm:0.2.7", {\
           "packageLocation": "./.yarn/cache/relateurl-npm-0.2.7-7687cc0a2a-5891e792ea.zip/node_modules/relateurl/",\
@@ -12610,6 +12682,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/remark-footnotes-npm-2.0.0-b0be266d8e-f2f87ffd6f.zip/node_modules/remark-footnotes/",\
           "packageDependencies": [\
             ["remark-footnotes", "npm:2.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["remark-math", [\
+        ["npm:3.0.1", {\
+          "packageLocation": "./.yarn/cache/remark-math-npm-3.0.1-ac4eef923f-690256f27f.zip/node_modules/remark-math/",\
+          "packageDependencies": [\
+            ["remark-math", "npm:3.0.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -13984,6 +14065,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/unist-builder-npm-2.0.3-8bf7de2024-e946fdf77d.zip/node_modules/unist-builder/",\
           "packageDependencies": [\
             ["unist-builder", "npm:2.0.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["unist-util-find-after", [\
+        ["npm:3.0.0", {\
+          "packageLocation": "./.yarn/cache/unist-util-find-after-npm-3.0.0-7381434645-daa9a28f6c.zip/node_modules/unist-util-find-after/",\
+          "packageDependencies": [\
+            ["unist-util-find-after", "npm:3.0.0"],\
+            ["unist-util-is", "npm:4.1.0"]\
           ],\
           "linkType": "HARD"\
         }]\

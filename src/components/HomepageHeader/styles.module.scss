@@ -1,0 +1,24 @@
+$small: 1200px;
+
+.headerText {
+  vertical-align: middle;
+}
+
+.headerImage {
+  height: 300px;
+  vertical-align: middle;
+
+  
+}
+
+.hideMobile {
+  @media screen and (max-width: $small) {
+    display: none;
+  }
+}
+
+.hideDesktop {
+  @media screen and (min-width: $small) {
+    display: none;
+  }
+}

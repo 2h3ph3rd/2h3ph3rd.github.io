@@ -30,6 +30,8 @@ const config = {
     locales: ['en'],
   },
 
+  plugins: ['docusaurus-plugin-sass'],
+
   presets: [
     [
       'classic',
@@ -121,7 +123,7 @@ const config = {
         //     ],
         //   },
         // ],
-        copyright: `Made with ❤️ using <a href="https://docusaurus.io/" target="_blank">Docusaurus.</a>`,
+        copyright: `Made with ❤️ using <a href="https://docusaurus.io" target="_blank">Docusaurus</a> and <a href="https://infima.dev" target="_blank">Infima</a>`,
       },
       prism: {
         theme: lightCodeTheme,

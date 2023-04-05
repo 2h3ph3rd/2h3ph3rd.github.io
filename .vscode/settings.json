@@ -4,6 +4,7 @@
         "formatter",
         "github-pages",
         "security",
-        "mida"
+        "mida",
+        "package.json"
     ]
 }

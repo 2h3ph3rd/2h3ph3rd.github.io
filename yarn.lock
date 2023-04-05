@@ -5,9 +5,9 @@ __metadata:
   version: 6
   cacheKey: 8
 
-"2-h-3-ph-3rd-github-io@workspace:.":
+"2h3ph3rd-github-io@workspace:.":
   version: 0.0.0-use.local
-  resolution: "2-h-3-ph-3rd-github-io@workspace:."
+  resolution: "2h3ph3rd-github-io@workspace:."
   dependencies:
     "@docusaurus/core": 2.4.0
     "@docusaurus/module-type-aliases": 2.4.0

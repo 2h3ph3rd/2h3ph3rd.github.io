@@ -79,9 +79,9 @@ const config = {
           },
           {
             type: 'docSidebar',
-            sidebarId: 'universitySidebar',
+            sidebarId: 'writeupsSidebar',
             position: 'left',
-            label: '🎓 University',
+            label: '📝 Writeups',
           },
           {
             href: 'https://raindrop.io/francesco0599/cybersecurity-27473312',

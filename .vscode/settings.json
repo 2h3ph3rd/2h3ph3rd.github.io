@@ -1,10 +1,11 @@
 {
-    "conventionalCommits.scopes": [
-        "general",
-        "formatter",
-        "github-pages",
-        "security",
-        "mida",
-        "package.json"
-    ]
+  "conventionalCommits.scopes": [
+    "general",
+    "formatter",
+    "github-pages",
+    "security",
+    "mida",
+    "package.json",
+    "docusaurus.config.js"
+  ]
 }

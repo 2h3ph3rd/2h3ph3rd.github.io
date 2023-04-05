@@ -11,7 +11,7 @@ const katex = require('rehype-katex')
 const config = {
   title: 'Francesco Pastore',
   tagline: 'My personal website',
-  favicon: 'img/favicon.ico',
+  favicon: '/img/favicon.ico',
 
   url: 'https://2h3ph3rd.github.io',
   baseUrl: '/',

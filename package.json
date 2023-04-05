@@ -1,10 +1,10 @@
 {
-  "name": "2-h-3-ph-3rd-github-io",
-  "version": "0.0.0",
+  "name": "2h3ph3rd-github-io",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "docusaurus start",
+    "start": "docusaurus start --port 4000",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",

@@ -1,6 +1,6 @@
 ---
 id: reverse_shell
-title: Reverse shell
+title: ↔ Reverse shell
 ---
 
 # Reverse shell

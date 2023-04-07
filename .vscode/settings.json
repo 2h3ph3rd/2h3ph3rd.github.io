@@ -6,6 +6,7 @@
     "security",
     "mida",
     "package.json",
-    "docusaurus.config.js"
+    "docusaurus.config.js",
+    "writeups"
   ]
 }

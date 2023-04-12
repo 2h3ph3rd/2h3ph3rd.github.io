@@ -41,7 +41,7 @@ int strcmp(const char *s1, const char *s2)
 }
 ```
 
-```sh
+```bash
 gcc -shared -fPIC -o inject.so inject.c
 LD_PRELOAD=$PWD/inject.so ./binary_to_execute
 ```

@@ -26,7 +26,7 @@ Find the correct mode for the hash algorithm
     <img src={require("./assets/hashcat-modes.jpg").default}></img><br />
 </p>
 
-```sh
+```bash
 # on kali linux /usr/share/wordlists/rockyou.txt
 hashcat -m 0 bdc87b9c894da5168059e00ebffb9077 path/to/wordlists/rockyou.txt
 ```

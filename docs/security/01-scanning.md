@@ -5,7 +5,7 @@ title: 🔎 Scanning
 
 # Scanning
 
-```sh
+```bash
 nmap -sS <host>
 ```
 

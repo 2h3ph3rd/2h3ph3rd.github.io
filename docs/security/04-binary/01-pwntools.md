@@ -39,7 +39,7 @@ Run `pwn cyclic` followed by the desired length.
 
 For example, for a string of 100 characters:
 
-```sh
+```bash
 pwn cyclic 100
 ```
 

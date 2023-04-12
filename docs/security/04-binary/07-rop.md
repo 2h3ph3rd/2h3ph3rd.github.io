@@ -17,13 +17,13 @@ ROP is used when you have no executable area to write a shellcode.
 
 Export all gadgets in an external file
 
-```sh
+```bash
 ropper --nocolor --file ./path_to_binary > gadgets.txt
 ```
 
 Export only small gadgets that ends with a return.
 
-```sh
+```bash
 ropper --inst-count 3 --nocolor --type rop --file ./path_to_binary > small_gadgets.txt
 ```
 
@@ -55,15 +55,15 @@ You can use the command `ldd` to see libc and loader details.
 Remember to make executable both the libc and the loader file.
 :::
 
-```sh
+```bash
 patchelf --replace-needed <lib_name> <lib_path> --set-interpreter <loader> <binary>
 ```
 
 ## Where to write
 
--   .bss
--   .data
--   stack (address are randomized, so you need a leak)
+- .bss
+- .data
+- stack (address are randomized, so you need a leak)
 
 :::info
 You can use readelf to find the start address of this sections.

@@ -46,3 +46,10 @@ curl -v https://website.com
 | inurl:id         | filters results by word in the URL |
 | filetype:pdf     | filters results by file extension  |
 | intitle:login    | filters results by word in title   |
+
+Special characters
+
+| Character | Example             | Meaning                                 |
+| --------- | ------------------- | --------------------------------------- |
+| \*        | site:\*.website.com | any possible alphanumeric strings       |
+| -         | -site:website.com   | used before an operator to obtain a not |

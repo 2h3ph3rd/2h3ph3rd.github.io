@@ -1,13 +1,6 @@
----
-id: database-enumeration
-title: Databases
----
-
 import Gist from 'react-gist';
 
-# Database
-
-## sqlmap
+# sqlmap
 
 <p align="center">
     <img src={require("./assets/sqlmap.png").default}></img>
@@ -40,6 +33,8 @@ Enumerate content by specifing table, column, and database.
 ```sh
 sqlmap -u "http://website.com/?id=1" --batch --dump -D db_name -T table_name -C col_name
 ```
+
+## Extras
 
 ### Using sqlmap with websockets
 

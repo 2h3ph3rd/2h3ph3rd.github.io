@@ -5,7 +5,7 @@ title: Databases
 
 import Gist from 'react-gist';
 
-# Database enumeration
+# Database
 
 ## sqlmap
 

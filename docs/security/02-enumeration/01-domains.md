@@ -3,7 +3,9 @@ id: domain-enumeration
 title: Domains
 ---
 
-# Domains enumeration
+# Domains
+
+Useful tools: ffuf dirb gobuster
 
 ## Wordlists
 

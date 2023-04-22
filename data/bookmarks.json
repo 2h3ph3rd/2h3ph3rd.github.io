@@ -1,0 +1,12 @@
+[
+	{
+		"url": "https://example.com",
+		"tag": [
+			"example1",
+			"example2",
+			"example3"
+		],
+		"open_graph": {},
+		"twitter": {}
+	}
+]

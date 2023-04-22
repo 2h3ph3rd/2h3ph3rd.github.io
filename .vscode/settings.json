@@ -8,6 +8,7 @@
     "package.json",
     "docusaurus.config.js",
     "writeups",
-    "thm"
+    "thm",
+    "tools"
   ]
 }

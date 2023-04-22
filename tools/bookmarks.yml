@@ -1,0 +1,6 @@
+# This yaml file is used as input
+- url: https://example.com
+  tags:
+    - example1
+    - example2
+    - example3

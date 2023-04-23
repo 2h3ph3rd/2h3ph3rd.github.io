@@ -1,148 +1,130 @@
 [
-  {
-    "url": "https://training.play-with-kubernetes.com/kubernetes-workshop/",
-    "category": "devops",
-    "tags": [
-      "kubernetes",
-      "docker",
-      "training"
-    ],
-    "open_graph": {},
-    "twitter": {
-      "title": "Kubernetes for Beginners",
-      "description": "Learn docker through online trainings in training.play-with-docker.com",
-      "image": "http://birthday.play-with-docker.com/images/simple-logo.jpg"
-    }
-  },
-  {
-    "url": "https://data.iana.org/TLD/tlds-alpha-by-domain.txt",
-    "category": "security",
-    "tags": [
-      "tld",
-      "domain",
-      "web",
-      "dns"
-    ],
-    "open_graph": {},
-    "twitter": {},
-    "favicon": "https://www.google.com/s2/favicons?domain=data.iana.org"
-  },
-  {
-    "url": "https://k8slens.dev/",
-    "category": "devops",
-    "tags": [
-      "kubernetes",
-      "docker",
-      "gui",
-      "tools"
-    ],
-    "open_graph": {},
-    "twitter": {},
-    "favicon": "https://www.google.com/s2/favicons?domain=k8slens.dev"
-  },
-  {
-    "url": "http://www.vmaxx.net/techinfo/ports.html",
-    "category": "security",
-    "tags": [
-      "ports",
-      "network",
-      "web"
-    ],
-    "open_graph": {},
-    "twitter": {}
-  },
-  {
-    "url": "https://github.com/uber-go/guide/blob/master/style.md",
-    "category": "programming",
-    "tags": [
-      "go",
-      "golang",
-      "style",
-      "guide"
-    ],
-    "open_graph": {
-      "title": "guide/style.md at master · uber-go/guide",
-      "site_name": "GitHub",
-      "description": "The Uber Go Style Guide. Contribute to uber-go/guide development by creating an account on GitHub.",
-      "image": "https://opengraph.githubassets.com/05c36358fc20ece779f53099ac14d33968ee0e07eb7f9a0cc2aa81c2c99fc1b0/uber-go/guide"
-    },
-    "twitter": {
-      "title": "guide/style.md at master · uber-go/guide",
-      "site": "@github",
-      "description": "The Uber Go Style Guide. Contribute to uber-go/guide development by creating an account on GitHub."
-    },
-    "favicon": "https://www.google.com/s2/favicons?domain=github.com"
-  },
-  {
-    "url": "https://k8slens.dev",
-    "category": "devops",
-    "tags": [
-      "kubernetes",
-      "docker",
-      "gui",
-      "tools"
-    ],
-    "open_graph": {
-      "title": "Lens | The Kubernetes IDE",
-      "description": "Lens IDE for Kubernetes. The only system you’ll ever need to take control of your Kubernetes clusters. It's open source and free. Download it today!",
-      "image": "https://k8slens.dev/images/lens-og.png"
-    },
-    "twitter": {},
-    "favicon": "https://www.google.com/s2/favicons?domain=k8slens.dev"
-  },
-  {
-    "url": "https://tryhackme.com",
-    "category": "security",
-    "tags": [
-      "hacking",
-      "training",
-      "ctf",
-      "challenges"
-    ],
-    "open_graph": {
-      "title": "TryHackMe | Cyber Security Training",
-      "site_name": "TryHackMe",
-      "description": "An online platform for learning and teaching cyber security, all through your browser.",
-      "image": "https://tryhackme.com/img/meta/default.png"
-    },
-    "twitter": {
-      "image": "https://tryhackme.com/img/meta/default.png"
-    },
-    "favicon": "https://www.google.com/s2/favicons?domain=tryhackme.com"
-  },
-  {
-    "url": "https://www.hackthebox.eu",
-    "category": "security",
-    "tags": [
-      "hacking",
-      "training",
-      "ctf",
-      "challenges"
-    ],
-    "open_graph": {
-      "title": "Hacking Training For The Best",
-      "site_name": "Hack The Box",
-      "description": "From beginners to experts, this is where hackers level up! Join today and learn how to hack.",
-      "image": "https://www.hackthebox.eu/images/landingv3/home/og-homepage.jpg"
-    },
-    "twitter": {},
-    "favicon": "https://www.google.com/s2/favicons?domain=hackthebox.eu"
-  },
-  {
-    "url": "https://www.hackthissite.org",
-    "category": "security",
-    "tags": [
-      "hacking",
-      "training",
-      "ctf",
-      "challenges"
-    ],
-    "open_graph": {
-      "title": "HackThisSite",
-      "description": "HackThisSite.org is a free, safe and legal training ground for hackers to test and expand their ethical hacking skills with challenges, CTFs, and more.",
-      "image": "https://data.htscdn.org/images/hackthissite-meta-card.png"
-    },
-    "twitter": {},
-    "favicon": "https://www.google.com/s2/favicons?domain=hackthissite.org"
-  }
+	{
+		"url": "https://training.play-with-kubernetes.com/kubernetes-workshop/",
+		"category": "devops",
+		"tags": [
+			"kubernetes",
+			"docker",
+			"training"
+		],
+		"title": "Kubernetes for Beginners",
+		"description": "Learn docker through online trainings in training.play-with-docker.com",
+		"created_at": "1682272419342"
+	},
+	{
+		"url": "https://data.iana.org/TLD/tlds-alpha-by-domain.txt",
+		"category": "security",
+		"tags": [
+			"tld",
+			"domain",
+			"web",
+			"dns"
+		],
+		"favicon": "https://www.google.com/s2/favicons?domain=data.iana.org",
+		"created_at": "1682272420031"
+	},
+	{
+		"url": "https://k8slens.dev",
+		"category": "devops",
+		"tags": [
+			"kubernetes",
+			"docker",
+			"gui",
+			"tools"
+		],
+		"title": "Lens | The Kubernetes IDE",
+		"description": "Lens IDE for Kubernetes. The only system you’ll ever need to take control of your Kubernetes clusters. It's open source and free. Download it today!",
+		"image": "https://k8slens.dev/images/lens-og.png",
+		"favicon": "https://www.google.com/s2/favicons?domain=k8slens.dev",
+		"created_at": "1682272420290"
+	},
+	{
+		"url": "https://github.com/uber-go/guide",
+		"category": "programming",
+		"tags": [
+			"go",
+			"golang",
+			"style",
+			"guide"
+		],
+		"title": "GitHub - uber-go/guide: The Uber Go Style Guide.",
+		"site_name": "GitHub",
+		"description": "The Uber Go Style Guide. Contribute to uber-go/guide development by creating an account on GitHub.",
+		"image": "https://opengraph.githubassets.com/05c36358fc20ece779f53099ac14d33968ee0e07eb7f9a0cc2aa81c2c99fc1b0/uber-go/guide",
+		"favicon": "https://www.google.com/s2/favicons?domain=github.com",
+		"created_at": "1682272421201"
+	},
+	{
+		"url": "https://tryhackme.com",
+		"category": "security",
+		"tags": [
+			"hacking",
+			"training",
+			"ctf",
+			"challenges"
+		],
+		"title": "TryHackMe | Cyber Security Training",
+		"site_name": "TryHackMe",
+		"description": "An online platform for learning and teaching cyber security, all through your browser.",
+		"image": "https://tryhackme.com/img/meta/default.png",
+		"favicon": "https://www.google.com/s2/favicons?domain=tryhackme.com",
+		"created_at": "1682272421633"
+	},
+	{
+		"url": "https://www.hackthebox.eu",
+		"category": "security",
+		"tags": [
+			"hacking",
+			"training",
+			"ctf",
+			"challenges"
+		],
+		"title": "Hacking Training For The Best",
+		"site_name": "Hack The Box",
+		"description": "From beginners to experts, this is where hackers level up! Join today and learn how to hack.",
+		"image": "https://www.hackthebox.eu/images/landingv3/home/og-homepage.jpg",
+		"favicon": "https://www.google.com/s2/favicons?domain=hackthebox.eu",
+		"created_at": "1682272422240"
+	},
+	{
+		"url": "https://www.hackthissite.org",
+		"category": "security",
+		"tags": [
+			"hacking",
+			"training",
+			"ctf",
+			"challenges"
+		],
+		"title": "HackThisSite",
+		"description": "HackThisSite.org is a free, safe and legal training ground for hackers to test and expand their ethical hacking skills with challenges, CTFs, and more.",
+		"image": "https://data.htscdn.org/images/hackthissite-meta-card.png",
+		"favicon": "https://www.google.com/s2/favicons?domain=hackthissite.org",
+		"created_at": "1682272422691"
+	},
+	{
+		"url": "https://snyk.io/",
+		"category": "security",
+		"tags": [
+			"vulnerabilities",
+			"docker",
+			"kubernetes",
+			"tools"
+		],
+		"title": "Snyk | Developer security | Develop fast. Stay secure.  | Snyk",
+		"site_name": "Snyk",
+		"description": "Snyk helps software-driven businesses develop fast and stay secure. Continuously find and fix vulnerabilities for npm, Maven, NuGet, RubyGems, PyPI and more. ",
+		"image": "https://snyk.io//_next/static/media/default-snyk.6bb9b598.jpg",
+		"favicon": "https://www.google.com/s2/favicons?domain=snyk.io",
+		"created_at": "1682272422996"
+	},
+	{
+		"url": "http://www.vmaxx.net/techinfo/ports.html",
+		"category": "security",
+		"tags": [
+			"ports",
+			"network",
+			"web"
+		],
+		"created_at": "1682272420572"
+	}
 ]

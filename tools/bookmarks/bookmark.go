@@ -3,33 +3,23 @@ package bookmarks
 import (
 	"fmt"
 	"log"
-	"net/http"
+	"strconv"
+	"time"
 
 	"2h3ph3rd.github.io/tools/common"
 	"github.com/gocolly/colly/v2"
 )
 
 type Bookmark struct {
-	URL       string    `json:"url" yaml:"url"`
-	Category  string    `json:"category" yaml:"category"`
-	Tags      []string  `json:"tags,omitempty" yaml:"tags"`
-	OpenGraph OpenGraph `json:"open_graph,omitempty"`
-	Twitter   Twitter   `json:"twitter,omitempty"`
-	Favicon   string    `json:"favicon,omitempty"`
-}
-
-type OpenGraph struct {
-	Title       string `json:"title,omitempty"`
-	SiteName    string `json:"site_name,omitempty"`
-	Description string `json:"description,omitempty"`
-	Image       string `json:"image,omitempty"`
-}
-
-type Twitter struct {
-	Title       string `json:"title,omitempty"`
-	Site        string `json:"site,omitempty"`
-	Description string `json:"description,omitempty"`
-	Image       string `json:"image,omitempty"`
+	URL         string   `json:"url" yaml:"url"`
+	Category    string   `json:"category" yaml:"category"`
+	Tags        []string `json:"tags,omitempty" yaml:"tags"`
+	Title       string   `json:"title,omitempty"`
+	Site        string   `json:"site_name,omitempty"`
+	Description string   `json:"description,omitempty"`
+	Image       string   `json:"image,omitempty"`
+	Favicon     string   `json:"favicon,omitempty"`
+	CreatedAt   string   `json:"created_at,omitempty"`
 }
 
 // NewBookmark creates a new bookmark from the given url and tags
@@ -50,6 +40,8 @@ func NewBookmark(url string, category string, tags []string) Bookmark {
 		log.Fatal(err)
 	}
 
+	b.CreatedAt = strconv.FormatInt(time.Now().UnixMilli(), 10)
+
 	return b
 }
 
@@ -66,10 +58,7 @@ func (b *Bookmark) AddFavicon() error {
 
 	b.Favicon = fmt.Sprintf("https://www.google.com/s2/favicons?domain=%s", domain)
 
-	_, statusCode, err := common.Get(b.Favicon)
-	if err != nil {
-		return err
-	} else if statusCode != http.StatusOK {
+	if !common.CheckImage(b.Favicon) {
 		b.Favicon = ""
 	}
 
@@ -87,24 +76,30 @@ func (b *Bookmark) AddMetaTagsData() error {
 	c.OnHTML("meta", func(e *colly.HTMLElement) {
 		switch e.Attr("property") {
 		case "og:description":
-			b.OpenGraph.Description = e.Attr("content")
+			b.Description = e.Attr("content")
 		case "og:image":
-			b.OpenGraph.Image = e.Attr("content")
+			b.Image = e.Attr("content")
+			// If the image is a relative path, add the domain to it
+			if b.Image[0] == "/"[0] {
+				b.Image = b.URL + b.Image
+			}
 		case "og:title":
-			b.OpenGraph.Title = e.Attr("content")
+			b.Title = e.Attr("content")
 		case "og:site_name":
-			b.OpenGraph.SiteName = e.Attr("content")
+			b.Site = e.Attr("content")
 		}
 
 		switch e.Attr("name") {
+		case "description":
+			b.Description = e.Attr("content")
 		case "twitter:description":
-			b.Twitter.Description = e.Attr("content")
+			b.Description = e.Attr("content")
 		case "twitter:image":
-			b.Twitter.Image = e.Attr("content")
+			b.Image = e.Attr("content")
 		case "twitter:title":
-			b.Twitter.Title = e.Attr("content")
+			b.Title = e.Attr("content")
 		case "twitter:site":
-			b.Twitter.Site = e.Attr("content")
+			b.Site = e.Attr("content")
 		}
 	})
 
@@ -114,6 +109,10 @@ func (b *Bookmark) AddMetaTagsData() error {
 
 	c.OnScraped(func(r *colly.Response) {
 		fmt.Println("Finished the crawling!")
+		if !common.CheckImage(b.Image) {
+			b.Image = ""
+		}
+
 	})
 
 	c.Visit(b.URL)

@@ -11,5 +11,6 @@
     "thm",
     "tools",
     "bookmarks"
-  ]
+  ],
+  "editor.formatOnSave": true
 }

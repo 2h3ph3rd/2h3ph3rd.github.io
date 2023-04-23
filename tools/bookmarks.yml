@@ -37,7 +37,7 @@
     - ports
     - network
     - web
-- url: https://github.com/uber-go/guide/blob/master/style.md
+- url: https://github.com/uber-go/guide
   category: programming
   tags:
     - go
@@ -65,3 +65,10 @@
     - training
     - ctf
     - challenges
+- url: https://snyk.io/
+  category: security
+  tags:
+    - vulnerabilities
+    - docker
+    - kubernetes
+    - tools

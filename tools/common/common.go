@@ -38,3 +38,22 @@ func ExtractDomain(input string) (string, error) {
 
 	return hostname, nil
 }
+
+// CheckImage checks if the given URL is a valid image.
+func CheckImage(url string) bool {
+	if url == "" {
+		return false
+	}
+
+	resp, err := http.Get(url)
+	if err != nil {
+		return false
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode == http.StatusOK {
+		return true
+	}
+
+	return false
+}

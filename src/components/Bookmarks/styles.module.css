@@ -1,11 +1,22 @@
-.features {
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
-  width: 100%;
+.hide {
+  display: none;
 }
 
-.featureSvg {
-  height: 200px;
-  width: 200px;
+.hover + .hide {
+  display: block;
+}
+
+.link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #00a0c6;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.card {
+  height: 100%;
 }

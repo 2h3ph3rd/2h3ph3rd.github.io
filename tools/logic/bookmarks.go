@@ -49,7 +49,7 @@ func ReadNewBookmarks() []Bookmark {
 func ReadActualBookmarks() []Bookmark {
 	var bookmarks []Bookmark
 
-	data, err := os.ReadFile("../data/bookmarks.json")
+	data, err := os.ReadFile(DataFolder + "/bookmarks.json")
 	if err != nil {
 		log.Fatal(err)
 	}

@@ -6,6 +6,8 @@ import (
 	"net/http"
 )
 
+const DataFolder = "../../static/data"
+
 func Get(url string) []byte {
 	resp, err := http.Get(url)
 	if err != nil {

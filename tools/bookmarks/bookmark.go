@@ -1,15 +1,17 @@
-package logic
+package bookmarks
 
 import (
 	"fmt"
 	"log"
 	"net/http"
 
+	"2h3ph3rd.github.io/tools/common"
 	"github.com/gocolly/colly/v2"
 )
 
 type Bookmark struct {
 	URL       string    `json:"url" yaml:"url"`
+	Category  string    `json:"category" yaml:"category"`
 	Tags      []string  `json:"tags,omitempty" yaml:"tags"`
 	OpenGraph OpenGraph `json:"open_graph,omitempty"`
 	Twitter   Twitter   `json:"twitter,omitempty"`
@@ -30,12 +32,14 @@ type Twitter struct {
 	Image       string `json:"image,omitempty"`
 }
 
-func NewBookmark(url string, tags []string) Bookmark {
+// NewBookmark creates a new bookmark from the given url and tags
+func NewBookmark(url string, category string, tags []string) Bookmark {
 	fmt.Printf("Creating new bookmark for %s\n", url)
 
 	b := Bookmark{
-		URL:  url,
-		Tags: tags,
+		URL:      url,
+		Tags:     tags,
+		Category: category,
 	}
 
 	if err := b.AddFavicon(); err != nil {
@@ -52,17 +56,17 @@ func NewBookmark(url string, tags []string) Bookmark {
 // AddFavicon adds the favicon to the bookmark using Google's favicon service
 func (b *Bookmark) AddFavicon() error {
 	if b.URL == "" {
-		return ErrEmptyURL
+		return common.ErrEmptyURL
 	}
 
-	domain, err := ExtractDomain(b.URL)
+	domain, err := common.ExtractDomain(b.URL)
 	if err != nil {
 		return err
 	}
 
 	b.Favicon = fmt.Sprintf("https://www.google.com/s2/favicons?domain=%s", domain)
 
-	_, statusCode, err := Get(b.Favicon)
+	_, statusCode, err := common.Get(b.Favicon)
 	if err != nil {
 		return err
 	} else if statusCode != http.StatusOK {
@@ -75,7 +79,7 @@ func (b *Bookmark) AddFavicon() error {
 // AddMetaTagsData adds the meta tags data to the bookmark
 func (b *Bookmark) AddMetaTagsData() error {
 	if b.URL == "" {
-		return ErrEmptyURL
+		return common.ErrEmptyURL
 	}
 
 	c := colly.NewCollector()

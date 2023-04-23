@@ -1,5 +1,6 @@
 # This yaml file is used as input
 - url: https://example.com
+  category: security # programming, security, devops, self-improvement, etc.
   tags:
     - example1
     - example2

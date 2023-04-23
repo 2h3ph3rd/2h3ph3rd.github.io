@@ -1,4 +1,4 @@
-package logic
+package bookmarks
 
 import (
 	"encoding/json"
@@ -6,10 +6,12 @@ import (
 	"log"
 	"os"
 
+	"2h3ph3rd.github.io/tools/common"
 	"gopkg.in/yaml.v3"
 )
 
-func GenerateBookmarks() {
+// Generate generates the bookmarks.json file from the bookmarks.yml file in input
+func Generate() {
 	fmt.Println("Generating bookmarks")
 
 	new := ReadNewBookmarks()
@@ -19,7 +21,7 @@ func GenerateBookmarks() {
 		// Store only new bookmarks
 		i := CheckDuplicate(bookmarks, b.URL)
 		if i == -1 {
-			bookmarks = append(bookmarks, NewBookmark(b.URL, b.Tags))
+			bookmarks = append(bookmarks, NewBookmark(b.URL, b.Category, b.Tags))
 		} else {
 			fmt.Printf("Bookmark with url %s already exists! Tags will be overwritten!\n", b.URL)
 			bookmarks[i].Tags = b.Tags
@@ -31,6 +33,7 @@ func GenerateBookmarks() {
 	fmt.Println("Data written to file successfully")
 }
 
+// ReadNewBookmarks reads the new bookmarks from the bookmarks.yml file
 func ReadNewBookmarks() []Bookmark {
 	var bookmarks []Bookmark
 
@@ -46,10 +49,11 @@ func ReadNewBookmarks() []Bookmark {
 	return bookmarks
 }
 
+// ReadActualBookmarks reads the actual bookmarks from the bookmarks.json file
 func ReadActualBookmarks() []Bookmark {
 	var bookmarks []Bookmark
 
-	data, err := os.ReadFile(DataFolder + "/bookmarks.json")
+	data, err := os.ReadFile(common.DataFolder + "/bookmarks.json")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -61,6 +65,9 @@ func ReadActualBookmarks() []Bookmark {
 	return bookmarks
 }
 
+// CheckDuplicate checks if the new bookmark already exists in the bookmarks slice.
+//
+// If it exists, it returns the index of the bookmark otherwise it returns -1
 func CheckDuplicate(bookmarks []Bookmark, new string) int {
 	for i, b := range bookmarks {
 		if b.URL == new {
@@ -71,6 +78,7 @@ func CheckDuplicate(bookmarks []Bookmark, new string) int {
 	return -1
 }
 
+// WriteBookmarks writes the bookmarks to the bookmarks.json file
 func WriteBookmarks(bookmarks []Bookmark) {
 	js, err := json.MarshalIndent(bookmarks, "", "\t")
 	if err != nil {

@@ -1,4 +1,4 @@
-package logic
+package common
 
 import (
 	"io"
@@ -6,8 +6,6 @@ import (
 	"net/url"
 	"strings"
 )
-
-const DataFolder = "../../static/data"
 
 // Get returns the body of a GET request to the given URL.
 func Get(url string) (body []byte, statusCode int, err error) {

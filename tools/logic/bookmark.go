@@ -2,6 +2,8 @@ package logic
 
 import (
 	"fmt"
+	"log"
+	"net/http"
 
 	"github.com/gocolly/colly/v2"
 )
@@ -11,6 +13,7 @@ type Bookmark struct {
 	Tags      []string  `json:"tags,omitempty" yaml:"tags"`
 	OpenGraph OpenGraph `json:"open_graph,omitempty"`
 	Twitter   Twitter   `json:"twitter,omitempty"`
+	Favicon   string    `json:"favicon,omitempty"`
 }
 
 type OpenGraph struct {
@@ -30,12 +33,52 @@ type Twitter struct {
 func NewBookmark(url string, tags []string) Bookmark {
 	fmt.Printf("Creating new bookmark for %s\n", url)
 
-	c := colly.NewCollector()
-
 	b := Bookmark{
 		URL:  url,
 		Tags: tags,
 	}
+
+	if err := b.AddFavicon(); err != nil {
+		log.Fatal(err)
+	}
+
+	if err := b.AddMetaTagsData(); err != nil {
+		log.Fatal(err)
+	}
+
+	return b
+}
+
+// AddFavicon adds the favicon to the bookmark using Google's favicon service
+func (b *Bookmark) AddFavicon() error {
+	if b.URL == "" {
+		return ErrEmptyURL
+	}
+
+	domain, err := ExtractDomain(b.URL)
+	if err != nil {
+		return err
+	}
+
+	b.Favicon = fmt.Sprintf("https://www.google.com/s2/favicons?domain=%s", domain)
+
+	_, statusCode, err := Get(b.Favicon)
+	if err != nil {
+		return err
+	} else if statusCode != http.StatusOK {
+		b.Favicon = ""
+	}
+
+	return nil
+}
+
+// AddMetaTagsData adds the meta tags data to the bookmark
+func (b *Bookmark) AddMetaTagsData() error {
+	if b.URL == "" {
+		return ErrEmptyURL
+	}
+
+	c := colly.NewCollector()
 
 	c.OnHTML("meta", func(e *colly.HTMLElement) {
 		switch e.Attr("property") {
@@ -66,9 +109,9 @@ func NewBookmark(url string, tags []string) Bookmark {
 		fmt.Println("Finished", r.Request.URL)
 	})
 
-	c.Visit(url)
+	c.Visit(b.URL)
 
 	c.Wait()
 
-	return b
+	return nil
 }

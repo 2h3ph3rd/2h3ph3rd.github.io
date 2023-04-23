@@ -1,7 +1,67 @@
-# This yaml file is used as input
-- url: https://example.com
-  category: security # programming, security, devops, self-improvement, etc.
+# This yaml file is used as input to generate new bookmarks for the bookmarks page.
+# The format is as follows:
+#
+# - url: https://example.com
+#   category: security
+#   tags:
+#     - example1
+#     - example2
+#     - example3
+#
+# The category is used to group the bookmarks into sections on the page.
+# For this reason categories are fixed: programming, security, and devops.
+# The tags are used to filter the bookmarks on the page. There are no restrictions on the tags.
+- url: https://training.play-with-kubernetes.com/kubernetes-workshop/
+  category: devops
   tags:
-    - example1
-    - example2
-    - example3
+    - kubernetes
+    - docker
+    - training
+- url: https://data.iana.org/TLD/tlds-alpha-by-domain.txt
+  category: security
+  tags:
+    - tld
+    - domain
+    - web
+    - dns
+- url: https://k8slens.dev
+  category: devops
+  tags:
+    - kubernetes
+    - docker
+    - gui
+    - tools
+- url: http://www.vmaxx.net/techinfo/ports.html
+  category: security
+  tags:
+    - ports
+    - network
+    - web
+- url: https://github.com/uber-go/guide/blob/master/style.md
+  category: programming
+  tags:
+    - go
+    - golang
+    - style
+    - guide
+- url: https://tryhackme.com
+  category: security
+  tags:
+    - hacking
+    - training
+    - ctf
+    - challenges
+- url: https://www.hackthebox.eu
+  category: security
+  tags:
+    - hacking
+    - training
+    - ctf
+    - challenges
+- url: https://www.hackthissite.org
+  category: security
+  tags:
+    - hacking
+    - training
+    - ctf
+    - challenges

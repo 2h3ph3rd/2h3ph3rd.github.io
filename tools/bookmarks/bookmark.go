@@ -94,6 +94,9 @@ func (b *Bookmark) AddMetaTagsData() error {
 			b.OpenGraph.Title = e.Attr("content")
 		case "og:site_name":
 			b.OpenGraph.SiteName = e.Attr("content")
+		}
+
+		switch e.Attr("name") {
 		case "twitter:description":
 			b.Twitter.Description = e.Attr("content")
 		case "twitter:image":
@@ -106,11 +109,11 @@ func (b *Bookmark) AddMetaTagsData() error {
 	})
 
 	c.OnRequest(func(r *colly.Request) {
-		fmt.Println("Visiting", r.URL)
+		fmt.Println("Visiting the website...")
 	})
 
 	c.OnScraped(func(r *colly.Response) {
-		fmt.Println("Finished", r.Request.URL)
+		fmt.Println("Finished the crawling!")
 	})
 
 	c.Visit(b.URL)

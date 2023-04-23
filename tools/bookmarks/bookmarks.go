@@ -10,6 +10,9 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
+var InputFile = "./bookmarks.yml"
+var OutputFile = common.DataFolder + "/bookmarks.json"
+
 // Generate generates the bookmarks.json file from the bookmarks.yml file in input
 func Generate() {
 	fmt.Println("Generating bookmarks")
@@ -20,12 +23,14 @@ func Generate() {
 	for _, b := range new {
 		// Store only new bookmarks
 		i := CheckDuplicate(bookmarks, b.URL)
+		b = NewBookmark(b.URL, b.Category, b.Tags)
 		if i == -1 {
-			bookmarks = append(bookmarks, NewBookmark(b.URL, b.Category, b.Tags))
+			bookmarks = append(bookmarks, b)
 		} else {
-			fmt.Printf("Bookmark with url %s already exists! Tags will be overwritten!\n", b.URL)
-			bookmarks[i].Tags = b.Tags
+			fmt.Println("Bookmark already exists! Data will be overwritten!")
+			bookmarks[i] = b
 		}
+		fmt.Println()
 	}
 
 	WriteBookmarks(bookmarks)
@@ -37,7 +42,7 @@ func Generate() {
 func ReadNewBookmarks() []Bookmark {
 	var bookmarks []Bookmark
 
-	data, err := os.ReadFile("./bookmarks.yml")
+	data, err := os.ReadFile(InputFile)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -53,7 +58,7 @@ func ReadNewBookmarks() []Bookmark {
 func ReadActualBookmarks() []Bookmark {
 	var bookmarks []Bookmark
 
-	data, err := os.ReadFile(common.DataFolder + "/bookmarks.json")
+	data, err := os.ReadFile(OutputFile)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -85,7 +90,7 @@ func WriteBookmarks(bookmarks []Bookmark) {
 		log.Fatal(err)
 	}
 
-	if err := os.WriteFile("../data/bookmarks.json", js, 0664); err != nil {
+	if err := os.WriteFile(OutputFile, js, 0664); err != nil {
 		log.Fatal(err)
 	}
 }

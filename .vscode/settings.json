@@ -9,6 +9,7 @@
     "docusaurus.config.js",
     "writeups",
     "thm",
-    "tools"
+    "tools",
+    "bookmarks"
   ]
 }

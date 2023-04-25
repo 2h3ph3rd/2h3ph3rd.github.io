@@ -1,9 +1,4 @@
----
-id: login-brute-force
-title: Login brute force
----
-
-# Login brute force
+# 👤 Login brute force
 
 ## Lists in Kali
 

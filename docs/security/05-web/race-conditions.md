@@ -1,9 +1,4 @@
----
-id: race-condition
-title: Race conditions
----
-
-# Race conditions
+# 🏁 Race conditions
 
 A race condition happens when concurrent calls lead to a not wanted status of the system.
 This can occur in web app because they are thought for multiple user access at the same time.

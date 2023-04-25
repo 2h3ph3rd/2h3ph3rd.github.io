@@ -44,11 +44,3 @@ Array keys are always integers or strings
 */
 ?>
 ```
-
-### A small tip about PHP paths
-
-Unlike local file system, in PHP `/path/../../dir/flag` is a valid path parameter for `file_get_contents` or other similar functions.
-
-```php
-file_get_contents("/path" . "/../../dir/flag");
-```

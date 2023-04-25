@@ -1,45 +1,53 @@
----
-id: forensics
-title: 🕵️ Forensics
----
+# 🕵️ Forensics
 
-# Forensics
+## Windows
+
+| Path        | Description  |
+| ----------- | ------------ |
+| C:\boot.ini | Boot options |
 
 ## Linux
 
 ### System
 
-| Name                          | Path                   |
-| ----------------------------- | ---------------------- |
-| Hostname                      | `/etc/hostname`        |
-| Timezone                      | `/etc/timezone`        |
-| Hosts file                    | `/etc/hosts`           |
-| OS info                       | `/etc/os-release`      |
-| Bash configuration for a user | `/home/<user>/.bashrc` |
+| Path               | Description                    |
+| ------------------ | ------------------------------ |
+| /etc/hostname      | Hostname                       |
+| /etc/timezone      | Timezone                       |
+| /etc/hosts         | Hosts file                     |
+| /etc/os-release    | OS info                        |
+| /home/USER/.bashrc | Bash configuration for a user  |
+| /etc/issue         | Message printed before login   |
+| /etc/profile       | System-wide configuration file |
+| /proc/version      | Linux kernel version           |
 
 ### Authentication
 
-| Name               | Path           |
-| ------------------ | -------------- |
-| Admin users        | `/etc/sudoers` |
-| Users information  | `/etc/passwd`  |
-| Groups information | `/etc/group`   |
+| Path         | Description                             |
+| ------------ | --------------------------------------- |
+| /etc/sudoers | Admin users                             |
+| /etc/passwd  | Users information                       |
+| /etc/group   | Groups information                      |
+| /etc/shadow  | Password information for system's users |
 
 ### Logs
 
-| Name                    | Path                         |
-| ----------------------- | ---------------------------- |
-| Cron jobs               | `/etc/crontab`               |
-| Services                | `/etc/init.d`                |
-| Bash history for a user | `/home/<user>/.bash_history` |
-| Authentication logs     | `/var/log/auth.log`          |
-| Vim history             | `/home/<user>/.viminfo`      |
-| System logs             | `/var/log/syslog`            |
-| Other apps logs         | `/var/log/<service>`         |
+| Path                     | Description                |
+| ------------------------ | -------------------------- |
+| /var/log/auth.log        | Authentication logs        |
+| /var/log/syslog          | System logs                |
+| /var/log/SERVICE         | Other apps logs            |
+| /var/log/dmessage        | Global system messages     |
+| /etc/crontab             | Cron jobs                  |
+| /etc/init.d              | Services                   |
+| /home/USER/.viminfo      | Vim history                |
+| /home/USER/.bash_history | Bash history for a user    |
+| /root/.bash_history      | Bash history for root user |
+| /var/mail/root           | Emails for root user       |
 
 Read commands executed with sudo privileges
 
-```
+```bash
 cat /var/log/auth.log | grep COMMAND
 ```
 
@@ -47,7 +55,7 @@ cat /var/log/auth.log | grep COMMAND
 
 ### PDF
 
-```
+```bash
 pdfinfo <pdf>
 ```
 
@@ -55,12 +63,12 @@ pdfinfo <pdf>
 
 Show all metadata
 
-```
+```bash
 exiv2 -pt <image>
 ```
 
 Edit or update an existing field
 
-```
+```bash
 exiv2 -M'set <field> <value>' <image>
 ```

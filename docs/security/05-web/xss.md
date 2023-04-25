@@ -2,11 +2,50 @@
 
 Cross Site Scripting (XSS) is a type of attack in which malicious scripts are injected in a website and executed on the client browser.
 
-There are three types of XSS:
+To demonstrate the presence of a XSS vulnerability it is enough to execute `<script>alert('Hi!')</script>`
 
-- reflective
-- stored
-- DOM-based.
+Goals of a XSS:
+
+- Steal the user cookie
+- Log user activities on the website
+- Change client code execution
+- Make action from the admin account
+
+## Types of XSS
+
+There are three main types of XSS:
+
+- reflected:
+- stored:
+- DOM-based
+
+### Reflected
+
+In reflected XSS the data inserted by the user is included in the webpage source without any validation.
+
+Common point of attacks are query or path params.
+
+```
+http://website.com/profile?greetings=<script>alert('Hi!')</script>
+```
+
+### Stored
+
+In stored XSS the payload is stored on the server and it is executed when other users visit the page.
+
+It was very common in the past inside public forum or blogs. The payload can be stored inside a comment or a post.
+
+Other examples are user profile information or contact forms.
+
+Do you know someone called `<script>alert('Hi!')</script>`?
+
+When there is no way to test your payload, this type of vulnerability becomes a blind XSS. This could happen for example with the restricted account.
+
+### DOM-based
+
+In DOM-based XSS the execution happens in the browser without any refreshes or updates.
+
+Common examples are input form or special page actions.
 
 ## Send requests in Javascript
 

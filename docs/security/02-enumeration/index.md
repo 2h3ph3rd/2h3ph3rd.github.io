@@ -1,9 +1,4 @@
----
-id: enumeration
-title: 🗃️ Enumeration
----
-
-# Enumeration
+# 🔤 Enumeration
 
 ## NFS
 

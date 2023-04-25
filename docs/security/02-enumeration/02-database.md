@@ -1,6 +1,6 @@
 import Gist from 'react-gist';
 
-# sqlmap
+# 🗃️ sqlmap
 
 <p align="center">
     <img src={require("./assets/sqlmap.png").default}></img>

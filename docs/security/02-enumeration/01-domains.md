@@ -1,4 +1,4 @@
-# Domains
+# 🏳️ Domains
 
 Domains enumeration means to enumerate:
 

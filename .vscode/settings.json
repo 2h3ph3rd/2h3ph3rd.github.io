@@ -11,7 +11,8 @@
     "thm",
     "tools",
     "bookmarks",
-    "resources"
+    "resources",
+    "theme"
   ],
   "editor.formatOnSave": true
 }

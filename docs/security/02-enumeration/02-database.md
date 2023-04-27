@@ -2,9 +2,7 @@
 
 ## sqlmap
 
-<p align="center">
-    <img src={require("./assets/sqlmap.png").default}></img>
-</p>
+<Image src={require("./assets/sqlmap.png").default} />
 
 Use `-u` to define the target url and `--batch` to use the default behavior without asking for input.
 
@@ -42,8 +40,6 @@ sqlmap may not support all types of requests, including those made over websocke
 
 To simplify the process, it is possible to set up a fake server as an intermediary. In this way, sqlmap would make a request to the fake server using a common format, and the fake server would then make the more complex request to the actual target.
 
-<p align="center">
-    <img src={require("./assets/sqlmap_over_websockets.png").default}></img>
-</p>
+<Image src={require("./assets/sqlmap_over_websockets.png").default} />
 
 <Gist id="4adec402e51df2bf3e35066172abaebf" />

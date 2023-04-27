@@ -2,19 +2,17 @@ package main
 
 import (
 	"flag"
-	"fmt"
 
-	"2h3ph3rd.github.io/tools/bookmarks"
+	"2h3ph3rd.github.io/tools/resources"
 )
 
 func main() {
-	fmt.Println("Hey there!")
-	generateBookmarks := flag.Bool("bookmarks", false, "Generate bookmarks from the given urls")
+	generateResources := flag.Bool("resources", false, "Generate resources from the given urls")
 
 	flag.Parse()
 
 	switch {
-	case *generateBookmarks:
-		bookmarks.Generate()
+	case *generateResources:
+		resources.Generate()
 	}
 }

@@ -1,4 +1,4 @@
-package bookmarks
+package resources
 
 import (
 	"testing"
@@ -20,7 +20,7 @@ func TestAddFavicon(t *testing.T) {
 
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			bookmark := Bookmark{URL: test.input}
+			bookmark := Resource{URL: test.input}
 			err := bookmark.AddFavicon()
 
 			assert.Contains(t, test.expected, bookmark.Favicon)
@@ -45,7 +45,7 @@ func TestAddMetaTagsData(t *testing.T) {
 
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			bookmark := Bookmark{URL: test.input}
+			bookmark := Resource{URL: test.input}
 			err := bookmark.AddMetaTagsData()
 
 			assert.Contains(t, test.expected, bookmark.Favicon)

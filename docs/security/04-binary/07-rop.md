@@ -1,9 +1,4 @@
----
-id: rop
-title: ROP
----
-
-# ROP
+# 🦘 ROP
 
 Returned Oriented Programming is a technique that allows to exploit sequence of instructions (gadgets) already present in the binary.
 

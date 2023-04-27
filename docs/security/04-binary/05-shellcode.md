@@ -1,9 +1,4 @@
----
-id: shellcode
-title: Shellcode
----
-
-# Shellcode
+# 🫗 Shellcode
 
 A shellcode is a malicious sequence of assembly instruction.
 Usually, it is inserted in memory and then executed by exploiting a vulnerability.
@@ -288,9 +283,9 @@ int main()
 
 `int socket (int domain, int type, int protocol)`
 
--   domain: 2 for IPv4 socket
--   type: 1 for standard socket
--   protocol: 0 for TCP
+- domain: 2 for IPv4 socket
+- type: 1 for standard socket
+- protocol: 0 for TCP
 
 The file descriptor of the created socket is returned in the rax register.
 
@@ -333,7 +328,7 @@ For example, considering the ip 127.0.0.1, the port 1337 and type 2:
 Remember little endian for each value.
 IP address is saved byte per byte.
 
--   socket:
+- socket:
 
 ```as
 mov rsi, 0x0100007f39050002

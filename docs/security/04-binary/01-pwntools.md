@@ -1,9 +1,4 @@
----
-id: pwntools
-title: Pwntools
----
-
-# Pwntools
+# 🧰 Pwntools
 
 ## Installation
 

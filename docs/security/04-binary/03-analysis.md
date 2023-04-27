@@ -1,9 +1,4 @@
----
-id: analysis
-title: Analysis
----
-
-# Analysis
+# 💭 Analysis
 
 ## Static analysis
 

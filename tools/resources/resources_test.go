@@ -1,4 +1,4 @@
-package bookmarks
+package resources
 
 import (
 	"testing"
@@ -7,7 +7,7 @@ import (
 )
 
 func TestCheckDuplicate(t *testing.T) {
-	bookmarks := []Bookmark{
+	bookmarks := []Resource{
 		{URL: "https://google.com"},
 		{URL: "https://duckduckgo.com"},
 		{URL: "https://ecosia.org"},

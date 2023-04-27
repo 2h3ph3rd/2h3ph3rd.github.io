@@ -19,6 +19,8 @@
     - training
 - url: https://data.iana.org/TLD/tlds-alpha-by-domain.txt
   category: security
+  title: List of approved TLDs
+  description: Official list of approved TLDs from IANA
   tags:
     - tld
     - domain
@@ -31,12 +33,6 @@
     - docker
     - gui
     - tools
-- url: http://www.vmaxx.net/techinfo/ports.html
-  category: security
-  tags:
-    - ports
-    - network
-    - web
 - url: https://github.com/uber-go/guide
   category: programming
   tags:
@@ -72,3 +68,10 @@
     - docker
     - kubernetes
     - tools
+- url: https://codeium.com/
+  category: programming
+  tags:
+    - code
+    - snippets
+    - tools
+    - ai

@@ -2,8 +2,11 @@ package common
 
 import (
 	"io"
+	"log"
+	"math/rand"
 	"net/http"
 	"net/url"
+	"os"
 	"strings"
 )
 
@@ -51,9 +54,17 @@ func CheckImage(url string) bool {
 	}
 	defer resp.Body.Close()
 
-	if resp.StatusCode == http.StatusOK {
-		return true
+	return resp.StatusCode == http.StatusOK
+}
+
+// GetRandomGradient returns a random gradient from the list of gradients.
+func GetRandomGradient() string {
+	entries, err := os.ReadDir("./static/images/gradients")
+	if err != nil {
+		log.Fatal(err)
 	}
 
-	return false
+	n := rand.Int() % (len(entries) - 2)
+
+	return entries[n+2].Name()
 }

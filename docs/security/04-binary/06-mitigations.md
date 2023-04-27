@@ -1,6 +1,1 @@
----
-id: mitigations
-title: Mitigations
----
-
-# Mitigations
+# ✋ Mitigations

@@ -9,7 +9,8 @@
 		],
 		"title": "Kubernetes for Beginners",
 		"description": "Learn docker through online trainings in training.play-with-docker.com",
-		"created_at": "1682272419342"
+		"image": "/images/gradients/gradient_04.jpeg",
+		"created_at": "1682625891648"
 	},
 	{
 		"url": "https://data.iana.org/TLD/tlds-alpha-by-domain.txt",
@@ -20,8 +21,11 @@
 			"web",
 			"dns"
 		],
+		"title": "List of approved TLDs",
+		"description": "Official list of approved TLDs from IANA",
+		"image": "/images/gradients/gradient_08.jpeg",
 		"favicon": "https://www.google.com/s2/favicons?domain=data.iana.org",
-		"created_at": "1682272420031"
+		"created_at": "1682625892819"
 	},
 	{
 		"url": "https://k8slens.dev",
@@ -36,7 +40,7 @@
 		"description": "Lens IDE for Kubernetes. The only system you’ll ever need to take control of your Kubernetes clusters. It's open source and free. Download it today!",
 		"image": "https://k8slens.dev/images/lens-og.png",
 		"favicon": "https://www.google.com/s2/favicons?domain=k8slens.dev",
-		"created_at": "1682272420290"
+		"created_at": "1682625893049"
 	},
 	{
 		"url": "https://github.com/uber-go/guide",
@@ -50,9 +54,9 @@
 		"title": "GitHub - uber-go/guide: The Uber Go Style Guide.",
 		"site_name": "GitHub",
 		"description": "The Uber Go Style Guide. Contribute to uber-go/guide development by creating an account on GitHub.",
-		"image": "https://opengraph.githubassets.com/05c36358fc20ece779f53099ac14d33968ee0e07eb7f9a0cc2aa81c2c99fc1b0/uber-go/guide",
+		"image": "https://opengraph.githubassets.com/96ed286d3354c5980fba9e10173a49811d981fe1b31c19ee5e4de4fcc5465f2c/uber-go/guide",
 		"favicon": "https://www.google.com/s2/favicons?domain=github.com",
-		"created_at": "1682272421201"
+		"created_at": "1682625893701"
 	},
 	{
 		"url": "https://tryhackme.com",
@@ -68,7 +72,7 @@
 		"description": "An online platform for learning and teaching cyber security, all through your browser.",
 		"image": "https://tryhackme.com/img/meta/default.png",
 		"favicon": "https://www.google.com/s2/favicons?domain=tryhackme.com",
-		"created_at": "1682272421633"
+		"created_at": "1682625894188"
 	},
 	{
 		"url": "https://www.hackthebox.eu",
@@ -84,7 +88,7 @@
 		"description": "From beginners to experts, this is where hackers level up! Join today and learn how to hack.",
 		"image": "https://www.hackthebox.eu/images/landingv3/home/og-homepage.jpg",
 		"favicon": "https://www.google.com/s2/favicons?domain=hackthebox.eu",
-		"created_at": "1682272422240"
+		"created_at": "1682625894598"
 	},
 	{
 		"url": "https://www.hackthissite.org",
@@ -99,7 +103,7 @@
 		"description": "HackThisSite.org is a free, safe and legal training ground for hackers to test and expand their ethical hacking skills with challenges, CTFs, and more.",
 		"image": "https://data.htscdn.org/images/hackthissite-meta-card.png",
 		"favicon": "https://www.google.com/s2/favicons?domain=hackthissite.org",
-		"created_at": "1682272422691"
+		"created_at": "1682625895015"
 	},
 	{
 		"url": "https://snyk.io/",
@@ -115,16 +119,22 @@
 		"description": "Snyk helps software-driven businesses develop fast and stay secure. Continuously find and fix vulnerabilities for npm, Maven, NuGet, RubyGems, PyPI and more. ",
 		"image": "https://snyk.io//_next/static/media/default-snyk.6bb9b598.jpg",
 		"favicon": "https://www.google.com/s2/favicons?domain=snyk.io",
-		"created_at": "1682272422996"
+		"created_at": "1682625895575"
 	},
 	{
-		"url": "http://www.vmaxx.net/techinfo/ports.html",
-		"category": "security",
+		"url": "https://codeium.com/",
+		"category": "programming",
 		"tags": [
-			"ports",
-			"network",
-			"web"
+			"code",
+			"snippets",
+			"tools",
+			"ai"
 		],
-		"created_at": "1682272420572"
+		"title": "Codeium",
+		"site_name": "https://twitter.com/codeiumdev",
+		"description": "Codeium offers best in class AI code completion \u0026 search — all for free. It supports over 40+ languages and integrates with your favorite IDEs, with lightning fast speeds and state-of-the-art suggestion quality.",
+		"image": "https://codeium.com/static/images/site_card.png",
+		"favicon": "https://www.google.com/s2/favicons?domain=codeium.com",
+		"created_at": "1682625895749"
 	}
 ]

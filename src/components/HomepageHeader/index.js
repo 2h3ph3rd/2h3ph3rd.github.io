@@ -22,7 +22,7 @@ function mobileVersion() {
 }
 
 function desktopVersion() {
-  const Svg = require('@site/static/img/header.svg').default
+  const Svg = require('@site/static/images/header.svg').default
 
   return (
     <header className="hero hero--primary">

@@ -1,9 +1,4 @@
----
-id: pwndbg
-title: Pwndbg
----
-
-# Pwndbg
+# 🐛 Pwndbg
 
 Pwndbg is a plugin that makes easier to use gdb.
 

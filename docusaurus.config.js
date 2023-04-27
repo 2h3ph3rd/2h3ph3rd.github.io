@@ -72,10 +72,10 @@ const config = {
       // image: 'img/docusaurus-social-card.jpg',
       navbar: {
         title: 'Francesco Pastore',
-        // logo: {
-        //   alt: 'My logo',
-        //   src: 'img/logo.svg',
-        // },
+        logo: {
+          alt: 'Logo',
+          src: 'images/logo.png',
+        },
         items: [
           {
             type: 'docSidebar',
@@ -90,7 +90,7 @@ const config = {
             label: '📝 Writeups',
           },
           {
-            href: 'https://raindrop.io/francesco0599/cybersecurity-27473312',
+            href: '/resources',
             label: '🔗 Resources',
             position: 'left',
           },

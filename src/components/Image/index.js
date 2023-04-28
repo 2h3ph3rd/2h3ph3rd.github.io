@@ -1,5 +1,4 @@
 import React from 'react'
-import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment'
 
 export default function ({ src }) {
   return (

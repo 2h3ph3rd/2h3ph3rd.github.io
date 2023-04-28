@@ -54,11 +54,6 @@ func (r *Resource) AddFavicon() error {
 	}
 
 	r.Favicon = fmt.Sprintf("https://www.google.com/s2/favicons?domain=%s", domain)
-
-	if !common.CheckImage(r.Favicon) {
-		r.Favicon = ""
-	}
-
 	return nil
 }
 
@@ -76,6 +71,7 @@ func (r *Resource) AddMetaTagsData() error {
 			r.Description = e.Attr("content")
 		case "og:image":
 			r.Image = e.Attr("content")
+			log.Println(r.Image)
 			// If the image is a relative path, add the domain to it
 			if r.Image[0] == "/"[0] {
 				r.Image = r.URL + r.Image
@@ -89,13 +85,17 @@ func (r *Resource) AddMetaTagsData() error {
 		switch e.Attr("name") {
 		case "description":
 			r.Description = e.Attr("content")
-		case "twitter:description":
+		case "twitter:description", "og:description":
 			r.Description = e.Attr("content")
-		case "twitter:image":
+		case "twitter:image", "twitter:image:src", "og:image":
 			r.Image = e.Attr("content")
-		case "twitter:title":
+			// If the image is a relative path, add the domain to it
+			if r.Image[0] == "/"[0] {
+				r.Image = r.URL + r.Image
+			}
+		case "twitter:title", "og:title":
 			r.Title = e.Attr("content")
-		case "twitter:site":
+		case "twitter:site", "og:site_name":
 			r.Site = e.Attr("content")
 		}
 	})
@@ -106,10 +106,10 @@ func (r *Resource) AddMetaTagsData() error {
 
 	c.OnScraped(func(*colly.Response) {
 		fmt.Println("Finished the crawling!")
-		if !common.CheckImage(r.Image) {
+		if r.Image != "" && !common.CheckResponseOK(r.Image) {
+			log.Println(r.Image)
 			r.Image = ""
 		}
-
 	})
 
 	c.Visit(r.URL)

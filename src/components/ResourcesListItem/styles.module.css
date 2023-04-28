@@ -18,5 +18,11 @@
 }
 
 .card {
-  /* height: 100%; */
+  height: 100%;
+}
+
+.image {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
 }

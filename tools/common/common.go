@@ -42,8 +42,8 @@ func ExtractDomain(input string) (string, error) {
 	return hostname, nil
 }
 
-// CheckImage checks if the given URL is a valid image.
-func CheckImage(url string) bool {
+// CheckResponseOK checks if the given URL returns an OK response.
+func CheckResponseOK(url string) bool {
 	if url == "" {
 		return false
 	}
@@ -59,12 +59,15 @@ func CheckImage(url string) bool {
 
 // GetRandomGradient returns a random gradient from the list of gradients.
 func GetRandomGradient() string {
+	// Read the available gradients
 	entries, err := os.ReadDir("./static/images/gradients")
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	n := rand.Int() % (len(entries) - 2)
+	// Generate random number between 0 and len(entries)
+	i := rand.Int() % (len(entries))
 
-	return entries[n+2].Name()
+	// Return the name of the gradient
+	return entries[i].Name()
 }

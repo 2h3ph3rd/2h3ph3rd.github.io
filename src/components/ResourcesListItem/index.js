@@ -7,21 +7,28 @@ function GenerateImage(resource) {
   if (image != undefined) {
     image = (
       <div className="card__image">
-        <img src={image} alt="cover" title={resource.title} />
+        <img
+          src={image}
+          alt="cover"
+          title={resource.title}
+          className={styles.image}
+        />
       </div>
     )
   }
   return image
 }
 
-function GenerateFavicon(resource) {
-  let favicon = resource.favicon
-  if (resource.favicon != undefined) {
-    favicon = (
-      <img src={resource.favicon} alt="favicon" title={resource.title} />
-    )
-  }
-  return favicon
+function GenerateHeader(resource) {
+  resource.title = ' ' + resource.title
+  return (
+    <div>
+      <h4>
+        <img src={resource.favicon} width="16px" height="16px" />
+        {resource.title}
+      </h4>
+    </div>
+  )
 }
 
 function GenerateTags(resource) {
@@ -43,18 +50,9 @@ function GenerateDescription(resource) {
   return description
 }
 
-function GenerateTitle(resource) {
-  let title = resource.title
-  if (resource.favicon != undefined) {
-    title = ' ' + title
-  }
-  return title
-}
-
 export default function ({ resource }) {
   let image = GenerateImage(resource)
-  let favicon = GenerateFavicon(resource)
-  let title = GenerateTitle(resource)
+  let header = GenerateHeader(resource)
   let description = GenerateDescription(resource)
   let tags = GenerateTags(resource)
 
@@ -63,10 +61,7 @@ export default function ({ resource }) {
       <div className={clsx('card', styles.card)}>
         {image}
         <div class="card__body">
-          <h4>
-            {favicon}
-            {title}
-          </h4>
+          {header}
           <small>{description}</small>
         </div>
         <div class="card__footer">{tags}</div>

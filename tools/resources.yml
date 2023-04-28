@@ -1,12 +1,14 @@
 # This yaml file is used as input to generate new bookmarks for the bookmarks page.
 # The format is as follows:
 #
-# - url: https://example.com
+# - url: https://syscall.sh
+#   title: Linux System Call Table
+#   description: A table of Linux system calls with operation codes and descriptions.
 #   category: security
 #   tags:
-#     - example1
-#     - example2
-#     - example3
+#     - linux
+#     - syscall
+#     - cheat sheet
 #
 # The category is used to group the bookmarks into sections on the page.
 # For this reason categories are fixed: programming, security, and devops.
@@ -75,3 +77,108 @@
     - snippets
     - tools
     - ai
+- url: https://docusaurus.community
+  category: programming
+  tags:
+    - documentation
+    - tools
+    - react
+    - javascript
+- url: https://github.com/payloadbox
+  category: security
+  tags:
+    - payloads
+    - tools
+    - hacking
+    - pentesting
+- url: https://www.keybr.com/
+  category: programming
+  tags:
+    - typing
+    - training
+    - tools
+- url: https://www.bugcrowd.com/
+  category: security
+  tags:
+    - bug
+    - bounty
+    - hacking
+    - pentesting
+- url: https://hackthissite.org/
+  category: security
+  tags:
+    - hacking
+    - pentesting
+    - challenges
+    - ctf
+- url: https://challenge.fi
+  title: Generation Z Hack Challenge
+  description: A collection of challenges for learning and practicing security from the finnish Generation Z Hack Challenge.
+  category: security
+  tags:
+    - hacking
+    - pentesting
+    - challenges
+    - ctf
+- url: https://training.olicyber.it
+  category: security
+  tags:
+    - hacking
+    - pentesting
+    - challenges
+    - ctf
+- url: https://cryptohack.org/
+  category: security
+  tags:
+    - hacking
+    - pentesting
+    - challenges
+    - ctf
+- url: https://www.cryptopals.com/
+  title: Cryptopals challenges
+  description: A collection of challenges for learning and practicing cryptography.
+  category: security
+  tags:
+    - hacking
+    - pentesting
+    - challenges
+    - ctf
+- url: http://sparksandflames.com/files/x86InstructionChart.html
+  title: x86 Instruction Chart
+  description: A chart of x86 instructions with operation codes and descriptions.
+  category: security
+  tags:
+    - assembly
+    - x86
+    - cheat sheet
+- url: https://syscall.sh
+  title: Linux System Call Table
+  description: A table of Linux system calls with operation codes and descriptions.
+  category: security
+  tags:
+    - linux
+    - syscall
+    - cheat sheet
+- url: https://github.com/dnSpy/dnSpy
+  title: dnSpy
+  description: A .NET debugger and assembly editor.
+  category: security
+  tags:
+    - .net
+    - debugger
+    - tools
+- url: https://www.typing.academy
+  title: Typing Academy
+  description: A typing trainer with lessons and tests.
+  category: programming
+  tags:
+    - typing
+    - training
+    - tools
+- url: https://vimsheet.com/
+  title: Vim Sheet
+  description: A cheat sheet for Vim.
+  category: programming
+  tags:
+    - vim
+    - cheat sheet

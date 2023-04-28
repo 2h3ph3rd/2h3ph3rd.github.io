@@ -13,18 +13,18 @@ export default function FooterWrapper(props) {
                 <b>Links</b>
               </p>
               <p>
-                <a href="/docs/security">Security</a>
+                <a className={styles.link} href="/docs/security">Security</a>
               </p>
               <p>
-                <a href="/docs/writeups">Writeups</a>
+                <a className={styles.link} href="/docs/writeups">Writeups</a>
               </p>
               <p>
-                <a href="/resources">Resources</a>
+                <a className={styles.link} href="/resources">Resources</a>
               </p>
             </div>
             <div class="col col--4">
               <p>
-                <a href="/docs/security">Source</a>
+                <a className={styles.link} href="/docs/security">Source</a>
               </p>
             </div>
             <div class="col col--4"></div>

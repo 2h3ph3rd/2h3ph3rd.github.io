@@ -57,7 +57,7 @@ func CheckResponseOK(url string) bool {
 	return resp.StatusCode == http.StatusOK
 }
 
-// GetRandomGradient returns a random gradient from the list of gradients.
+// GetRandomGradient returns an url to a random gradient.
 func GetRandomGradient() string {
 	// Read the available gradients
 	entries, err := os.ReadDir("./static/images/gradients")

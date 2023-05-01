@@ -12,7 +12,8 @@
     "tools",
     "bookmarks",
     "resources",
-    "theme"
+    "theme",
+    "blog"
   ],
   "editor.formatOnSave": true
 }

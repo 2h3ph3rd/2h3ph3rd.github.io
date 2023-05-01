@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"log"
 
 	"2h3ph3rd.github.io/tools/blog"
 	"2h3ph3rd.github.io/tools/resources"
@@ -17,6 +18,8 @@ func main() {
 	case *generateResources:
 		resources.Generate()
 	case *generateBlog:
-		blog.Generate()
+		if err := blog.Generate(); err != nil {
+			log.Fatal(err)
+		}
 	}
 }

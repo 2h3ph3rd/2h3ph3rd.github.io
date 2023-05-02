@@ -1,9 +1,4 @@
----
-id: scanning
-title: 🔎 Scanning
----
-
-# Scanning
+# 🔎 Scanning
 
 ```bash
 nmap -sS <host>
@@ -20,7 +15,3 @@ nmap -sA --disable-arp-ping -T 1 -n <host>
 ```javascript
 nmap -source-port <dns_port> <host>
 ```
-
-$$
-\tau
-$$

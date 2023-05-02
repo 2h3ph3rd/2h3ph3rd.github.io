@@ -31,12 +31,16 @@ function GenerateHeader(resource) {
   )
 }
 
-function GenerateTags(resource) {
-  let tags = []
+function GenerateFooter(resource) {
+  let tags = [
+    <span class="badge badge--primary margin-right--xs">
+      {resource.category}
+    </span>,
+  ]
   resource.tags.forEach((tag) => {
     tags = [
       ...tags,
-      <span class="badge badge--primary margin-right--sm">{tag}</span>,
+      <span class="badge badge--secondary margin-right--xs">{tag}</span>,
     ]
   })
   return tags
@@ -47,14 +51,14 @@ function GenerateDescription(resource) {
   if (description != undefined && description.length > 200) {
     description = description.substring(0, 200) + '...'
   }
-  return description
+  return <small>{description}</small>
 }
 
 export default function ({ resource }) {
   let image = GenerateImage(resource)
   let header = GenerateHeader(resource)
   let description = GenerateDescription(resource)
-  let tags = GenerateTags(resource)
+  let tags = GenerateFooter(resource)
 
   return (
     <a href={resource.url} className={styles.link} target="_blank">
@@ -62,7 +66,7 @@ export default function ({ resource }) {
         {image}
         <div class="card__body">
           {header}
-          <small>{description}</small>
+          {description}
         </div>
         <div class="card__footer">{tags}</div>
       </div>

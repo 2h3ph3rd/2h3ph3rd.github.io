@@ -6,12 +6,12 @@ import (
 )
 
 func Generate() error {
-	feed, err := GetFromFeed()
+	feed, err := GetFeed()
 	if err != nil {
 		return err
 	}
 
-	// Convert to json
+	// Write compact json
 	data, err := json.Marshal(feed)
 	if err != nil {
 		return err
@@ -21,7 +21,7 @@ func Generate() error {
 		return err
 	}
 
-	// Convert to json
+	// Write pretty json
 	data, err = json.MarshalIndent(feed, "", "  ")
 	if err != nil {
 		return err

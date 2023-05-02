@@ -22,17 +22,17 @@ type Channel struct {
 }
 
 type Item struct {
-	Title       string   `xml:"title" json:"title"`
-	Description string   `xml:"description"xml:"description"`
-	Link        string   `xml:"link" json:"link"`
-	PubDate     string   `xml:"pubDate" json:"pubDate"`
-	Creator     string   `xml:"creator" json:"creator"`
-	Category    []string `xml:"category" json:"categories"`
-	Guid        string   `xml:"guid" json:"guid"`
-	Content     string   `xml:"encoded" json:"encoded"`
+	Title    string   `xml:"title" json:"title"`
+	Link     string   `xml:"link" json:"link"`
+	PubDate  string   `xml:"pubDate" json:"pubDate"`
+	Creator  string   `xml:"creator" json:"creator"`
+	Category []string `xml:"category" json:"categories"`
+	Guid     string   `xml:"guid" json:"guid"`
+	Content  string   `xml:"encoded" json:"encoded"`
 }
 
-func GetFromFeed() (feed Feed, err error) {
+// GetFeed gets the feed from the medium blog
+func GetFeed() (feed Feed, err error) {
 	// Get the feed
 	result, status, err := common.Get(FeedURL)
 	if status != 200 || err != nil {

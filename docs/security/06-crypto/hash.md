@@ -1,9 +1,4 @@
----
-id: hash
-title: Hash
----
-
-# hash
+# #️ Hash
 
 ## Hashid
 

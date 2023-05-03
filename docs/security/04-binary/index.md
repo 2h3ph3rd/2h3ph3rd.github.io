@@ -1,4 +1,4 @@
-# Binary exploitation
+# 💻 Binary
 
 ### Quick reference
 

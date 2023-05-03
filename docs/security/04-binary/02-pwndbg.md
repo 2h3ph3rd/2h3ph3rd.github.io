@@ -1,4 +1,4 @@
-# 🐛 Pwndbg
+# 🐛 Debugging
 
 Pwndbg is a plugin that makes easier to use gdb.
 

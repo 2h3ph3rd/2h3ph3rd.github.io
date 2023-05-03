@@ -1,12 +1,11 @@
-# 🏳️ Domains
+# 🔤 Fuzzing
 
-Domains enumeration means to enumerate:
+Web fuzzing allows to enumerate:
 
 - domains
 - subdomains
 - directories
 - files
-- ...
 
 ## Wordlists
 
@@ -116,10 +115,8 @@ Gobuster is a tool used for domain enumeration using brute force.
 
 Enumerate directories and files
 
-```
-
+```bash
 gobuster dir -e -u <TARGET> -w <WORDLIST> -q
-
 ```
 
 `-u` target
@@ -130,10 +127,8 @@ gobuster dir -e -u <TARGET> -w <WORDLIST> -q
 
 Enumerate subdomains
 
-```
-
+```bash
 gobuster dns -d <TARGET> -t 100 -w <WORDLIST> --wildcard
-
 ```
 
 `-d` dns server
@@ -146,12 +141,6 @@ dirb is a tool used for domain enumeration using brute force. It is a little old
 
 [https://dirb.sourceforge.net/](https://dirb.sourceforge.net/)
 
-```
-
+```bash
 dirb <TARGET> <WORDLIST>
-
-```
-
-```
-
 ```

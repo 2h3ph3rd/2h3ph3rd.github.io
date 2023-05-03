@@ -182,3 +182,11 @@
   tags:
     - vim
     - cheat sheet
+- url: https://owasp.org
+  title: OWASP
+  description: The Open Web Application Security Project.
+  category: security
+  tags:
+    - security
+    - web
+    - tools

@@ -15,8 +15,8 @@ Goals of a XSS:
 
 There are three main types of XSS:
 
-- reflected:
-- stored:
+- reflected
+- stored
 - DOM-based
 
 ### Reflected

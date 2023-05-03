@@ -1,4 +1,4 @@
-# Web
+# 🌐 Web
 
 ## Analyzing a web application
 

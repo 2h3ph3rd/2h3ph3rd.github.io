@@ -2,7 +2,7 @@
 
 ## Burp
 
-Main modules:
+### Main modules
 
 - Proxy: intercept requests and responses that can be analyzed and manipulated.
 - Intruder: automate requests for fuzzing or bruteforcing.
@@ -10,6 +10,7 @@ Main modules:
 - Sequencer: measure the entropy of token strings.
 - Decoder: encode, decode, or hash data.
 - Comparer: find difference between two requests.
+- Extender: extend Burp features adding plugins from the BApp Store or your disk.
 
 ### Intruder
 

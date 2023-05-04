@@ -190,3 +190,27 @@
     - security
     - web
     - tools
+- url: https://stylelint.io
+  title: Stylelint
+  description: A linter for CSS.
+  category: programming
+  tags:
+    - css
+    - linter
+    - tools
+- url: https://semgrep.dev
+  title: Semgrep
+  description: A linter for code.
+  category: programming
+  tags:
+    - linter
+    - tools
+- url: https://crackstation.net
+  title: CrackStation
+  description: A password hash cracker.
+  category: security
+  tags:
+    - password
+    - hash
+    - cracker
+    - tools

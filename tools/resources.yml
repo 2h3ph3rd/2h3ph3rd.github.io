@@ -214,3 +214,41 @@
     - hash
     - cracker
     - tools
+- url: https://portswigger.net
+  title: PortSwigger
+  description: The creators of Burp Suite.
+  category: security
+  tags:
+    - web
+    - tools
+- url: https://www.exploit-db.com
+  title: Exploit Database
+  description: A database of exploits.
+  category: security
+  tags:
+    - exploits
+    - tools
+- url: https://projectworlds.in
+  title: Project Worlds
+  description: A collection of projects for learning and practicing programming.
+  category: programming
+  tags:
+    - projects
+    - tools
+- url: https://crackmes.one
+  title: Crackmes
+  description: A collection of challenges for learning and practicing reverse engineering.
+  category: security
+  tags:
+    - hacking
+    - reverse engineering
+    - challenges
+    - ctf
+- url: https://www.root-me.org/?lang=en
+  title: Root Me
+  description: A collection of challenges for learning and practicing security.
+  category: security
+  tags:
+    - hacking
+    - challenges
+    - ctf

@@ -3,7 +3,7 @@
 A developer has asked you to do a vulnerability check on their system.
 
 <p align="center">
-  <img src={require("./assets/devie/devie.png").default} width="128" />
+  <img src={require("./assets/devie/icon.png").default} width="128" />
 </p>
 
 ## Task 1 - What are the flags?

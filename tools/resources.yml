@@ -29,6 +29,7 @@
     - web
     - dns
 - url: https://k8slens.dev
+  title: K8S Lens
   category: devops
   tags:
     - kubernetes
@@ -43,6 +44,7 @@
     - style
     - guide
 - url: https://tryhackme.com
+  title: TryHackMe
   category: security
   tags:
     - hacking
@@ -50,6 +52,7 @@
     - ctf
     - challenges
 - url: https://www.hackthebox.eu
+  title: Hack The Box
   category: security
   tags:
     - hacking
@@ -64,6 +67,7 @@
     - ctf
     - challenges
 - url: https://snyk.io/
+  title: Snyk
   category: security
   tags:
     - vulnerabilities
@@ -78,6 +82,7 @@
     - tools
     - ai
 - url: https://docusaurus.community
+  title: docusaurus.community
   category: programming
   tags:
     - documentation
@@ -92,22 +97,22 @@
     - hacking
     - pentesting
 - url: https://www.keybr.com/
+  title: Keybr
   category: programming
   tags:
     - typing
     - training
     - tools
 - url: https://www.bugcrowd.com/
+  title: Bugcrowd
   category: security
   tags:
     - bug
     - bounty
-    - hacking
     - pentesting
 - url: https://hackthissite.org/
   category: security
   tags:
-    - hacking
     - pentesting
     - challenges
     - ctf
@@ -116,21 +121,19 @@
   description: A collection of challenges for learning and practicing security from the finnish Generation Z Hack Challenge.
   category: security
   tags:
-    - hacking
     - pentesting
     - challenges
     - ctf
 - url: https://training.olicyber.it
   category: security
   tags:
-    - hacking
     - pentesting
     - challenges
     - ctf
 - url: https://cryptohack.org/
+  title: CryptoHack
   category: security
   tags:
-    - hacking
     - pentesting
     - challenges
     - ctf
@@ -139,7 +142,6 @@
   description: A collection of challenges for learning and practicing cryptography.
   category: security
   tags:
-    - hacking
     - pentesting
     - challenges
     - ctf
@@ -152,8 +154,6 @@
     - x86
     - cheat sheet
 - url: https://syscall.sh
-  title: Linux System Call Table
-  description: A table of Linux system calls with operation codes and descriptions.
   category: security
   tags:
     - linux
@@ -161,7 +161,6 @@
     - cheat sheet
 - url: https://github.com/dnSpy/dnSpy
   title: dnSpy
-  description: A .NET debugger and assembly editor.
   category: security
   tags:
     - .net
@@ -169,22 +168,18 @@
     - tools
 - url: https://www.typing.academy
   title: Typing Academy
-  description: A typing trainer with lessons and tests.
   category: programming
   tags:
     - typing
     - training
     - tools
 - url: https://vimsheet.com/
-  title: Vim Sheet
-  description: A cheat sheet for Vim.
   category: programming
   tags:
     - vim
     - cheat sheet
 - url: https://owasp.org
   title: OWASP
-  description: The Open Web Application Security Project.
   category: security
   tags:
     - security
@@ -192,7 +187,7 @@
     - tools
 - url: https://stylelint.io
   title: Stylelint
-  description: A linter for CSS.
+  description: A mighty CSS linter that helps you avoid errors and enforce conventions.
   category: programming
   tags:
     - css
@@ -200,7 +195,6 @@
     - tools
 - url: https://semgrep.dev
   title: Semgrep
-  description: A linter for code.
   category: programming
   tags:
     - linter
@@ -216,21 +210,18 @@
     - tools
 - url: https://portswigger.net
   title: PortSwigger
-  description: The creators of Burp Suite.
   category: security
   tags:
     - web
     - tools
 - url: https://www.exploit-db.com
   title: Exploit Database
-  description: A database of exploits.
   category: security
   tags:
     - exploits
     - tools
 - url: https://projectworlds.in
   title: Project Worlds
-  description: A collection of projects for learning and practicing programming.
   category: programming
   tags:
     - projects
@@ -240,15 +231,25 @@
   description: A collection of challenges for learning and practicing reverse engineering.
   category: security
   tags:
-    - hacking
     - reverse engineering
     - challenges
     - ctf
 - url: https://www.root-me.org/?lang=en
   title: Root Me
-  description: A collection of challenges for learning and practicing security.
   category: security
   tags:
-    - hacking
     - challenges
     - ctf
+- url: https://malwareunicorn.org
+  category: security
+  tags:
+    - reverse engineering
+    - challenges
+    - ctf
+- url: https://any.run
+  title: ANY.RUN
+  category: security
+  tags:
+    - malware
+    - analysis
+    - tools

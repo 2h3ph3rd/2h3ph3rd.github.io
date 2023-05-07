@@ -43,9 +43,7 @@ THM{KEEP_YOUR_SOFTWARE_UPDATED}
 By looking to the changelog we can see that in the last version a bug was fix about a `/tmp.zip` file.
 We can download and extract the zip to obtain the flag.
 
-<p align="center">
-  <img src={require("./assets/walking-an-application/framework.png").default} width="128" />
-</p>
+<Image src={require("./assets/walking-an-application/framework.png").default} />
 
 ### Task 4 - Developer Tools - Inspector
 
@@ -56,9 +54,7 @@ THM{NOT_SO_HIDDEN}
 It is enough to open the third article inside the news section and disable the paywall.
 The flag is behind it. To remove the paywall it is possible to set `display: none` or to delete directly the node.
 
-<p align="center">
-  <img src={require("./assets/walking-an-application/inspector.png").default} width="128" />
-</p>
+<Image src={require("./assets/walking-an-application/inspector.png").default} />
 
 ### Task 5 - Developer Tools - Debugger
 
@@ -69,9 +65,7 @@ THM{CATCH_ME_IF_YOU_CAN}
 Go in `contact` page and add a breakpoint inside the file `flash.min.js` to the line with `flash['remove']();`.
 When reloading the page the flag will be shown.
 
-<p align="center">
-  <img src={require("./assets/walking-an-application/debugger.png").default} width="128" />
-</p>
+<Image src={require("./assets/walking-an-application/debugger.png").default} />
 
 ### Task 6 - Developer Tools - Network
 
@@ -82,6 +76,4 @@ THM{GOT_AJAX_FLAG}
 Open the newtwok tool, go in `contact` page, and send the form.
 You should see a POST request with the flag inside the response.
 
-<p align="center">
-  <img src={require("./assets/walking-an-application/network.png").default} width="128" />
-</p>
+<Image src={require("./assets/walking-an-application/network.png").default} />

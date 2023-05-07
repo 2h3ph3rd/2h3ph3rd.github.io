@@ -73,29 +73,25 @@ func GetRandomGradient() string {
 }
 
 // WriteJson writes a JSON file.
-func WriteJson(path string, data interface{}) error {
+func WriteJson(path string, data interface{}) {
 	content, err := json.Marshal(data)
 	if err != nil {
-		return err
+		panic(err)
 	}
 
 	if err := os.WriteFile(path, content, 0644); err != nil {
-		return err
+		panic(err)
 	}
-
-	return nil
 }
 
 // WriteJsonPretty writes a JSON file with indentation.
-func WriteJsonPretty(path string, data interface{}) error {
+func WriteJsonPretty(path string, data interface{}) {
 	content, err := json.MarshalIndent(data, "", "  ")
 	if err != nil {
-		return err
+		panic(err)
 	}
 
 	if err := os.WriteFile(path, content, 0644); err != nil {
-		return err
+		panic(err)
 	}
-
-	return nil
 }

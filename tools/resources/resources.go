@@ -17,35 +17,46 @@ func Generate() error {
 	log.Println("Generating bookmarks")
 
 	new := ReadNewResources()
-	resources := ReadActualResources()
+	actual := ReadActualResources()
+	resources := GetUpdateList(new, actual)
 
 	fmt.Println() // new line before first resource
 
+	common.WriteJson("./static/data/resources.json", resources)
+	common.WriteJsonPretty("./static/data/resources_pretty.json", resources)
+	log.Println("Data written to file successfully")
+	return nil
+}
+
+func GetUpdateList(new []Resource, actual []Resource) []Resource {
 	for _, b := range new {
 		// Store only new resources
-		i := CheckDuplicate(resources, b.URL)
-
+		given := b
 		b.AddData()
+
+		i := CheckDuplicate(actual, b.URL)
 		if i == -1 {
-			resources = append(resources, b)
+			actual = append(actual, b)
 		} else {
 			log.Println("Bookmark already exists! Data will be overwritten!")
-			resources[i] = b
+
+			// Overwrite current bookmark
+			actual[i] = b
+
+			// Given title and description have priority over the found ones
+			if given.Title != "" {
+				actual[i].Title = given.Title
+			}
+
+			if given.Description != "" {
+				actual[i].Description = given.Description
+			}
 		}
 
 		fmt.Println() // new line between resources
 	}
 
-	if err := common.WriteJson("./static/data/resources.json", resources); err != nil {
-		return err
-	}
-
-	if err := common.WriteJsonPretty("./static/data/resources_pretty.json", resources); err != nil {
-		return err
-	}
-
-	log.Println("Data written to file successfully")
-	return nil
+	return actual
 }
 
 // ReadNewResources reads the new bookmarks from the bookmarks.yml file

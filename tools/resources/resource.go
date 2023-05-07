@@ -15,7 +15,6 @@ type Resource struct {
 	Category    string   `json:"category" yaml:"category"`
 	Tags        []string `json:"tags,omitempty" yaml:"tags"`
 	Title       string   `json:"title,omitempty"`
-	Site        string   `json:"site_name,omitempty"`
 	Description string   `json:"description,omitempty"`
 	Image       string   `json:"image,omitempty"`
 	Favicon     string   `json:"favicon,omitempty"`
@@ -67,15 +66,12 @@ func (r *Resource) AddMetaTagsData() error {
 			r.Description = e.Attr("content")
 		case "og:image":
 			r.Image = e.Attr("content")
-			log.Println(r.Image)
 			// If the image is a relative path, add the domain to it
 			if r.Image[0] == "/"[0] {
 				r.Image = r.URL + r.Image
 			}
 		case "og:title":
 			r.Title = e.Attr("content")
-		case "og:site_name":
-			r.Site = e.Attr("content")
 		}
 
 		switch e.Attr("name") {
@@ -91,8 +87,6 @@ func (r *Resource) AddMetaTagsData() error {
 			}
 		case "twitter:title", "og:title":
 			r.Title = e.Attr("content")
-		case "twitter:site", "og:site_name":
-			r.Site = e.Attr("content")
 		}
 	})
 
@@ -102,9 +96,7 @@ func (r *Resource) AddMetaTagsData() error {
 
 	c.OnScraped(func(*colly.Response) {
 		log.Println("Finished the crawling!")
-		log.Println(common.CheckResponseOK(r.Image))
 		if r.Image != "" && !common.CheckResponseOK(r.Image) {
-			log.Println(r.Image)
 			r.Image = ""
 		}
 	})

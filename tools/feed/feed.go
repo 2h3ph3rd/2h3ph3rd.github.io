@@ -1,8 +1,7 @@
-package blog
+package feed
 
 import (
 	"encoding/json"
-	"log"
 
 	"2h3ph3rd.github.io/tools/common"
 )
@@ -31,19 +30,21 @@ type Item struct {
 	Content  string   `xml:"encoded" json:"encoded"`
 }
 
-// GetFeed gets the feed from the medium blog
-func GetFeed() (feed Feed, err error) {
+// Generate
+func Generate() error {
 	// Get the feed
 	result, status, err := common.Get(FeedURL)
 	if status != 200 || err != nil {
-		log.Fatalln("Cannot read medium feed", err)
-		return feed, err
+		return err
 	}
 
 	// Parse the feed
+	feed := Feed{}
 	if err := json.Unmarshal(result, &feed); err != nil {
-		return feed, err
+		return err
 	}
 
-	return feed, err
+	common.WriteJson("./static/data/blog.json", feed)
+	common.WriteJsonPretty("./static/data/blog_pretty.json", feed)
+	return nil
 }

@@ -8,7 +8,7 @@ function mobileVersion() {
     <header className="hero hero--primary">
       <div className="container">
         <div className="row">
-          <div className="col col--12 padding--md text--center">
+          <div className="col col--12 padding--sm text--center">
             <h1 className="hero__title">
               Hey there!
               <br />

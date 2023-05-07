@@ -14,7 +14,8 @@
     "resources",
     "theme",
     "blog",
-    "feed"
+    "feed",
+    "header"
   ],
   "editor.formatOnSave": true
 }

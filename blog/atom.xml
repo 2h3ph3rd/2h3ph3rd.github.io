@@ -6,7 +6,7 @@
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://2h3ph3rd.github.io/blog"/>
     <subtitle>Francesco Pastore Blog</subtitle>
-    <icon>https://2h3ph3rd.github.io/img/favicon.ico</icon>
+    <icon>https://2h3ph3rd.github.io/images/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
         <id>https://2h3ph3rd.github.io/blog/welcome</id>

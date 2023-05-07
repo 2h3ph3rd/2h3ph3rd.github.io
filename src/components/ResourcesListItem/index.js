@@ -4,19 +4,20 @@ import styles from './styles.module.css'
 
 function GenerateImage(resource) {
   let image = resource.image
-  if (image != undefined) {
-    image = (
-      <div className="card__image">
-        <img
-          src={image}
-          alt="cover"
-          title={resource.title}
-          className={styles.image}
-        />
-      </div>
-    )
-  }
-  return image
+  return (
+    <div className="card__image">
+      <img
+        src={image}
+        onError={({ currentTarget }) => {
+          currentTarget.onerror = null // prevents looping
+          currentTarget.src = '/images/gradients/gradient_01.jpeg'
+        }}
+        alt="cover"
+        title={resource.title}
+        className={styles.image}
+      />
+    </div>
+  )
 }
 
 function GenerateHeader(resource) {

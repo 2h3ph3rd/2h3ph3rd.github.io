@@ -102,6 +102,7 @@ func (r *Resource) AddMetaTagsData() error {
 
 	c.OnScraped(func(*colly.Response) {
 		log.Println("Finished the crawling!")
+		log.Println(common.CheckResponseOK(r.Image))
 		if r.Image != "" && !common.CheckResponseOK(r.Image) {
 			log.Println(r.Image)
 			r.Image = ""

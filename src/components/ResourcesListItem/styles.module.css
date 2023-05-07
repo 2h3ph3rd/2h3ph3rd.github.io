@@ -6,17 +6,6 @@
   display: block;
 }
 
-.link {
-  color: inherit;
-  text-decoration: none;
-}
-
-.link:hover {
-  color: #00a0c6;
-  text-decoration: none;
-  cursor: pointer;
-}
-
 .card {
   height: 100%;
 }

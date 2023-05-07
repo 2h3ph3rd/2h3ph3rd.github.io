@@ -54,15 +54,15 @@ function GenerateDescription(resource) {
   return <small>{description}</small>
 }
 
-export default function ({ resource }) {
+export default function ResourcesListItem({ resource }) {
   let image = GenerateImage(resource)
   let header = GenerateHeader(resource)
   let description = GenerateDescription(resource)
   let tags = GenerateFooter(resource)
 
   return (
-    <a href={resource.url} className={styles.link} target="_blank">
-      <div className={clsx('card', styles.card)}>
+    <a href={resource.url} class="nolink" target="_blank">
+      <div className={clsx('card zoom', styles.card)}>
         {image}
         <div class="card__body">
           {header}

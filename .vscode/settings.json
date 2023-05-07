@@ -13,7 +13,8 @@
     "bookmarks",
     "resources",
     "theme",
-    "blog"
+    "blog",
+    "feed"
   ],
   "editor.formatOnSave": true
 }

@@ -33,21 +33,20 @@ func TestExtractDomain(t *testing.T) {
 		name     string
 		input    string
 		expected string
-		err      error
 	}{
-		{"Simple url", "https://www.google.com", "google.com", nil},
-		{"Additional slash", "https://www.google.com/", "google.com", nil},
-		{"Query param", "https://www.google.com/search?q=hello", "google.com", nil},
-		{"Multiple query params", "https://www.google.com/search?q=hello&hl=en", "google.com", nil},
-		{"Anchor", "https://www.google.com/search?q=hello&hl=en#test", "google.com", nil},
-		{"Complex path", "https://example.com/api/users/1?type=guest", "example.com", nil},
-		{"Multiple subdomains", "https://sub1.sub2.sub3.example.com/api/users/1?type=guest", "sub1.sub2.sub3.example.com", nil},
+		{"Simple url", "https://www.google.com", "google.com"},
+		{"Additional slash", "https://www.google.com/", "google.com"},
+		{"Query param", "https://www.google.com/search?q=hello", "google.com"},
+		{"Multiple query params", "https://www.google.com/search?q=hello&hl=en", "google.com"},
+		{"Anchor", "https://www.google.com/search?q=hello&hl=en#test", "google.com"},
+		{"Complex path", "https://example.com/api/users/1?type=guest", "example.com"},
+		{"Multiple subdomains", "https://sub1.sub2.sub3.example.com/api/users/1?type=guest", "sub1.sub2.sub3.example.com"},
+		{"Bad url", "not an url", ""},
 	}
 
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			actual, err := ExtractDomain(test.input)
-			assert.NoError(t, err)
+			actual := GetDomain(test.input)
 			assert.Equal(t, test.expected, actual)
 		})
 	}

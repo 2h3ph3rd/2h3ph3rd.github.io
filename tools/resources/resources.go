@@ -1,7 +1,6 @@
 package resources
 
 import (
-	"encoding/json"
 	"fmt"
 	"log"
 	"os"
@@ -14,32 +13,43 @@ var InputFile = "./tools/resources.yml"
 var OutputFile = common.DataFolder + "/resources.json"
 
 // Generate generates the bookmarks.json file from the bookmarks.yml file in input
-func Generate() {
-	fmt.Println("Generating bookmarks")
+func Generate() error {
+	log.Println("Generating bookmarks")
 
-	new := ReadNewBookmarks()
-	bookmarks := ReadActualBookmarks()
+	new := ReadNewResources()
+	resources := ReadActualResources()
+
+	fmt.Println() // new line before first resource
 
 	for _, b := range new {
-		// Store only new bookmarks
-		i := CheckDuplicate(bookmarks, b.URL)
+		// Store only new resources
+		i := CheckDuplicate(resources, b.URL)
+
 		b.AddData()
 		if i == -1 {
-			bookmarks = append(bookmarks, b)
+			resources = append(resources, b)
 		} else {
-			fmt.Println("Bookmark already exists! Data will be overwritten!")
-			bookmarks[i] = b
+			log.Println("Bookmark already exists! Data will be overwritten!")
+			resources[i] = b
 		}
-		fmt.Println()
+
+		fmt.Println() // new line between resources
 	}
 
-	WriteBookmarks(bookmarks)
+	if err := common.WriteJson("./static/data/resources.json", resources); err != nil {
+		return err
+	}
 
-	fmt.Println("Data written to file successfully")
+	if err := common.WriteJsonPretty("./static/data/resources_pretty.json", resources); err != nil {
+		return err
+	}
+
+	log.Println("Data written to file successfully")
+	return nil
 }
 
-// ReadNewBookmarks reads the new bookmarks from the bookmarks.yml file
-func ReadNewBookmarks() []Resource {
+// ReadNewResources reads the new bookmarks from the bookmarks.yml file
+func ReadNewResources() []Resource {
 	var bookmarks []Resource
 
 	data, err := os.ReadFile(InputFile)
@@ -54,45 +64,35 @@ func ReadNewBookmarks() []Resource {
 	return bookmarks
 }
 
-// ReadActualBookmarks reads the actual bookmarks from the bookmarks.json file
-func ReadActualBookmarks() []Resource {
-	var bookmarks []Resource
+// ReadActualResources reads the actual bookmarks from the bookmarks.json file
+func ReadActualResources() []Resource {
+	var resources []Resource
 
 	data, err := os.ReadFile(OutputFile)
 	if os.IsNotExist(err) {
-		return bookmarks
+		return resources
 	} else if err != nil {
 		log.Fatal(err)
 	}
 
-	if err := yaml.Unmarshal(data, &bookmarks); err != nil {
+	if err := yaml.Unmarshal(data, &resources); err != nil {
 		log.Fatal(err)
 	}
 
-	return bookmarks
+	return resources
 }
 
 // CheckDuplicate checks if the new bookmark already exists in the bookmarks slice.
 //
 // If it exists, it returns the index of the bookmark otherwise it returns -1
-func CheckDuplicate(bookmarks []Resource, new string) int {
-	for i, b := range bookmarks {
-		if b.URL == new {
+func CheckDuplicate(resources []Resource, new string) int {
+	domain := common.GetDomain(new)
+
+	for i, b := range resources {
+		if common.GetDomain(b.URL) == domain {
 			return i
 		}
 	}
 
 	return -1
-}
-
-// WriteBookmarks writes the bookmarks to the bookmarks.json file
-func WriteBookmarks(bookmarks []Resource) {
-	js, err := json.MarshalIndent(bookmarks, "", "\t")
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	if err := os.WriteFile(OutputFile, js, 0664); err != nil {
-		log.Fatal(err)
-	}
 }

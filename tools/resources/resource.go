@@ -24,7 +24,7 @@ type Resource struct {
 
 // AddData adds the data to the resource
 func (r *Resource) AddData() {
-	fmt.Printf("Creating new bookmark for %s\n", r.URL)
+	log.Printf("Creating new bookmark for %s\n", r.URL)
 
 	if err := r.AddFavicon(); err != nil {
 		log.Fatal(err)
@@ -48,11 +48,7 @@ func (r *Resource) AddFavicon() error {
 		return common.ErrEmptyURL
 	}
 
-	domain, err := common.ExtractDomain(r.URL)
-	if err != nil {
-		return err
-	}
-
+	domain := common.GetDomain(r.URL)
 	r.Favicon = fmt.Sprintf("https://www.google.com/s2/favicons?domain=%s", domain)
 	return nil
 }
@@ -101,11 +97,11 @@ func (r *Resource) AddMetaTagsData() error {
 	})
 
 	c.OnRequest(func(*colly.Request) {
-		fmt.Println("Visiting the website...")
+		log.Println("Visiting the website...")
 	})
 
 	c.OnScraped(func(*colly.Response) {
-		fmt.Println("Finished the crawling!")
+		log.Println("Finished the crawling!")
 		if r.Image != "" && !common.CheckResponseOK(r.Image) {
 			log.Println(r.Image)
 			r.Image = ""
@@ -113,8 +109,6 @@ func (r *Resource) AddMetaTagsData() error {
 	})
 
 	c.Visit(r.URL)
-
 	c.Wait()
-
 	return nil
 }

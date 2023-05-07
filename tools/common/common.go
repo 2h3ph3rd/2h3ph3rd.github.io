@@ -1,6 +1,7 @@
 package common
 
 import (
+	"encoding/json"
 	"io"
 	"log"
 	"math/rand"
@@ -30,16 +31,15 @@ func Get(url string) (body []byte, statusCode int, err error) {
 	return body, resp.StatusCode, err
 }
 
-// ExtractDomain extracts the domain from a URL.
-func ExtractDomain(input string) (string, error) {
-	u, err := url.Parse(input)
+// GetDomain get the domain from a URL.
+func GetDomain(address string) string {
+	u, err := url.Parse(address)
 	if err != nil {
-		return "", err
+		return ""
 	}
 
 	hostname := strings.TrimPrefix(u.Hostname(), "www.")
-
-	return hostname, nil
+	return hostname
 }
 
 // CheckResponseOK checks if the given URL returns an OK response.
@@ -70,4 +70,32 @@ func GetRandomGradient() string {
 
 	// Return the name of the gradient
 	return entries[i].Name()
+}
+
+// WriteJson writes a JSON file.
+func WriteJson(path string, data interface{}) error {
+	content, err := json.Marshal(data)
+	if err != nil {
+		return err
+	}
+
+	if err := os.WriteFile(path, content, 0644); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// WriteJsonPretty writes a JSON file with indentation.
+func WriteJsonPretty(path string, data interface{}) error {
+	content, err := json.MarshalIndent(data, "", "  ")
+	if err != nil {
+		return err
+	}
+
+	if err := os.WriteFile(path, content, 0644); err != nil {
+		return err
+	}
+
+	return nil
 }

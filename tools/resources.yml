@@ -253,3 +253,10 @@
     - malware
     - analysis
     - tools
+- url: https://wpscan.com
+  category: security
+  tags:
+    - wordpress
+    - tools
+    - web
+    - wordpress

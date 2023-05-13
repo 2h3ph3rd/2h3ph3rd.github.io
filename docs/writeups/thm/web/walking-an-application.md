@@ -8,13 +8,13 @@
 
 No answer needed.
 
-### Task 2 - Exploring The Website
+## Task 2 - Exploring The Website
 
 > Read the above.
 
 No answer needed.
 
-### Task 3 - Viewing The Page Source
+## Task 3 - Viewing The Page Source
 
 > What is the flag from the HTML comment?
 
@@ -45,7 +45,7 @@ We can download and extract the zip to obtain the flag.
 
 <Image src={require("./assets/walking-an-application/framework.png").default} />
 
-### Task 4 - Developer Tools - Inspector
+## Task 4 - Developer Tools - Inspector
 
 > What is the flag behind the paywall?
 
@@ -56,7 +56,7 @@ The flag is behind it. To remove the paywall it is possible to set `display: non
 
 <Image src={require("./assets/walking-an-application/inspector.png").default} />
 
-### Task 5 - Developer Tools - Debugger
+## Task 5 - Developer Tools - Debugger
 
 > What is the flag in the red box?
 
@@ -67,7 +67,7 @@ When reloading the page the flag will be shown.
 
 <Image src={require("./assets/walking-an-application/debugger.png").default} />
 
-### Task 6 - Developer Tools - Network
+## Task 6 - Developer Tools - Network
 
 > What is the flag shown on the contact-msg network request?
 

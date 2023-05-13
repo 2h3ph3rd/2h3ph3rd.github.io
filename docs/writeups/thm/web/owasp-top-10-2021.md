@@ -167,7 +167,6 @@ The reset password is based on three security questions. One of them asks about 
 ## Task 12 - 5. Security Misconfiguration
 
 > Navigate to http://10.10.2.211:86/console to access the Werkzeug console.
-
 > What is the database file name (the one with the .db extension) in the current directory?
 
 todo.db
@@ -308,6 +307,8 @@ Look the previous answer.
 ## Task 22 - 10. Server-Side Request Forgery (SSRF)
 
 > Explore the website. What is the only host allowed to access the admin area?
+
+localhost
 
 <Image src={require("./assets/owasp-top-10-2021/admin-area.png").default} />
 

@@ -1,10 +1,8 @@
 ---
-id: about
-title: ℹ️ About
 sidebar_position: 0
 ---
 
-# About
+# ℹ️ About
 
 Here you can find small tips & tricks on useful CTF tools or commands.
 

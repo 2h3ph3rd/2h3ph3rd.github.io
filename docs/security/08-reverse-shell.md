@@ -1,9 +1,4 @@
----
-id: reverse_shell
-title: ↔ Reverse shell
----
-
-# Reverse shell
+# ↕️ Reverse shell
 
 ## nc
 

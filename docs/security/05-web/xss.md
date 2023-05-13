@@ -2,7 +2,19 @@
 
 Cross Site Scripting (XSS) is a type of attack in which malicious scripts are injected in a website and executed on the client browser.
 
-To demonstrate the presence of a XSS vulnerability it is enough to execute `<script>alert('Hi!')</script>`
+Common payloads to check for XSS are:
+
+```xml
+<script>alert('hello');</script>
+
+<img src="javascript:alert('hello')">
+
+<iframe src="javascript:alert(`xss`)"></iframe>
+
+<svg onload="alert('xss')">
+
+<img onerror="alert('hello')">
+```
 
 Goals of a XSS:
 

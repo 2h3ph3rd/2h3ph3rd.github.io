@@ -260,3 +260,24 @@
     - tools
     - web
     - wordpress
+- url: https://cve.mitre.org/
+  category: security
+  tags:
+    - vulnerabilities
+    - tools
+    - database
+    - search
+- url: https://nvd.nist.gov/vuln/search
+  category: security
+  tags:
+    - vulnerabilities
+    - tools
+    - database
+    - search
+- url: https://www.wappalyzer.com/
+  category: security
+  tags:
+    - web
+    - tools
+    - browser
+    - extension

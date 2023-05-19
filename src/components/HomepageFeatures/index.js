@@ -5,7 +5,7 @@ import styles from './styles.module.css'
 const FeatureList = [
   {
     title: 'Security',
-    Svg: require('@site/static/images/home_security.svg').default,
+    Svg: require('@site/static/images/home-security.svg').default,
     description: (
       <>
         A collection of tips and tricks about security vulnerabilities and
@@ -15,7 +15,7 @@ const FeatureList = [
   },
   {
     title: 'Examples',
-    Svg: require('@site/static/images/home_examples.svg').default,
+    Svg: require('@site/static/images/home-examples.svg').default,
     description: (
       <>
         The examples section is a collection of real-world examples of security
@@ -25,7 +25,7 @@ const FeatureList = [
   },
   {
     title: 'Writeups',
-    Svg: require('@site/static/images/home_writeups.svg').default,
+    Svg: require('@site/static/images/home-writeups.svg').default,
     description: (
       <>
         The writeups section is a collection of writeups of security challenges.

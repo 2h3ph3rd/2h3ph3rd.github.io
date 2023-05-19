@@ -15,7 +15,8 @@
     "theme",
     "blog",
     "feed",
-    "header"
+    "header",
+    "typo"
   ],
   "editor.formatOnSave": true
 }

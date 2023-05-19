@@ -7,20 +7,14 @@ const FeatureList = [
     title: 'Security',
     Svg: require('@site/static/images/home-security.svg').default,
     description: (
-      <>
-        A collection of tips and tricks about security vulnerabilities and
-        attacks continually updated.
-      </>
+      <>A collection of tips and tricks for CTFs and cybersecurity in general</>
     ),
   },
   {
     title: 'Examples',
     Svg: require('@site/static/images/home-examples.svg').default,
     description: (
-      <>
-        The examples section is a collection of real-world examples of security
-        vulnerabilities and exploits.
-      </>
+      <>Common applications of security vulnerabilities and relative exploits</>
     ),
   },
   {
@@ -28,7 +22,8 @@ const FeatureList = [
     Svg: require('@site/static/images/home-writeups.svg').default,
     description: (
       <>
-        The writeups section is a collection of writeups of security challenges.
+        Detailed solutions of CTFs, challenges, machines, and other
+        security-related content
       </>
     ),
   },

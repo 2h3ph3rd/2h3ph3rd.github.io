@@ -40,6 +40,10 @@ Upload a file with name `mountains.jpg`.
 
 > Run a Gobuster scan on the website using the syntax from the screenshot above. What directory looks like it might be used for uploads?
 
+```bash
+gobuster dir -u http://shell.uploadvulns.thm -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+```
+
 > What's the flag in the /var/www/ directory of the server?
 
 ## Task 6 - Filtering

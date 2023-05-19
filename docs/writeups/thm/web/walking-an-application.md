@@ -73,7 +73,7 @@ When reloading the page the flag will be shown.
 
 THM{GOT_AJAX_FLAG}
 
-Open the newtwok tool, go in `contact` page, and send the form.
+Open the network tools, go in `contact` page, and send the form.
 You should see a POST request with the flag inside the response.
 
 <Image src={require("./assets/walking-an-application/network.png").default} />

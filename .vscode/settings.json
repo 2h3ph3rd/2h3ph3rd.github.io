@@ -16,7 +16,8 @@
     "blog",
     "feed",
     "header",
-    "typo"
+    "typo",
+    "writeups/thm"
   ],
   "editor.formatOnSave": true
 }

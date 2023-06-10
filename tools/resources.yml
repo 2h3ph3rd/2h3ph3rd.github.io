@@ -281,3 +281,9 @@
     - tools
     - browser
     - extension
+- url: https://en.wikipedia.org/wiki/List_of_file_signatures
+  category: security
+  tags:
+    - file
+    - signatures
+    - database

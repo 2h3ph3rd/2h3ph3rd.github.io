@@ -1,6 +1,6 @@
-# 🔤 Fuzzing
+# 🔤 Enumeration
 
-Web fuzzing allows to enumerate:
+Enumeration allows to find::
 
 - domains
 - subdomains
@@ -92,19 +92,19 @@ Useful flags
 
 ```bash
 # Enumerate directories and files
-ffuf -w <WORDLIST> -u <TARGET>/FUZZ
+ffuf -w WORDLIST -u TARGET/FUZZ
 
 # Enumerate virtual hosts
-ffuf -w  -H "Host: FUZZ.<TARGET>" -u <TARGET> -fs <FILTER_SIZE>
+ffuf -w  -H "Host: FUZZ.TARGET" -u TARGET -fs FILTER_SIZE
 
 # Enumerate usernames using a login form
-ffuf -w <WORDLIST> -X POST -d "username=FUZZ&password=x" -H "Content-Type: application/x-www-form-urlencoded" -u <TARGET> -mr "bad password"
+ffuf -w WORDLIST -X POST -d "username=FUZZ&password=x" -H "Content-Type: application/x-www-form-urlencoded" -u TARGET -mr "bad password"
 
 # Enumerate username and password using a login form
-ffuf -w <WORDLIST_1>:W1,<WORDLIST_2>:W2 -X POST -d "username=W1&password=W2" -H "Content-Type: application/x-www-form-urlencoded" -u <TARGET> -mr "bad password"
+ffuf -w <WORDLIST_1>:W1,<WORDLIST_2>:W2 -X POST -d "username=W1&password=W2" -H "Content-Type: application/x-www-form-urlencoded" -u TARGET -mr "bad password"
 
 # Store results as wordlist
-ffuf -w <WORDLIST> -u <TARGET>/FUZZ -s > wordlist.txt
+ffuf -w WORDLIST -u TARGET/FUZZ -s > wordlist.txt
 ```
 
 ### gobuster
@@ -116,24 +116,22 @@ Gobuster is a tool used for domain enumeration using brute force.
 Enumerate directories and files
 
 ```bash
-gobuster dir -e -u <TARGET> -w <WORDLIST> -q
+gobuster dir -u TARGET -w WORDLIST
+
+gobuster dir -u TARGET -w WORDLIST -eq
+
+gobuster dir -u TARGET -w WORDLIST -x EXTENSIONS -eq
 ```
-
-`-u` target
-
-`-w` wordlist
 
 `-e` print the full url instead of only the relative path
 
 Enumerate subdomains
 
 ```bash
-gobuster dns -d <TARGET> -t 100 -w <WORDLIST> --wildcard
+gobuster dns -d DNS_SERVER -t 100 -w WORDLIST --wildcard
 ```
 
-`-d` dns server
-
-`-w` wordlist
+`--wildcard` Force continued operation when wildcard found
 
 ### dirb
 
@@ -142,5 +140,5 @@ dirb is a tool used for domain enumeration using brute force. It is a little old
 [https://dirb.sourceforge.net/](https://dirb.sourceforge.net/)
 
 ```bash
-dirb <TARGET> <WORDLIST>
+dirb TARGET WORDLIST
 ```

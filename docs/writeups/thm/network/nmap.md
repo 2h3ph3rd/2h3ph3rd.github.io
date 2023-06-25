@@ -1,6 +1,6 @@
 # Nmap
 
-<Image src="https://tryhackme-images.s3.amazonaws.com/room-icons/95164927092fe0fc3e9f142aea05267a.png" alt="OWASP Juice Shop" width="128" />
+<Image src="https://tryhackme-images.s3.amazonaws.com/room-icons/5d653d7a4e8a1a6d98379168cfc30ac0.png" alt="OWASP Juice Shop" width="128" />
 
 ## Task 1 - Deploy
 
@@ -87,3 +87,89 @@ Ports
 > How would you activate all of the scripts in the "vuln" category?
 
 --script=vuln
+
+## Task 4 - Scan Types - Overview
+
+> Read the Scan Types Introduction.
+
+No answer needed
+
+## Task 5 - Scan Types - TCP Connect Scans
+
+> Which RFC defines the appropriate behaviour for the TCP protocol?
+
+RFC 9293
+
+> If a port is closed, which flag should the server send back to indicate this?
+
+RST
+
+## Task 6 - Scan Types - SYN Scans
+
+> There are two other names for a SYN scan, what are they?
+
+half-open, stealth
+
+> Can Nmap use a SYN scan without Sudo permissions (Y/N)?
+
+N
+
+## Task 7 - Scan Types - UDP Scans
+
+> If a UDP port doesn't respond to an Nmap scan, what will it be marked as?
+
+open|filtered
+
+> When a UDP port is closed, by convention the target should send back a "port unreachable" message. Which protocol would it use to do so?
+
+ICMP
+
+## Task 8 - Scan Types - NULL, FIN and Xmas
+
+> Which of the three shown scan types uses the URG flag?
+
+Xmas
+
+> Why are NULL, FIN and Xmas scans generally used?
+
+firewall evasion
+
+> Which common OS may respond to a NULL, FIN or Xmas scan with a RST for every port?
+
+Microsoft Windows
+
+## Task 9 - Scan Types - ICMP Network Scanning
+
+> How would you perform a ping sweep on the 172.16.x.x network (Netmask: 255.255.0.0) using Nmap? (CIDR notation)
+
+nmap -sn 172.16.0.0/16
+
+## Task 10 - NSE Scripts - Overview
+
+> What language are NSE scripts written in?
+
+Lua
+
+> Which category of scripts would be a very bad idea to run in a production environment?
+
+Intrusive
+
+## Task 11 - NSE Scripts - Working with the NSE
+
+> What optional argument can the ftp-anon.nse script take?
+
+maxlist
+
+[https://nmap.org/nsedoc/scripts/ftp-anon.html](https://nmap.org/nsedoc/scripts/ftp-anon.html)
+
+## Task 12 - NSE Scripts - Searching for Scripts
+
+> What is the filename of the script which determines the underlying OS of the SMB server?
+
+> Read through this script. What does it depend on?
+
+## Task 15 - Conclusion
+
+> Read the conclusion.
+
+No answer needed

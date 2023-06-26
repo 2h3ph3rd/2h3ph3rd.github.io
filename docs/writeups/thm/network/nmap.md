@@ -166,7 +166,83 @@ maxlist
 
 > What is the filename of the script which determines the underlying OS of the SMB server?
 
+smb-os-discovery.nse
+
+Use this command to list all smb scripts:
+
+```bash
+ls /usr/share/nmap/scripts/*smb*
+```
+
 > Read through this script. What does it depend on?
+
+smb-brute
+
+The answer can be found in description of the previous script.
+
+```bash
+cat /usr/share/nmap/scripts/smb-os-discovery.nse
+```
+
+<Image src="/images/writeups/thm/network/smb.png" />
+
+## Task 13 - Firewall Evasion
+
+> Which simple (and frequently relied upon) protocol is often blocked, requiring the use of the -Pn switch?
+
+ICMP
+
+> [Research] Which Nmap switch allows you to append an arbitrary length of random data to the end of packets?
+
+--data-length
+
+## Task 14 - Practical
+
+> Does the target (10.10.142.197)respond to ICMP (ping) requests (Y/N)?
+
+N
+
+Try with:
+
+```bash
+ping <HOST>
+```
+
+> Perform an Xmas scan on the first 999 ports of the target -- how many ports are shown to be open or filtered?
+
+999
+
+```bash
+nmap -sX -p 0-999 <HOST>
+```
+
+> There is a reason given for this -- what is it?
+
+No responses
+
+```bash
+nmap -sX -p 0-999 <HOST> -vv
+```
+
+> Perform a TCP SYN scan on the first 5000 ports of the target -- how many ports are shown to be open?
+
+5
+
+```bash
+nmap -sT -p 0-5000 <HOST> -vv
+```
+
+> Open Wireshark (see Cryillic's Wireshark Room for instructions) and perform a TCP Connect scan against port 80 on the target, monitoring the results. Make sure you understand what's going on.
+
+No answer needed
+
+> Deploy the ftp-anon script against the box. Can Nmap login successfully to the FTP server on port 21? (Y/N)
+
+Y
+
+```bash
+nmap --script ftp-anon -p 21 <HOST> -vv
+```
 
 ## Task 15 - Conclusion
 

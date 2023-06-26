@@ -18,7 +18,8 @@
     "header",
     "typo",
     "writeups/thm",
-    "htb"
+    "htb",
+    "docs/network"
   ],
   "editor.formatOnSave": true
 }

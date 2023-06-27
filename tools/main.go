@@ -23,5 +23,7 @@ func main() {
 		if err := feed.Generate(); err != nil {
 			log.Fatal(err)
 		}
+	default:
+		log.Fatal("No command specified, use --help for more information")
 	}
 }

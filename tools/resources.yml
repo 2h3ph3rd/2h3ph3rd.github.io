@@ -37,6 +37,7 @@
     - gui
     - tools
 - url: https://github.com/uber-go/guide
+  title: uber-go/guide
   category: programming
   tags:
     - go
@@ -75,6 +76,7 @@
     - kubernetes
     - tools
 - url: https://codeium.com/
+  title: Codeium
   category: programming
   tags:
     - code
@@ -90,6 +92,7 @@
     - react
     - javascript
 - url: https://github.com/payloadbox
+  title: "Payloads All The Things"
   category: security
   tags:
     - payloads
@@ -154,6 +157,7 @@
     - x86
     - cheat sheet
 - url: https://syscall.sh
+  title: Linux System Call Table
   category: security
   tags:
     - linux
@@ -254,6 +258,7 @@
     - analysis
     - tools
 - url: https://wpscan.com
+  title: WPScan
   category: security
   tags:
     - wordpress
@@ -261,6 +266,7 @@
     - web
     - wordpress
 - url: https://cve.mitre.org/
+  title: CVE
   category: security
   tags:
     - vulnerabilities
@@ -268,6 +274,7 @@
     - database
     - search
 - url: https://nvd.nist.gov/vuln/search
+  title: NVD search
   category: security
   tags:
     - vulnerabilities
@@ -275,6 +282,7 @@
     - database
     - search
 - url: https://www.wappalyzer.com/
+  title: Wappalyzer
   category: security
   tags:
     - web
@@ -282,8 +290,32 @@
     - browser
     - extension
 - url: https://en.wikipedia.org/wiki/List_of_file_signatures
+  title: List of file signatures
   category: security
   tags:
     - file
     - signatures
     - database
+- url: https://university.alchemy.com
+  title: Alchemy University
+  category: blockchain
+  tags:
+    - blockchain
+    - ethereum
+    - training
+- url: https://www.whois.com/whois
+  category: security
+  tags:
+    - whois
+    - tools
+    - dns
+    - lookup
+- url: https://github.com/CiscoCXSecurity/enum4linux
+  title: CiscoCXSecurity/enum4linux
+  category: security
+  tags:
+    - linux
+    - tools
+    - enumeration
+    - smb
+    - samba

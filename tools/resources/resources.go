@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strings"
 
 	"2h3ph3rd.github.io/tools/common"
 	"gopkg.in/yaml.v3"
@@ -28,29 +29,31 @@ func Generate() error {
 	return nil
 }
 
+// GetUpdateList returns the list of resources to be updated
 func GetUpdateList(new []Resource, actual []Resource) []Resource {
 	for _, b := range new {
 		// Store only new resources
 		given := b
 		b.AddData()
 
+		// Given data have priority over the found ones
+
+		// Overwrite the title
+		if given.Title != "" {
+			b.Title = given.Title
+		}
+
+		// Overwrite the description
+		if given.Description != "" {
+			b.Description = given.Description
+		}
+
 		i := CheckDuplicate(actual, b.URL)
 		if i == -1 {
 			actual = append(actual, b)
 		} else {
 			log.Println("Bookmark already exists! Data will be overwritten!")
-
-			// Overwrite current bookmark
 			actual[i] = b
-
-			// Given title and description have priority over the found ones
-			if given.Title != "" {
-				actual[i].Title = given.Title
-			}
-
-			if given.Description != "" {
-				actual[i].Description = given.Description
-			}
 		}
 
 		fmt.Println() // new line between resources
@@ -97,13 +100,41 @@ func ReadActualResources() []Resource {
 //
 // If it exists, it returns the index of the bookmark otherwise it returns -1
 func CheckDuplicate(resources []Resource, new string) int {
-	domain := common.GetDomain(new)
+	newDomain := common.GetDomain(new)
+
+	if newDomain == "github.com" {
+		return CheckDuplicateGithub(resources, new)
+	}
 
 	for i, b := range resources {
-		if common.GetDomain(b.URL) == domain {
+		if common.GetDomain(b.URL) == newDomain {
 			return i
 		}
 	}
 
+	return -1
+}
+
+// CheckDuplicateGithub checks if the new resource already exists in the bookmarks slice.
+// It works only for Github links by checking username and repository name.
+func CheckDuplicateGithub(resources []Resource, new string) int {
+	for i, b := range resources {
+		// Check only for Github links
+		if common.GetDomain(b.URL) != "github.com" {
+			continue
+		}
+
+		newSplit := strings.Split(new, "/")
+		bSplit := strings.Split(b.URL, "/")
+
+		// Avoid out of range errors
+		if len(newSplit) < 4 || len(bSplit) < 4 {
+			continue
+		}
+
+		if newSplit[2] == bSplit[2] && newSplit[3] == bSplit[3] {
+			return i
+		}
+	}
 	return -1
 }

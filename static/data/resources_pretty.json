@@ -9,9 +9,9 @@
     ],
     "title": "Kubernetes for Beginners",
     "description": "Learn docker through online trainings in training.play-with-docker.com",
-    "image": "/images/gradients/gradient_09.jpeg",
+    "image": "/images/gradients/gradient_16.jpeg",
     "favicon": "https://www.google.com/s2/favicons?domain=training.play-with-kubernetes.com",
-    "created_at": "1683480616507"
+    "created_at": "1687895730525"
   },
   {
     "url": "https://data.iana.org/TLD/tlds-alpha-by-domain.txt",
@@ -24,9 +24,9 @@
     ],
     "title": "List of approved TLDs",
     "description": "Official list of approved TLDs from IANA",
-    "image": "/images/gradients/gradient_11.jpeg",
+    "image": "/images/gradients/gradient_07.jpeg",
     "favicon": "https://www.google.com/s2/favicons?domain=data.iana.org",
-    "created_at": "1683480617608"
+    "created_at": "1687895731143"
   },
   {
     "url": "https://k8slens.dev",
@@ -41,21 +41,22 @@
     "description": "Lens IDE for Kubernetes. The only system you’ll ever need to take control of your Kubernetes clusters. It's open source and free. Download it today!",
     "image": "https://k8slens.dev/images/lens-og.png",
     "favicon": "https://www.google.com/s2/favicons?domain=k8slens.dev",
-    "created_at": "1683480617722"
+    "created_at": "1687895731305"
   },
   {
-    "url": "https://github.com/dnSpy/dnSpy",
-    "category": "security",
+    "url": "https://github.com/uber-go/guide",
+    "category": "programming",
     "tags": [
-      ".net",
-      "debugger",
-      "tools"
+      "go",
+      "golang",
+      "style",
+      "guide"
     ],
-    "title": "dnSpy",
-    "description": ".NET debugger and assembly editor. Contribute to dnSpy/dnSpy development by creating an account on GitHub.",
-    "image": "https://opengraph.githubassets.com/e574b1ea1de4dca854cff7884df13c00fd6e5889624b8d37ba44ce65037aeb89/dnSpy/dnSpy",
+    "title": "uber-go/guide",
+    "description": "The Uber Go Style Guide. Contribute to uber-go/guide development by creating an account on GitHub.",
+    "image": "https://opengraph.githubassets.com/6c04796c4b999e47e0751173c0b6e8958c9b9994d99e89872f08d38f29ba852a/uber-go/guide",
     "favicon": "https://www.google.com/s2/favicons?domain=github.com",
-    "created_at": "1683480623685"
+    "created_at": "1687895732058"
   },
   {
     "url": "https://tryhackme.com",
@@ -70,7 +71,7 @@
     "description": "An online platform for learning and teaching cyber security, all through your browser.",
     "image": "https://tryhackme.com/img/meta/default.png",
     "favicon": "https://www.google.com/s2/favicons?domain=tryhackme.com",
-    "created_at": "1683480618718"
+    "created_at": "1687895732390"
   },
   {
     "url": "https://www.hackthebox.eu",
@@ -85,7 +86,7 @@
     "description": "From beginners to experts, this is where hackers level up! Join today and learn how to hack.",
     "image": "https://www.hackthebox.eu/images/landingv3/home/og-homepage.jpg",
     "favicon": "https://www.google.com/s2/favicons?domain=hackthebox.eu",
-    "created_at": "1683480619100"
+    "created_at": "1687895732783"
   },
   {
     "url": "https://hackthissite.org/",
@@ -99,7 +100,7 @@
     "description": "HackThisSite.org is a free, safe and legal training ground for hackers to test and expand their ethical hacking skills with challenges, CTFs, and more.",
     "image": "https://data.htscdn.org/images/hackthissite-meta-card.png",
     "favicon": "https://www.google.com/s2/favicons?domain=hackthissite.org",
-    "created_at": "1683480621708"
+    "created_at": "1687895735909"
   },
   {
     "url": "https://snyk.io/",
@@ -114,7 +115,7 @@
     "description": "Snyk helps software-driven businesses develop fast and stay secure. Continuously find and fix vulnerabilities for npm, Maven, NuGet, RubyGems, PyPI and more. ",
     "image": "https://snyk.io//_next/static/media/default-snyk.6bb9b598.jpg",
     "favicon": "https://www.google.com/s2/favicons?domain=snyk.io",
-    "created_at": "1683480619789"
+    "created_at": "1687895733433"
   },
   {
     "url": "https://codeium.com/",
@@ -126,10 +127,10 @@
       "ai"
     ],
     "title": "Codeium",
-    "description": "Codeium offers best in class AI code completion \u0026 search — all for free. It supports over 40+ languages and integrates with your favorite IDEs, with lightning fast speeds and state-of-the-art suggestion quality.",
+    "description": "Codeium offers best in class AI code completion \u0026 search — all for free. It supports over 70+ languages and integrates with your favorite IDEs, with lightning fast speeds and state-of-the-art suggestion quality.",
     "image": "https://codeium.com/static/images/site_card.png",
     "favicon": "https://www.google.com/s2/favicons?domain=codeium.com",
-    "created_at": "1683480619938"
+    "created_at": "1687895733651"
   },
   {
     "url": "https://docusaurus.community",
@@ -140,11 +141,26 @@
       "react",
       "javascript"
     ],
-    "title": "Docusaurus.community | Docusaurus.community",
+    "title": "docusaurus.community",
     "description": "Docusaurus community knowledge sharing and plugin directory.",
     "image": "https://docusaurus.community/img/docusaurus-social-card.jpg",
     "favicon": "https://www.google.com/s2/favicons?domain=docusaurus.community",
-    "created_at": "1683480620092"
+    "created_at": "1687895733916"
+  },
+  {
+    "url": "https://github.com/payloadbox",
+    "category": "security",
+    "tags": [
+      "payloads",
+      "tools",
+      "hacking",
+      "pentesting"
+    ],
+    "title": "Payloads All The Things",
+    "description": "Attack payloads only 📦. Payload Box has 9 repositories available. Follow their code on GitHub.",
+    "image": "https://avatars.githubusercontent.com/u/54147719?s=280\u0026v=4",
+    "favicon": "https://www.google.com/s2/favicons?domain=github.com",
+    "created_at": "1687895734452"
   },
   {
     "url": "https://www.keybr.com/",
@@ -158,7 +174,7 @@
     "description": "Teaching the world to type at the speed of thought! Typing lessons that work.",
     "image": "https://www.keybr.com/cover.png",
     "favicon": "https://www.google.com/s2/favicons?domain=keybr.com",
-    "created_at": "1683480620753"
+    "created_at": "1687895734665"
   },
   {
     "url": "https://www.bugcrowd.com/",
@@ -172,7 +188,7 @@
     "description": "Bugcrowd teams with elite security researchers to reduce risk \u0026 improve security ROI through our bug bounty, pen testing, \u0026 vulnerability disclosure programs.",
     "image": "https://www.bugcrowd.com/wp-content/uploads/2022/05/og_simple_generic.jpg",
     "favicon": "https://www.google.com/s2/favicons?domain=bugcrowd.com",
-    "created_at": "1683480621361"
+    "created_at": "1687895735316"
   },
   {
     "url": "https://challenge.fi",
@@ -184,9 +200,9 @@
     ],
     "title": "Generation Z Hack Challenge",
     "description": "A collection of challenges for learning and practicing security from the finnish Generation Z Hack Challenge.",
-    "image": "/images/gradients/gradient_14.jpeg",
+    "image": "https://challenge.fi/img/facebook_share_image.jpg",
     "favicon": "https://www.google.com/s2/favicons?domain=challenge.fi",
-    "created_at": "1683480621947"
+    "created_at": "1687895736120"
   },
   {
     "url": "https://training.olicyber.it",
@@ -200,7 +216,7 @@
     "description": "Le Olimpiadi Italiane di Cybersicurezza sono il primo programma di addestramento e competizione in cybersecurity interamente dedicato agli studenti degli istituti superiori di secondo grado.",
     "image": "https://olicyber.it/assets/loghi/logo-social.png",
     "favicon": "https://www.google.com/s2/favicons?domain=training.olicyber.it",
-    "created_at": "1683480622127"
+    "created_at": "1687895736317"
   },
   {
     "url": "https://cryptohack.org/",
@@ -214,7 +230,7 @@
     "description": "A fun, free platform to learn about cryptography through solving challenges and cracking insecure code. Can you reach the top of the leaderboard?",
     "image": "https://cryptohack.org/static/img/banner.png",
     "favicon": "https://www.google.com/s2/favicons?domain=cryptohack.org",
-    "created_at": "1683480622386"
+    "created_at": "1687895736534"
   },
   {
     "url": "https://www.cryptopals.com/",
@@ -226,9 +242,9 @@
     ],
     "title": "Cryptopals challenges",
     "description": "A collection of challenges for learning and practicing cryptography.",
-    "image": "/images/gradients/gradient_22.jpeg",
+    "image": "/images/gradients/gradient_07.jpeg",
     "favicon": "https://www.google.com/s2/favicons?domain=cryptopals.com",
-    "created_at": "1683480622517"
+    "created_at": "1687895736666"
   },
   {
     "url": "http://sparksandflames.com/files/x86InstructionChart.html",
@@ -240,9 +256,9 @@
     ],
     "title": "x86 Instruction Chart",
     "description": "A chart of x86 instructions with operation codes and descriptions.",
-    "image": "/images/gradients/gradient_08.jpeg",
+    "image": "/images/gradients/gradient_24.jpeg",
     "favicon": "https://www.google.com/s2/favicons?domain=sparksandflames.com",
-    "created_at": "1683480623036"
+    "created_at": "1687895737349"
   },
   {
     "url": "https://syscall.sh",
@@ -254,9 +270,23 @@
     ],
     "title": "Linux System Calls quick and easy",
     "description": "Linux System Calls and Call Conventions for most architechtures",
-    "image": "https://i.imgur.com/PYpkDba.png",
+    "image": "/images/gradients/gradient_01.jpeg",
     "favicon": "https://www.google.com/s2/favicons?domain=syscall.sh",
-    "created_at": "1683480623299"
+    "created_at": "1687895737655"
+  },
+  {
+    "url": "https://github.com/dnSpy/dnSpy",
+    "category": "security",
+    "tags": [
+      ".net",
+      "debugger",
+      "tools"
+    ],
+    "title": "dnSpy",
+    "description": ".NET debugger and assembly editor. Contribute to dnSpy/dnSpy development by creating an account on GitHub.",
+    "image": "https://opengraph.githubassets.com/88b526cc9100366be4940fb1be1dd8248dc3c4b24c7594225843d9da55e94332/dnSpy/dnSpy",
+    "favicon": "https://www.google.com/s2/favicons?domain=github.com",
+    "created_at": "1687895738062"
   },
   {
     "url": "https://www.typing.academy",
@@ -270,7 +300,7 @@
     "description": "Learn typing with our online typing practice and typing speed test. Just try it - it's free!",
     "image": "https://www.typing.academy/app/source/public/images/octopus.png",
     "favicon": "https://www.google.com/s2/favicons?domain=typing.academy",
-    "created_at": "1683480624135"
+    "created_at": "1687895738421"
   },
   {
     "url": "https://vimsheet.com/",
@@ -281,9 +311,9 @@
     ],
     "title": "A Great Vim Cheat Sheet",
     "description": "A Great Vim Cheat Sheet",
-    "image": "/images/gradients/gradient_17.jpeg",
+    "image": "/images/gradients/gradient_03.jpeg",
     "favicon": "https://www.google.com/s2/favicons?domain=vimsheet.com",
-    "created_at": "1683480624205"
+    "created_at": "1687895738506"
   },
   {
     "url": "https://owasp.org",
@@ -297,7 +327,7 @@
     "description": "OWASP Foundation, the Open Source Foundation for Application Security on the main website for The OWASP Foundation. OWASP is a nonprofit foundation that works to improve the security of software.",
     "image": "https://owasp.org/www--site-theme/favicon.ico",
     "favicon": "https://www.google.com/s2/favicons?domain=owasp.org",
-    "created_at": "1683480624483"
+    "created_at": "1687895738689"
   },
   {
     "url": "https://stylelint.io",
@@ -309,9 +339,9 @@
     ],
     "title": "Stylelint",
     "description": "A mighty CSS linter that helps you avoid errors and enforce conventions.",
-    "image": "/images/gradients/gradient_07.jpeg",
+    "image": "/images/gradients/gradient_16.jpeg",
     "favicon": "https://www.google.com/s2/favicons?domain=stylelint.io",
-    "created_at": "1683480624574"
+    "created_at": "1687895738824"
   },
   {
     "url": "https://semgrep.dev",
@@ -322,9 +352,9 @@
     ],
     "title": "Semgrep",
     "description": "Semgrep is a fast, open source static analysis tool for finding bugs, detecting vulnerabilities in third-party dependencies, and enforcing code standards.\n\nStart scanning for free!",
-    "image": "https://a.storyblok.com/f/151984/3000x1000/d9c86bfa99/twitter-banner-updated.png",
+    "image": "https://a.storyblok.com/f/151984/1200x628/fff4211e18/semgrep-twitter-card-thumbnail-original.png",
     "favicon": "https://www.google.com/s2/favicons?domain=semgrep.dev",
-    "created_at": "1683480625668"
+    "created_at": "1687895739760"
   },
   {
     "url": "https://crackstation.net",
@@ -337,9 +367,9 @@
     ],
     "title": "CrackStation",
     "description": "A password hash cracker.",
-    "image": "/images/gradients/gradient_20.jpeg",
+    "image": "/images/gradients/gradient_11.jpeg",
     "favicon": "https://www.google.com/s2/favicons?domain=crackstation.net",
-    "created_at": "1683480626067"
+    "created_at": "1687895740151"
   },
   {
     "url": "https://portswigger.net",
@@ -352,7 +382,7 @@
     "description": "PortSwigger offers tools for web application security, testing, \u0026 scanning. Choose from a range of security tools, \u0026 identify the very latest vulnerabilities.",
     "image": "https://portswigger.net/content/images/logos/portswigger-twittercardlogo.png",
     "favicon": "https://www.google.com/s2/favicons?domain=portswigger.net",
-    "created_at": "1683480626475"
+    "created_at": "1687895740590"
   },
   {
     "url": "https://www.exploit-db.com",
@@ -363,9 +393,9 @@
     ],
     "title": "Exploit Database",
     "description": "The Exploit Database - Exploits, Shellcode, 0days, Remote Exploits, Local Exploits, Web Apps, Vulnerability Reports, Security Articles, Tutorials and more.",
-    "image": "/images/gradients/gradient_17.jpeg",
+    "image": "/images/gradients/gradient_11.jpeg",
     "favicon": "https://www.google.com/s2/favicons?domain=exploit-db.com",
-    "created_at": "1683480627050"
+    "created_at": "1687895740708"
   },
   {
     "url": "https://projectworlds.in",
@@ -378,7 +408,7 @@
     "description": "Projectworlds Free learning videos and free projects to Learn programming languages like C,C++,Java, PHP , Android, Kotlin, and other computer subjects like Data Structure, DBMS, SQL. etc",
     "image": "https://projectworlds.in/wp-content/uploads/2018/10/projectworlds-copy.png",
     "favicon": "https://www.google.com/s2/favicons?domain=projectworlds.in",
-    "created_at": "1683480627733"
+    "created_at": "1687895741389"
   },
   {
     "url": "https://crackmes.one",
@@ -390,9 +420,9 @@
     ],
     "title": "Crackmes",
     "description": "A collection of challenges for learning and practicing reverse engineering.",
-    "image": "/images/gradients/gradient_16.jpeg",
+    "image": "/images/gradients/gradient_03.jpeg",
     "favicon": "https://www.google.com/s2/favicons?domain=crackmes.one",
-    "created_at": "1683480627861"
+    "created_at": "1687895741519"
   },
   {
     "url": "https://www.root-me.org/?lang=en",
@@ -403,9 +433,9 @@
     ],
     "title": "Root Me",
     "description": "Root Me is a platform for everyone to test and improve knowledge in computer security and hacking.",
-    "image": "/images/gradients/gradient_02.jpeg",
+    "image": "/images/gradients/gradient_22.jpeg",
     "favicon": "https://www.google.com/s2/favicons?domain=root-me.org",
-    "created_at": "1683480628022"
+    "created_at": "1687895741684"
   },
   {
     "url": "https://malwareunicorn.org",
@@ -419,7 +449,7 @@
     "description": "Provides workshops and resources for reverse engineering in the infosec space.",
     "image": "https://malwareunicorn.org/re101/img/dc346360cad65528.gif",
     "favicon": "https://www.google.com/s2/favicons?domain=malwareunicorn.org",
-    "created_at": "1683480628130"
+    "created_at": "1687895741785"
   },
   {
     "url": "https://any.run",
@@ -433,6 +463,123 @@
     "description": "Cloud-based malware analysis service. Take your information security to the next level. Analyze suspicious and malicious activities using our innovative tools.",
     "image": "https://any.run/img/logo-anyrun.png",
     "favicon": "https://www.google.com/s2/favicons?domain=any.run",
-    "created_at": "1683480628294"
+    "created_at": "1687895742002"
+  },
+  {
+    "url": "https://wpscan.com",
+    "category": "security",
+    "tags": [
+      "wordpress",
+      "tools",
+      "web",
+      "wordpress"
+    ],
+    "title": "WPScan",
+    "description": "A WordPress vulnerability database for WordPress core security vulnerabilities, plugin vulnerabilities and theme vulnerabilities.",
+    "image": "https://wpscan.com/wpscan_logo.png",
+    "favicon": "https://www.google.com/s2/favicons?domain=wpscan.com",
+    "created_at": "1687895742297"
+  },
+  {
+    "url": "https://cve.mitre.org/",
+    "category": "security",
+    "tags": [
+      "vulnerabilities",
+      "tools",
+      "database",
+      "search"
+    ],
+    "title": "CVE",
+    "description": "The mission of the CVE® Program is to identify, define, and catalog publicly disclosed cybersecurity vulnerabilities.",
+    "image": "/images/gradients/gradient_14.jpeg",
+    "favicon": "https://www.google.com/s2/favicons?domain=cve.mitre.org",
+    "created_at": "1687895742781"
+  },
+  {
+    "url": "https://nvd.nist.gov/vuln/search",
+    "category": "security",
+    "tags": [
+      "vulnerabilities",
+      "tools",
+      "database",
+      "search"
+    ],
+    "title": "NVD search",
+    "image": "/images/gradients/gradient_01.jpeg",
+    "favicon": "https://www.google.com/s2/favicons?domain=nvd.nist.gov",
+    "created_at": "1687895743388"
+  },
+  {
+    "url": "https://www.wappalyzer.com/",
+    "category": "security",
+    "tags": [
+      "web",
+      "tools",
+      "browser",
+      "extension"
+    ],
+    "title": "Wappalyzer",
+    "description": "Find out the technology stack of any website. Create lists of websites and contacts by the technologies they use.",
+    "image": "/images/gradients/gradient_17.jpeg",
+    "favicon": "https://www.google.com/s2/favicons?domain=wappalyzer.com",
+    "created_at": "1687895745314"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
+    "category": "security",
+    "tags": [
+      "file",
+      "signatures",
+      "database"
+    ],
+    "title": "List of file signatures",
+    "image": "/images/gradients/gradient_14.jpeg",
+    "favicon": "https://www.google.com/s2/favicons?domain=en.wikipedia.org",
+    "created_at": "1687895745450"
+  },
+  {
+    "url": "https://university.alchemy.com",
+    "category": "blockchain",
+    "tags": [
+      "blockchain",
+      "ethereum",
+      "training"
+    ],
+    "title": "Alchemy University",
+    "description": "Fast track your web3 career through courses, projects and code. Totally free.",
+    "image": "https://university.alchemypreview.com/metatag_image.png",
+    "favicon": "https://www.google.com/s2/favicons?domain=university.alchemy.com",
+    "created_at": "1687895746061"
+  },
+  {
+    "url": "https://www.whois.com/whois",
+    "category": "security",
+    "tags": [
+      "whois",
+      "tools",
+      "dns",
+      "lookup"
+    ],
+    "title": "Whois.com - Free Whois Lookup",
+    "description": "Whois Domain Name \u0026 IP lookup service to search the whois database for verified registration information",
+    "image": "https://www.whois.com/images/og.png",
+    "favicon": "https://www.google.com/s2/favicons?domain=whois.com",
+    "created_at": "1687895746714"
+  },
+  {
+    "url": "https://github.com/CiscoCXSecurity/enum4linux",
+    "category": "security",
+    "tags": [
+      "linux",
+      "tools",
+      "enumeration",
+      "smb",
+      "samba"
+    ],
+    "title": "CiscoCXSecurity/enum4linux",
+    "description": "enum4Linux is a Linux alternative to enum.exe for enumerating data from Windows and Samba hosts - GitHub - CiscoCXSecurity/enum4linux: enum4Linux is a Linux alternative to enum.exe for enumerating ...",
+    "image": "https://opengraph.githubassets.com/f81e92205aed4e813cc195e876585f343dbdfb76be0501aab98aa247d969a494/CiscoCXSecurity/enum4linux",
+    "favicon": "https://www.google.com/s2/favicons?domain=github.com",
+    "created_at": "1687895747175"
   }
 ]

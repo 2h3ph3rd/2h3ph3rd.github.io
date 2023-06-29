@@ -2,6 +2,10 @@
 
 ## Nmap
 
+:::tip
+Start with a fast scan to check for open ports and than run a full scan only on them.
+:::
+
 Fast scan, requires sudo priviliges:
 
 ```bash
@@ -17,8 +21,17 @@ nmap --script-default -p 22,80,443 -sV 10.10.1.1
 ```
 
 :::tip
-Start with a fast scan to check for open ports and than run a full scan only on them.
+Usually, it is better to run nmap with verbose output to see what is happening by adding the `-v` or `-vv` flag to the command.
 :::
+
+By default, nmap scans the first 1000 ports.
+
+To scan all the 65535 ports use the `-p-` flag.:
+
+```bash
+nmap -sS -p- <HOST>
+nmap -sS -p- 10.10.1.1
+```
 
 ### TCP scan
 
@@ -56,11 +69,11 @@ nmap will respond with a RST packet to close the connection.
 
 ### Other types of scan
 
-- `FIN` - Send a FIN packet to close the connection.
-- `XMAS` - Send a FIN, URG and PUSH packet to close the connection.
-- `NULL` - Send an empty packet to close the connection.
-- `ACK` - Send an ACK packet to check if the port is filtered or not.
-- `UDP` - Send a UDP packet to check if the port is open or not.
+- `-sF` - FIN scan - Send a FIN packet to close the connection.
+- `-sX` - XMAS scan - Send a FIN, URG and PUSH packet to close the connection.
+- `-sN` - NULL scan - Send an empty packet to close the connection.
+- `-sA` - ACK scan - Send an ACK packet to check if the port is filtered or not.
+- `-sU` - UDP scan - Send a UDP packet to check if the port is open or not.
 
 ### Ports result
 

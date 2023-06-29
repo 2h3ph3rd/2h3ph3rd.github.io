@@ -133,3 +133,97 @@ ssh-add
 ssh cactus@10.10.147.248
 cat smb.txt
 ```
+
+## Task 5 - Understanding Telnet
+
+> What is Telnet?
+
+Application Protocol
+
+> What has slowly replaced Telnet?
+
+SSH
+
+> How would you connect to a Telnet server with the IP 10.10.10.3 on port 23?
+
+telnet 10.10.10.3 23
+
+> The lack of what, means that all Telnet communication is in plaintext?
+
+Encryption
+
+## Task 6 - Enumerating Telnet
+
+> How many ports are open on the target machine?
+
+1
+
+```bash
+nmap -sS <IP> -p- -vv
+```
+
+> What port is this?
+
+8012
+
+> This port is unassigned, but still lists the protocol it's using, what protocol is this?
+
+TCP
+
+> Now re-run the nmap scan, without the -p- tag, how many ports show up as open?
+
+0
+
+> It's important to try every angle when enumerating, as the information you gather here will inform your exploitation stage.
+
+No answer needed
+
+> Based on the title returned to us, what do we think this port could be used for?
+
+a backdoor
+
+> Who could it belong to? Gathering possible usernames is an important step in enumeration.
+
+skidy
+
+```bash
+telnet <IP> 8012
+```
+
+> Always keep a note of information you find during your enumeration stage, so you can refer back to it when you move on to try exploits.
+
+No answer needed
+
+## Task 7 - Exploiting Telnet
+
+> Okay, let's try and connect to this telnet port! If you get stuck, have a look at the syntax for connecting outlined above.
+
+No answer needed
+
+> Great! It's an open telnet connection! What welcome message do we receive?
+
+> Let's try executing some commands, do we get a return on any input we enter into the telnet session? (Y/N)
+
+> Hmm... that's strange. Let's check to see if what we're typing is being executed as a system command.
+
+No answer needed
+
+> This starts a tcpdump listener, specifically listening for ICMP traffic, which pings operate on.
+
+No answer needed
+
+> Do we receive any pings? Note, you need to preface this with .RUN (Y/N)
+
+> Great! This means that we are able to execute system commands AND that we are able to reach our local machine. Now let's have some fun!
+
+No answer needed
+
+> What word does the generated payload start with?
+
+> What would the command look like for the listening port we selected in our payload?
+
+> Hopefully- this will give us a shell on the target machine!
+
+No answer needed
+
+> Success! What is the contents of flag.txt?

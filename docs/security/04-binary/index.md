@@ -23,7 +23,7 @@ No ASLR (globally!)
 bash -c 'echo 0 > /proc/sys/kernel/randomize_va_space'
 ```
 
-No stack protection, executable stack, no pie.
+No stack protection, no executable stack, and no pie.
 
 ```bash
 gcc -fno-stack-protector -no-pie -z execstack main.c

@@ -96,7 +96,7 @@ const config = {
           },
           {
             href: 'https://2h3ph3rd.medium.com',
-            label: '📃 Blog',
+            label: '📰 Blog',
             position: 'left',
           },
           {

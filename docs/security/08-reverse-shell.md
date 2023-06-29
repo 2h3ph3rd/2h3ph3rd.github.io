@@ -1,4 +1,4 @@
-# ↕️ Reverse shell
+# 🔃 Reverse shell
 
 ## nc
 

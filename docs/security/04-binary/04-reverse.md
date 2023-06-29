@@ -1,4 +1,4 @@
-# ↔️ Reverse
+# 🔁 Reverse
 
 Reverse challenges usually require to find a hidden flag inside a binary.
 

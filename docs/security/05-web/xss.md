@@ -16,12 +16,12 @@ Common payloads to check for XSS are:
 <img onerror="alert('hello')">
 ```
 
-Goals of a XSS:
+Possible goals of a XSS:
 
 - Steal the user cookie
 - Log user activities on the website
 - Change client code execution
-- Make action from the admin account
+- Make some actions from the admin account
 
 ## Types of XSS
 
@@ -51,7 +51,9 @@ Other examples are user profile information or contact forms.
 
 Do you know someone called `<script>alert('Hi!')</script>`?
 
-When there is no way to test your payload, this type of vulnerability becomes a blind XSS. This could happen for example with the restricted account.
+When there is no way to test your payload, this type of vulnerability becomes a blind XSS.
+
+For example, you could be able to exploit a XSS by writing something to the admin without seeing the result of it.
 
 ### DOM-based
 

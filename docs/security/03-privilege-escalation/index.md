@@ -1,9 +1,4 @@
----
-id: privilige-escalation
-title: 🔒 Privilege escalation
----
-
-# Privilege escalation
+# 🔒 Privilege escalation
 
 ### dstat
 
@@ -47,7 +42,7 @@ bash -p
 
 You can use this trick if the user has access to a binary or a script with sudo privilege.
 
-Also there must be no specific override of the LD_PRELOAD variable. You can check it by using the command `sudo -l`.
+Also, there must be no specific override of the LD_PRELOAD variable. You can check it by using the command `sudo -l`.
 
 ```c title="shell.c"
 void _init()

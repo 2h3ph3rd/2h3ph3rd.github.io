@@ -5,8 +5,8 @@ import styles from './styles.module.scss'
 import feed from '@site/static/data/feed.json'
 
 function getDescription(descrition) {
+  const length = 200
   let description = descrition
-  let length = 200
   if (description != undefined && description.length > length) {
     description = description.substring(0, length) + '...'
   }

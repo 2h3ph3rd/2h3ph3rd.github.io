@@ -47,9 +47,10 @@ function GenerateFooter(resource) {
 }
 
 function GenerateDescription(resource) {
+  const length = 200
   let description = resource.description
-  if (description != undefined && description.length > 200) {
-    description = description.substring(0, 200) + '...'
+  if (description != undefined && description.length > length) {
+    description = description.substring(0, length) + '...'
   }
   return <small>{description}</small>
 }

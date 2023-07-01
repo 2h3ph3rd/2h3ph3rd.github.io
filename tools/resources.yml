@@ -13,12 +13,6 @@
 # The category is used to group the bookmarks into sections on the page.
 # For this reason categories are fixed: programming, security, and devops.
 # The tags are used to filter the bookmarks on the page. There are no restrictions on the tags.
-- url: https://training.play-with-kubernetes.com/kubernetes-workshop/
-  category: devops
-  tags:
-    - kubernetes
-    - docker
-    - training
 - url: https://data.iana.org/TLD/tlds-alpha-by-domain.txt
   category: security
   title: List of approved TLDs
@@ -28,6 +22,12 @@
     - domain
     - web
     - dns
+- url: https://training.play-with-kubernetes.com/kubernetes-workshop/
+  category: devops
+  tags:
+    - kubernetes
+    - docker
+    - training
 - url: https://k8slens.dev
   title: K8S Lens
   category: devops

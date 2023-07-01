@@ -11,12 +11,12 @@ import (
 type Resources []Resource
 
 type Resource struct {
-	URL       string   `json:"url" yaml:"url"`
-	Category  string   `json:"category" yaml:"category"`
-	Tags      []string `json:"tags,omitempty" yaml:"tags"`
-	Favicon   string   `json:"favicon,omitempty"`
-	CreatedAt string   `json:"created_at,omitempty"`
-	scraper.Metadata
+	URL              string   `json:"url" yaml:"url"`
+	Category         string   `json:"category" yaml:"category"`
+	Tags             []string `json:"tags,omitempty" yaml:"tags"`
+	Favicon          string   `json:"favicon,omitempty"`
+	CreatedAt        string   `json:"created_at,omitempty"`
+	scraper.Metadata `yaml:",inline"`
 }
 
 var InputFile = "./tools/resources.yml"

@@ -21,7 +21,7 @@ func TestAddFavicon(t *testing.T) {
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
 			bookmark := Resource{URL: test.input}
-			err := bookmark.AddFavicon()
+			err := bookmark.addFavicon()
 
 			assert.Contains(t, test.expected, bookmark.Favicon)
 			if test.err != nil {
@@ -46,7 +46,7 @@ func TestAddMetaTagsData(t *testing.T) {
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
 			bookmark := Resource{URL: test.input}
-			err := bookmark.AddMetadata()
+			err := bookmark.addMetadata()
 
 			assert.Contains(t, test.expected, bookmark.Favicon)
 			if test.err != nil {

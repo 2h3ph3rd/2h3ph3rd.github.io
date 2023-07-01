@@ -8,9 +8,9 @@ import (
 )
 
 type Metadata struct {
-	Title       string `json:"title,omitempty"`
-	Description string `json:"description,omitempty"`
-	Image       string `json:"image,omitempty"`
+	Title       string `json:"title,omitempty" yaml:"title"`
+	Description string `json:"description,omitempty" yaml:"description"`
+	Image       string `json:"image,omitempty" yaml:"image"`
 }
 
 // Scrape returns the metadata of the given URL

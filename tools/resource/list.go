@@ -11,11 +11,11 @@ import (
 // getUpdateList returns the list of resources to be updated
 func getUpdateList(new Resources, actual Resources) Resources {
 	for _, b := range new {
-		// Store only new resources
-		given := b
-		b.addData()
-
 		// Given data have priority over the found ones
+		given := b
+
+		// Add new data
+		b.addData()
 
 		// Overwrite the title
 		if given.Title != "" {

@@ -20,7 +20,8 @@
     "writeups/thm",
     "htb",
     "docs/network",
-    "data"
+    "data",
+    "gradients"
   ],
   "editor.formatOnSave": true
 }

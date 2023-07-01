@@ -1,73 +1,54 @@
 package feed
 
 import (
-	"encoding/xml"
-	"regexp"
-
 	"2h3ph3rd.github.io/tools/common"
+	"2h3ph3rd.github.io/tools/scraper"
 )
 
 const FeedURL = "https://medium.com/feed/@2h3ph3rd"
 const PageURL = "https://2h3ph3rd.medium.com"
 
-type Feed struct {
-	Channel Channel `xml:"channel" json:"channel"`
-}
+type Feed []Article
 
-type Channel struct {
-	Title       string `xml:"title" json:"title"`
-	Description string `xml:"description" json:"description"`
-	Link        string `xml:"link" json:"link"`
-	Image       string `xml:"image" json:"image"`
-	Items       []Item `xml:"item" json:"items"`
-}
-
-type Item struct {
-	Title       string   `xml:"title" json:"title"`
-	Link        string   `xml:"link" json:"link"`
-	PubDate     string   `xml:"pubDate" json:"pubDate"`
-	Creator     string   `xml:"creator" json:"creator"`
-	Category    []string `xml:"category" json:"categories"`
-	Guid        string   `xml:"guid" json:"guid"`
-	Description string   `xml:"encoded" json:"description"`
+type Article struct {
+	URL string `json:"url"`
+	scraper.Metadata
 }
 
 // Generate
 func Generate() error {
-	feed, err := getFeed()
+	mediumFeed, err := getMediumFeed()
 	if err != nil {
 		return err
 	}
 
-	feed.Clean()
+	mediumFeed.clean()
+
+	feed, err := NewFeedFromMediumFeed(mediumFeed)
+	if err != nil {
+		return err
+	}
 
 	common.WriteJson("./static/data/feed.json", feed)
 	common.WriteJsonPretty("./static/data/feed_pretty.json", feed)
 	return nil
 }
 
-// Clean removes tags from the content
-func (f *Feed) Clean() {
-	re := regexp.MustCompile(`<[^>]*>`)
-	for i := range f.Channel.Items {
-		content := f.Channel.Items[i].Description
-		content = re.ReplaceAllString(content, "")
-		f.Channel.Items[i].Description = content
-	}
-}
+func NewFeedFromMediumFeed(mediumFeed MediumFeed) (Feed, error) {
+	f := Feed{}
+	for _, item := range mediumFeed.Channel.Items {
+		metadata, err := scraper.Scrape(item.Link)
+		if err != nil {
+			return f, err
+		}
 
-// getFeed gets the feed from Medium blog
-func getFeed() (feed Feed, err error) {
-	// Get the feed
-	result, status, err := common.Get(FeedURL)
-	if status != 200 || err != nil {
-		return feed, err
+		article := Article{
+			URL:      item.Link,
+			Metadata: metadata,
+		}
+
+		f = append(f, article)
 	}
 
-	// Parse the feed
-	if err := xml.Unmarshal(result, &feed); err != nil {
-		return feed, err
-	}
-
-	return feed, err
+	return f, nil
 }

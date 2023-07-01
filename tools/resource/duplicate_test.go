@@ -1,4 +1,4 @@
-package resources
+package resource
 
 import (
 	"testing"
@@ -26,7 +26,7 @@ func TestCheckDuplicate(t *testing.T) {
 
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			actual := CheckDuplicate(bookmarks, test.url)
+			actual := checkDuplicate(bookmarks, test.url)
 			assert.Equal(t, test.expected, actual)
 		})
 	}

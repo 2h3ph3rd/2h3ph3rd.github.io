@@ -5,7 +5,7 @@ import (
 	"log"
 
 	"2h3ph3rd.github.io/tools/feed"
-	"2h3ph3rd.github.io/tools/resources"
+	"2h3ph3rd.github.io/tools/resource"
 )
 
 func main() {
@@ -16,7 +16,7 @@ func main() {
 
 	switch {
 	case *generateResources:
-		if err := resources.Generate(); err != nil {
+		if err := resource.Generate(); err != nil {
 			log.Fatal(err)
 		}
 	case *generateBlog:

@@ -1,4 +1,4 @@
-package resources
+package resource
 
 import (
 	"testing"
@@ -46,7 +46,7 @@ func TestAddMetaTagsData(t *testing.T) {
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
 			bookmark := Resource{URL: test.input}
-			err := bookmark.AddMetaTagsData()
+			err := bookmark.AddMetadata()
 
 			assert.Contains(t, test.expected, bookmark.Favicon)
 			if test.err != nil {

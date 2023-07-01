@@ -19,7 +19,8 @@
     "typo",
     "writeups/thm",
     "htb",
-    "docs/network"
+    "docs/network",
+    "data"
   ],
   "editor.formatOnSave": true
 }

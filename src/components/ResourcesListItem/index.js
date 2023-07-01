@@ -12,7 +12,6 @@ function GenerateImage(resource) {
           currentTarget.onerror = null // prevents looping
           currentTarget.src = '/images/gradients/gradient_01.jpeg'
         }}
-        alt="cover"
         title={resource.title}
         className={styles.image}
       />
@@ -63,7 +62,7 @@ export default function ResourcesListItem({ resource }) {
 
   return (
     <a href={resource.url} class="nolink" target="_blank">
-      <div className={clsx('card zoom', styles.card)}>
+      <div className={clsx('card zoom-effect', styles.card)}>
         {image}
         <div class="card__body">
           {header}

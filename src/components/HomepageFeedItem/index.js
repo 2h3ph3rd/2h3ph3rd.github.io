@@ -6,16 +6,24 @@ import feed from '@site/static/data/feed.json'
 
 function getDescription(descrition) {
   let description = descrition
-  if (description != undefined && description.length > 320) {
-    description = description.substring(0, 320) + '...'
+  let length = 200
+  if (description != undefined && description.length > length) {
+    description = description.substring(0, length) + '...'
   }
   return description
 }
 
 export default function HomepageFeedItem({ item }) {
   return (
-    <a href={item.link} target="_blank" class="nolink">
-      <div class="card shadow--tl zoom">
+    <a href={item.url} target="_blank" class="nolink">
+      <div className={clsx('card zoom-effect shadow--tl', styles.card)}>
+        <div class="card__image">
+          <img
+            src={item.image}
+            title="Logo Title Text 1"
+            className={styles.image}
+          />
+        </div>
         <div class="card__body">
           <div class="container-fluid">
             <div class="row">

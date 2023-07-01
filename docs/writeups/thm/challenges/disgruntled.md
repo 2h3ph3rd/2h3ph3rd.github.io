@@ -1,8 +1,6 @@
 # Disgruntled
 
-<p align="center">
-  <img src={require("./assets/disgruntled.png").default} width="128" />
-</p>
+<Image src="https://tryhackme-images.s3.amazonaws.com/room-icons/03de138b8dfa8f5b003298c17b73fbd8.png" width="128" />
 
 ### Task 1 Introduction
 

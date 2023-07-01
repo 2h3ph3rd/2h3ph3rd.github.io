@@ -2,9 +2,7 @@
 
 A developer has asked you to do a vulnerability check on their system.
 
-<p align="center">
-  <img src={require("./assets/devie/icon.png").default} width="128" />
-</p>
+<Image src="/images/writeups/thm/challenges/devie/icon.png" width="128" />
 
 ## Task 1 - What are the flags?
 
@@ -28,16 +26,12 @@ It is possible to start by scanning the machine for open ports with nmap.
 
 There are only the 22 port for SSH and 5000.
 
-<p align="center">
-  <img src={require("./assets/devie/nmap.png").default} />
-</p>
+<Image src="/images/writeups/thm/challenges/devie/nmap.png" />
 
 By connecting to the port 5000 with the browser we can find a web application.
 The website allows to do different math calculations.
 
-<p align="center">
-  <img src={require("./assets/devie/website.png").default} />
-</p>
+<Image src="/images/writeups/thm/challenges/devie/website.png" />
 
 In the footer of the page is possible to download the source code.
 
@@ -45,9 +39,7 @@ In the footer of the page is possible to download the source code.
 
 By looking careful to the code we can see a vulnerability in the eval function with user input. There is no sanitation, it only checks that the values given are string.
 
-<p align="center">
-  <img src={require("./assets/devie/vuln.png").default} />
-</p>
+<Image src="/images/writeups/thm/challenges/devie/vuln.png" />
 
 We can try to obtain a reverse shell by using a custom payload.
 
@@ -66,9 +58,7 @@ nc -nvlp <PORT>
 
 Once inside the machine, the first flag is in the home folder of the user: `THM{Car3ful_witH_3v@l}`.
 
-<p align="center">
-  <img src={require("./assets/devie/flag1.png").default} />
-</p>
+<Image src="/images/writeups/thm/challenges/devie/flag1.png" />
 
 ### Second flag
 
@@ -94,9 +84,7 @@ In this way it is possible to calculate the key.
 
 `decode_base64(ciphertext) = ciphertext = cleartex ^ key -> cleartex ^ key ^ cleartext = key`
 
-<p align="center">
-  <img src={require("./assets/devie/key.png").default} />
-</p>
+<Image src="/images/writeups/thm/challenges/devie/key.png" />
 
 It is possible to write a simple Python script to decrypt easily the password.
 
@@ -129,9 +117,7 @@ print(password)
 By executing this script we can find the password `G0th@mR0ckz!`.
 The second flag is inside the home folder of the user Gordon: `THM{X0R_XoR_XOr_xOr}`.
 
-<p align="center">
-  <img src={require("./assets/devie/flag2.png").default} />
-</p>
+<Image src="/images/writeups/thm/challenges/devie/flag2.png" />
 
 ### Third flag
 

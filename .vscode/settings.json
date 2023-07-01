@@ -21,7 +21,8 @@
     "htb",
     "docs/network",
     "data",
-    "gradients"
+    "gradients",
+    "images"
   ],
   "editor.formatOnSave": true
 }

@@ -12,6 +12,7 @@ import HomepageFeed from '@site/src/components/HomepageFeed'
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext()
+
   return (
     <Layout>
       <HomepageHeader />

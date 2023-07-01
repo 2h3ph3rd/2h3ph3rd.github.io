@@ -12,7 +12,7 @@ function mobileVersion() {
             <h1 className="hero__title">
               Hey there!
               <br />
-              I'm Francesco 👋
+              I'm Francesco <span className={styles.hand}>👋</span>
             </h1>
           </div>
         </div>
@@ -32,7 +32,7 @@ function desktopVersion() {
             <h1 className="hero__title">
               Hey there!
               <br />
-              I'm Francesco 👋
+              I'm Francesco <span className={styles.hand}>👋</span>
             </h1>
           </div>
           <div className="col col--5 col--offset-1">

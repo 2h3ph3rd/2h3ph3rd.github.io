@@ -16,8 +16,8 @@ nmap -sS 10.10.1.1
 Advanced scannning on specific ports:
 
 ```bash
-nmap --script-default -p <PORTS> -sV <HOST>
-nmap --script-default -p 22,80,443 -sV 10.10.1.1
+nmap -p <PORTS> -A <HOST>
+nmap -p 22,80,443 -A 10.10.1.1
 ```
 
 :::tip

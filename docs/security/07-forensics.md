@@ -64,7 +64,11 @@ pdfinfo <pdf>
 Show all metadata
 
 ```bash
+exiftool <image>
+exiftool image.jpg
+
 exiv2 -pt <image>
+exiv2 -pt image.jpg
 ```
 
 Edit or update an existing field

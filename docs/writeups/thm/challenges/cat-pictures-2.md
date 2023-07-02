@@ -15,7 +15,7 @@ Main parts of the room:
 
 Firstly, we can start with a nmap scan.
 
-We find five open ports and three web servers publicly accessible.
+We find five open ports with three web servers publicly accessible.
 
 ```bash
 nmap -sS <HOST>
@@ -35,7 +35,7 @@ nmap -sS <HOST>
 
 ### Finding interesting metadata
 
-We can start by looking inside the Lychee Photo Album.
+We can begin by looking inside the Lychee Photo Album.
 
 In the info of the first image we can find a message about stripping away the metadata.
 
@@ -68,7 +68,7 @@ ansible runner (olivetin): port 1337
 
 ### Accessing Gitea
 
-Now, we have the credentials for the gitea instance.
+Now, we have the credentials for the Gitea instance.
 
 Once logged in, we can see a repository called `ansible`.
 
@@ -89,6 +89,8 @@ There we can find a OliveTin instance that allows to run the Ansible tasks.
 ### Editing the playbook
 
 It is possible to change the script `playbook.yml` through Gitea and then run it from OliveTin.
+
+If you prefer you can also configure the ssh access and modify it from your machine.
 
 <Image src="/images/writeups/thm/challenges/cat-pictures-2/edit.png" />
 
@@ -142,9 +144,21 @@ If you check the output, you can see the second flag.
 
 For the third flag, it is better to use a reverse shell.
 
-At this link you can find an example:
+Remember to listen with:
 
-[https://gist.github.com/Reelix/32ccf1baaa3066654a460265fca53960](https://gist.github.com/Reelix/32ccf1baaa3066654a460265fca53960)
+```bash
+nc -nlvp <PORT>
+```
+
+To check your IP use:
+
+```bash
+ifconfig
+```
+
+In this Gist you can find an example:
+
+<Gist id="32ccf1baaa3066654a460265fca53960" />
 
 ```yaml
 ---

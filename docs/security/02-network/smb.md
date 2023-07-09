@@ -6,25 +6,25 @@ SMB is a client-server interaction, meaning an SMB client requests a file and th
 
 Samba is an open-source implementation of SMB.
 
-## smbclient
+## Commands
 
 On Linux, SMB is implemented through the `smbclient` command.
 
-Connect to a SMB share:
+### Connect to a SMB share
 
 ```bash
 smbclient //<IP>/<SHARE>
 smbclient //10.10.10.1/share
 ```
 
-Connect using the `Anonymous` user:
+### Connect using the Anonymous user
 
 ```bash
 smbclient //<IP>/<SHARE> -U Anonymous
 smbclient //10.10.10.1/share -U Anonymous
 ```
 
-Common commands:
+### Inside the SMB shell
 
 ```bash
 ls # List files

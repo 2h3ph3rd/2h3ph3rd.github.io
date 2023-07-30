@@ -319,3 +319,59 @@
     - enumeration
     - smb
     - samba
+- url: https://github.com/blackploit/hash-identifier
+  title: blackploit/hash-identifier
+  category: security
+  tags:
+    - hash
+    - tools
+    - identification
+- url: https://shattered.io/
+  title: Shattered
+  category: security
+  tags:
+    - hash
+    - cracking
+    - sha1
+- url: https://www.mscs.dal.ca/~selinger/md5collision/
+  title: MD5 Collision Demo
+  category: security
+  tags:
+    - hash
+    - cracking
+    - md5
+- url: https://threatbook.io/
+  title: ThreatBook
+  category: security
+  tags:
+    - threat
+    - intelligence
+    - tools
+- url: https://urlscan.io/
+  title: urlscan.io
+  category: security
+  tags:
+    - threat
+    - intelligence
+    - tools
+- url: https://github.com/vanhauser-thc/thc-hydra
+  title: vanhauser-thc/thc-hydra
+  category: security
+  tags:
+    - password
+    - cracking
+    - tools
+- url: https://hyperskill.org
+  title: Hyperskill
+  category: programming
+  tags:
+    - training
+    - algorithms
+    - data structures
+    - development
+- url: https://roadmap.sh/cyber-security
+  title: Roadmap to become a Cyber Security Expert
+  category: security
+  tags:
+    - roadmap
+    - learning

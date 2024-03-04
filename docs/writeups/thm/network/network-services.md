@@ -1,4 +1,4 @@
-# Network Services
+<!-- # Network Services
 
 <Image src="https://tryhackme-images.s3.amazonaws.com/room-icons/623103b06d1d53c3d8bddfc16998f9d7.png" width="128" />
 
@@ -326,4 +326,4 @@ THM{y0u_g0t_th3_ftp_fl4g}
 
 > Well done, you did it!
 
-No answer needed
+No answer needed -->

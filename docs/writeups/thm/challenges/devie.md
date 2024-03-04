@@ -1,24 +1,8 @@
-# Devie
+<!-- # Devie
 
 A developer has asked you to do a vulnerability check on their system.
 
 <Image src="/images/writeups/thm/challenges/devie/icon.png" width="128" />
-
-## Task 1 - What are the flags?
-
-> What is the first flag?
-
-THM{Car3ful_witH_3v@l}
-
-> What is the second flag?
-
-THM{X0R_XoR_XOr_xOr}
-
-> What is the root flag?
-
-THM{J0k3r$\_Ar3_W1ld}
-
-## Writeup
 
 ### Scanning
 
@@ -135,4 +119,4 @@ cp * /home/gordon/backups/
 bash -p
 ```
 
-The final flag is `THM{J0k3r$_Ar3_W1ld}`.
+The final flag is `THM{J0k3r$_Ar3_W1ld}`. -->

@@ -1,4 +1,4 @@
-# Walking An Application
+<!-- # Walking An Application
 
 <Image src={require("./assets/walking-an-application/icon.png").default} width="128px" />
 
@@ -76,4 +76,4 @@ THM{GOT_AJAX_FLAG}
 Open the network tools, go in `contact` page, and send the form.
 You should see a POST request with the flag inside the response.
 
-<Image src={require("./assets/walking-an-application/network.png").default} />
+<Image src={require("./assets/walking-an-application/network.png").default} /> -->

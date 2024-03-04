@@ -1,4 +1,4 @@
-# OWASP Top 10 - 2021
+<!-- # OWASP Top 10 - 2021
 
 <Image src="https://tryhackme-images.s3.amazonaws.com/room-icons/3b2f3af8e836785fe698356264efbb55.png" width="128px" />
 
@@ -357,4 +357,4 @@ To avoid this problem add `?x=` at the end of the url to avoid the additional te
 
 > Read the above!
 
-No answer needed
+No answer needed -->

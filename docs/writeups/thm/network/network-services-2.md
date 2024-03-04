@@ -1,4 +1,4 @@
-# Network services 2
+<!-- # Network services 2
 
 <Image src="https://tryhackme-images.s3.amazonaws.com/room-icons/5a1f94a2bdee82a5410f42346bd218c8.png" alt="OWASP Juice Shop" width="128" />
 
@@ -388,4 +388,4 @@ cat MySQL.txt
 
 > Congratulations! You did it!
 
-No answer needed
+No answer needed -->

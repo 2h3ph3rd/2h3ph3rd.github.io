@@ -1,4 +1,4 @@
-# Upload Vulnerabilities
+<!-- # Upload Vulnerabilities
 
 <Image src="https://tryhackme-images.s3.amazonaws.com/room-icons/5ebaa42422d2cf0aa103b2c77d02e100.png" width="128" />
 
@@ -175,4 +175,4 @@ Remember to start a listener with `nc -lvnp PORT`.
 
 > Room completed, and hosts file reverted!
 
-No answer needed
+No answer needed -->

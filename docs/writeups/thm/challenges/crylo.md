@@ -1,8 +1,8 @@
 # Crylo
 
-> Learn about the CryptoJS library and JavaScript-based client-side encryption and decryption.
-
 This is a writeup for the room [Crylo](https://tryhackme.com/room/crylo4a) on TryHackMe.
+
+> Learn about the CryptoJS library and JavaScript-based client-side encryption and decryption.
 
 <Image src="https://tryhackme-images.s3.amazonaws.com/room-icons/af0e7c2109847033d31d273498657526.png" width="128" />
 
@@ -58,17 +58,17 @@ It is possible to look to the code to find how it works.
 
 The client decrypts the response using the CryptoJS library.
 
-The response is encrypted using the AES algorithm with the CBC mode and clear text as key and IV.
+The response is encrypted using the AES algorithm with the CBC mode and a hardcode string as key and IV.
 
 Using Cyberchef it is possible to convert the response and see its content.
 
 <Image src="/images/writeups/thm/challenges/crylo/decrypt-response.png" />
 
-It is possible to try with sqlmap to see if it is vulnerable to SQL injection.
+Now that the request is known, we can try sqlmap to see if it is vulnerable to SQL injection.
 
 The easy way to manage the request is to save it in a file and use the `-r` flag.
 
-It seems that using the standard risk level no vulns are found, add `--risk=3 --level=3` to increase it.
+Using the standard risk level is not enough, add `--risk=3 --level=3` to increase it and find a vulnerability.
 
 ```bash
 # Enumerate databases
@@ -88,9 +88,9 @@ Follow the default answer for all questions except:
 you provided a HTTP Cookie header value. The target URL provided its own cookies within the HTTP Set-Cookie header which intersect with yours. Do you want to merge them in further requests? [Y/n] n
 ```
 
-We can obtain a hash of the admin password, we can use hashcat to crack it.
+We can obtain a hash of the admin password that be cracked with a tool like hashcat.
 
-Using a tool hashid we can find the hash type as Django (PBKDF2-SHA256).
+Analyzing the hash with hashid we can find the hash type is Django (PBKDF2-SHA256).
 
 ```bash
 # Save hash in a file

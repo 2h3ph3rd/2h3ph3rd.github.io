@@ -14,7 +14,7 @@ No answer needed
 
 > What is the flag?
 
-THM{FliP_DaT_B1t_oR_G3t_Fl1pP3d}
+<!-- THM{FliP_DaT_B1t_oR_G3t_Fl1pP3d} -->
 
 ## Writeup
 

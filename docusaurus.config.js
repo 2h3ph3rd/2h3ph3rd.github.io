@@ -91,6 +91,12 @@ const config = {
             label: '📝 Writeups',
           },
           {
+            type: 'docSidebar',
+            sidebarId: 'aiSidebar',
+            position: 'left',
+            label: '🧠 AI & ML',
+          },
+          {
             href: '/resources',
             label: '🔗 Resources',
             position: 'left',

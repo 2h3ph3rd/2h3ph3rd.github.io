@@ -112,10 +112,4 @@ $mail->Password = "Cb4_JmWM8zUZWMu@Ys";
 ...
 ```
 
-We can try to use them for ssh:
-
-In this way we obtain the user flag:
-
-```
-4df68ef9947c09d45b2cd642455d4e1a
-```
+By logging in using ssh we can find the user flag.

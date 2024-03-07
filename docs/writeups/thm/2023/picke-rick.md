@@ -1,5 +1,7 @@
 # Pickle Rick
 
+A writeup for the room Rick on TryHackMe.
+
 <Image src="https://i.imgur.com/o9pyhyU.jpg" width="128" />
 
 > What is the first ingredient that Rick needs?

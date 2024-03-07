@@ -1,6 +1,6 @@
 # Crylo
 
-This is a writeup for the room [Crylo](https://tryhackme.com/room/crylo4a) on TryHackMe.
+A writeup for the room [Crylo](https://tryhackme.com/room/crylo4a) on TryHackMe.
 
 > Learn about the CryptoJS library and JavaScript-based client-side encryption and decryption.
 

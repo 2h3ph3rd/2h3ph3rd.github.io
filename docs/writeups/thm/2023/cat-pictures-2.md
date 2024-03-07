@@ -1,8 +1,6 @@
 # Cat Pictures 2
 
-This is a writeup for the TryHackMe room [Cat Pictures 2](https://tryhackme.com/room/catpictures2).
-
-<Image src="https://tryhackme-images.s3.amazonaws.com/room-icons/4c424fa649d64938ae8282b14e4299ac.png" width="128" />
+A writeup for the room [Cat Pictures 2](https://tryhackme.com/room/catpictures2) on TryHackMe.
 
 Main parts of the room:
 
@@ -10,6 +8,10 @@ Main parts of the room:
 - Accessing Gitea and editing files using Git or in-browser editor
 - Runnig custom Ansible tasks through OliveTin
 - Exploiting CVE-2021-3156
+
+> Now with more Cat Pictures!
+
+<Image src="https://tryhackme-images.s3.amazonaws.com/room-icons/4c424fa649d64938ae8282b14e4299ac.png" width="128" />
 
 ## Footprinting
 

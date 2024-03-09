@@ -94,7 +94,7 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'aiSidebar',
             position: 'left',
-            label: '🧠 AI & ML',
+            label: '🧠 AI',
           },
           {
             href: '/resources',

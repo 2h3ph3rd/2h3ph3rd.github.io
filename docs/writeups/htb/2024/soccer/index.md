@@ -1,16 +1,12 @@
 # Soccer
 
-> A writeup for the HTB machine Soccer
+A writeup for the machine [Soccer](https://app.hackthebox.com/machines/Soccer) on Hack The Box.
 
-Soccer is a HTB machine that requires different types of attack for the user flag. On the other hand, the path to root access is relatively straightforward.
+<Image src={require("./banner.png").default} width="700" />
 
-In this writeup there are enumeration with gobuster, upload vulnerability with php reverse shell and sqlmap over websocket using a script.
+## Footprinting
 
-<Image src="/images/writeups/htb/soccer/banner.png" />
-
-## User flag
-
-### Scanning
+### Nmap scan
 
 Use nmap to scan for services.
 
@@ -18,7 +14,7 @@ Use nmap to scan for services.
 nmap -sS <IP>
 ```
 
-<Image src="/images/writeups/htb/soccer/nmap-scan.png" />
+<Image src={require("./nmap-scan.png").default} />
 
 We can see three services: ssh, http, and one on port 9091 used for websockets.
 
@@ -26,7 +22,7 @@ We can see three services: ssh, http, and one on port 9091 used for websockets.
 
 If we look on the website there is only a simple homepage with no other links.
 
-<Image src="/images/writeups/htb/soccer/website.png" />
+<Image src={require("./website.png").default} />
 
 ### Website enumeration
 
@@ -36,11 +32,13 @@ By enumerating the main website using gobuster we can find a subdomain called ti
 gobuster dir -u soccer.htb -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
 ```
 
-<Image src="/images/writeups/htb/soccer/gobuster.png" />
+<Image src={require("./gobuster.png").default} />
+
+## User flag
 
 ### Entering Tiny File Manager
 
-A page is found under /tiny. There is a login but common credentials don't work.
+During the enumeration a page is found under /tiny. There is a login but common credentials don't work.
 
 It is possible to search online for "Tiny File Manager" and the Github repository of this project is one of the first results.
 
@@ -55,7 +53,7 @@ password: 12345
 
 [https://github.com/prasathmani/tinyfilemanager/wiki/Security-and-User-Management](https://github.com/prasathmani/tinyfilemanager/wiki/Security-and-User-Management)
 
-<Image src="/images/writeups/htb/soccer/tiny.png" />
+<Image src={require("./tiny.png").default} />
 
 ### Exploiting the file upload vulnerability in Tiny
 
@@ -63,7 +61,7 @@ Because it is a php server and we can upload file, we can obtain a reverse shell
 
 [https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php](https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php)
 
-<Image src="/images/writeups/htb/soccer/upload.png" />
+<Image src={require("./upload.png").default} />
 
 ### Inside the system
 
@@ -73,7 +71,7 @@ Also, no vulnerabilities are found with tools like LinPeas or LinEnum.
 
 By looking in the available files we can find in the nginx config that there is an additional website as soc-player.soccer.htb.
 
-<Image src="/images/writeups/htb/soccer/nginx.png" />
+<Image src={require("./nginx.png").default} />
 
 ### Second website
 
@@ -83,7 +81,7 @@ By trying different inputs we can see that the message "Tickets exists" is show 
 
 This is a blind sql injection vulnerability.
 
-<Image src="/images/writeups/htb/soccer/sqli.png" />
+<Image src={require("./sqli.png").default} />
 
 ### SQLMap over websocket
 
@@ -120,13 +118,13 @@ sqlmap -u "http://localhost:5000/?id=1" --batch -D soccer_db --tables
 sqlmap -u "http://localhost:5000/?id=1" -D soccer_db -T accounts -C username,email,password --dump
 ```
 
-<Image src="/images/writeups/htb/soccer/sqlmap.png" />
+<Image src={require("./sqlmap.png").default} />
 
 ### User flag
 
 We can enter inside the system using ssh and the credentials found in the database. It is possible in this way to read the user flag.
 
-<Image src="/images/writeups/htb/soccer/user.png" />
+<Image src={require("./user.png").default} />
 
 ## Root flag
 
@@ -142,7 +140,7 @@ Once inside the system for privilige escalation we can run LinPeas. Move it usin
 
 In the final output of LinPeas we can see that there is a possible vulnerability with dstat.
 
-<Image src="/images/writeups/htb/soccer/linpeas.png" />
+<Image src={require("./linpeas.png").default} />
 
 ### Exploiting dstat
 
@@ -173,4 +171,4 @@ Now we can run bash as root and read the flag.
 bash -p
 ```
 
-<Image src="/images/writeups/htb/soccer/root.png" />
+<Image src={require("./root.png").default} />

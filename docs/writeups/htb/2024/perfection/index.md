@@ -6,7 +6,7 @@ A writeup for the machine [Perfection](https://app.hackthebox.com/machines/Perfe
 
 ## Footprinting
 
-### Nmap scans
+### Nmap scan
 
 Firstly, we can start with a nmap scan.
 

@@ -1,22 +1,14 @@
-# ▶️ Introduction
-
-Artificial Intelligence (AI) is the simulation of human intelligence processes by machines, especially computer systems. 
-
-These processes include learning (the acquisition of information and rules for using the information), reasoning (using rules to reach approximate or definite conclusions) and self-correction.
-
-## Machine Learning
-
-Machine Learning (ML) is a type of AI that provides computers with the ability to learn without being explicitly programmed.
+# Introduction to ML
 
 Machine Learning focuses on the development of computer programs that can change when exposed to new data.
 
-Machine Learning can be divided into three types:
+Machine Learning can be divided into three main paradigms:
 
-- Supervised Learning:
-- Unsupervised Learning: the computer is presented with a set of inputs and the goal is to find patterns in the data.
-- Reinforcement Learning: the computer is programmed to take specific actions in a specific environment and the goal is to maximize some notion of cumulative reward.
+- Supervised Learning
+- Unsupervised Learning
+- Reinforcement Learning
 
-### Supervised Learning
+## Supervised Learning
 
 In supervised learning the computer is presented with example inputs and their desired outputs and the goal is to learn a general rule that maps inputs to outputs.
 
@@ -29,9 +21,9 @@ There are two types of supervised learning problems:
 
 In classification there is a small number of possible outputs, while in regression the possible output can be infinite.
 
-<Image src="/images/ai/supervised-learning.drawio.png" />
+<Image src={require("./supervised-learning.drawio.png").default} />
 
-### Unsupervised Learning
+## Unsupervised Learning
 
 In unsupervised learning the computer is presented with a set of inputs and the goal is to find patterns in the data.
 
@@ -43,9 +35,9 @@ There are three types of unsupervised learning problems:
 - Anomaly detection: the goal is to identify data points that are different from the rest.
 - Dimensionality reduction: the goal is to reduce the number of input variables.
 
-<Image src="/images/ai/unsupervised-learning.drawio.png" />
+<Image src={require("./unsupervised-learning.drawio.png").default} />
 
-### Reinforcement Learning
+## Reinforcement Learning
 
 In reinforcement learning the computer is programmed to take specific actions in a specific environment and the goal is to maximize some notion of cumulative reward.
 

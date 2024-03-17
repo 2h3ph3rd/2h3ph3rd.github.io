@@ -1,4 +1,8 @@
-# ℹ️ About
+---
+sidebar_position: 0
+---
+
+# About
 
 This section is about AI and its applications in the field of software development. It covers the basics of AI, its applications, and how it can be used to solve real-world problems.
 

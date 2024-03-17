@@ -1,4 +1,4 @@
-# 1️⃣ Linear Regression
+# Linear Regression
 
 > Given a set of inputs it produces a continuos output
 

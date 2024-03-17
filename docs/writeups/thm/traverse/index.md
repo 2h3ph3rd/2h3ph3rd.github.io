@@ -1,28 +1,29 @@
 # Traverse
 
+> Challenge your secure coding skills to restore a compromised website
+
 A writeup for the room [Traverse](https://tryhackme.com/room/traverse) on TryHackMe.
+
+<Image src="https://tryhackme-images.s3.amazonaws.com/room-icons/d2c1e819d8409b3bee8e15c688a3f088.png" width="256" />
+
 
 This room is about a compromised website that needs to be restored.
 
 The website is compromised by an attacker that uploaded a web shell and renamed a file used for managing the server.
 
-> Challenge your secure coding skills to restore a compromised website
-
-<Image src="https://tryhackme-images.s3.amazonaws.com/room-icons/d2c1e819d8409b3bee8e15c688a3f088.png" width="128" />
-
 ### What type of encoding is used by the hackers to obfuscate the JavaScript file?
 
 The website on port 80 doesn't have much to offer:
 
-<Image src="/images/writeups/thm/2024/traverse/homepage.webp" />
+<Image src={require("./homepage.webp").default} />
 
 Even if there isn’t so much to do here, there could be something in the code:
 
-<Image src="/images/writeups/thm/2024/traverse/source.webp" />
+<Image src={require("./source.webp").default} />
 
 There is a custom Javascript file that could be interesting:
 
-<Image src="/images/writeups/thm/2024/traverse/obfuscated.webp" />
+<Image src={require("./obfuscated.webp").default} />
 
 The content is obfuscated, but it can be identified as hexadecimal. Indeed, there are only pairs of numbers and letters between A and F and each pair corresponds to an ASCII character.
 
@@ -30,11 +31,11 @@ The content is obfuscated, but it can be identified as hexadecimal. Indeed, ther
 
 To deobfuscate the file is enough to use any hex decoder like the one available in [CyberChef](https://gchq.github.io/CyberChef/).
 
-<Image src="/images/writeups/thm/2024/traverse/cyberchef.webp" />
+<Image src={require("./cyberchef.webp").default} />
 
 A possible way to see the result is to run the code inside the browser console:
 
-<Image src="/images/writeups/thm/2024/traverse/script.webp" />
+<Image src={require("./script.webp").default} />
 
 ### Logging is an important aspect. What is the name of the file containing email dumps?
 
@@ -48,21 +49,21 @@ ffuf -w WORDLIST -u URL/FUZZ -s
 
 These are the results from the scan:
 
-<Image src="/images/writeups/thm/2024/traverse/ffuf.webp" />
+<Image src={require("./ffuf.webp").default} />
 
 To search for the email logs it makes sense to start from the logs folder:
 
-<Image src="/images/writeups/thm/2024/traverse/logs.webp" />
+<Image src={require("./logs.webp").default} />
 
 ### The logs folder contains email logs and has a message for the software team lead. What is the name of the directory that Bob has created?
 
 By opening the email_dump.txt file, it is possible to see the following message:
 
-<Image src="/images/writeups/thm/2024/traverse/email.webp" />
+<Image src={require("./email.webp").default} />
 
 In the [SSDLC](https://https://tryhackme.com/room/securesdlc) room on TryHackMe it is explained that the first phase of SSDLC is planning:
 
-<Image src="/images/writeups/thm/2024/traverse/password.webp" />
+<Image src={require("./password.webp").default} />
 
 ### What is the key file for opening the directory that Bob has created for Mark?
 
@@ -72,7 +73,7 @@ It is inside the previous email.
 
 To enter the API page use the correct key from the email:
 
-<Image src="/images/writeups/thm/2024/traverse/api-docs.webp" />
+<Image src={require("./api-docs.webp").default} />
 
 The correct URL for the request is:
 
@@ -80,13 +81,13 @@ The correct URL for the request is:
 http://MACHINE_IP/api/?customer_id=5
 ```
 
-<Image src="/images/writeups/thm/2024/traverse/response.webp" />
+<Image src={require("./response.webp").default} />
 
 ### What is the ID for the user with admin privileges?
 
 The endpoint is affected by an IDOR vulnerability. It is possible to try all the consecutive numbers starting from one until an admin is found.
 
-<Image src="/images/writeups/thm/2024/traverse/idor.webp" />
+<Image src={require("./idor.webp").default} />
 
 ### What is the endpoint for logging in as the admin? Mention the last endpoint instead of the URL. For example, if the answer is URL is tryhackme.com/admin — Just write /admin.
 
@@ -98,7 +99,7 @@ It is possible to intercept the request and change the command to use ls using a
 
 Once the files and folders are listed, the files uploaded by the attacker are shown:
 
-<Image src="/images/writeups/thm/2024/traverse/admin-page.webp" />
+<Image src={require("./admin-page.webp").default} />
 
 ### What is the name of the file renamed by the attacker for managing the web server?
 
@@ -114,4 +115,4 @@ http://MACHINE_IP/realadmin/renamed_file_manager.php
 
 By using the original file manager it is possible to edit the index.php file of the website. After that, the final flag is printed.
 
-<Image src="/images/writeups/thm/2024/traverse/original-file-manager.webp" />
+<Image src={require("./original-file-manager.webp").default} />

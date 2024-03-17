@@ -4,7 +4,7 @@ A writeup for the room [Crylo](https://tryhackme.com/room/crylo4a) on TryHackMe.
 
 > Learn about the CryptoJS library and JavaScript-based client-side encryption and decryption.
 
-<Image src="https://tryhackme-images.s3.amazonaws.com/room-icons/af0e7c2109847033d31d273498657526.png" width="128" />
+<Image src="https://tryhackme-images.s3.amazonaws.com/room-icons/af0e7c2109847033d31d273498657526.png" width="256" />
 
 ## Task 1 - Enumeration
 
@@ -16,7 +16,7 @@ Start the machine and scan the ports with nmap.
 nmap -sS -p- -v [IP]
 ```
 
-<Image src="/images/writeups/thm/2023/crylo/nmap.png" />
+<Image src={require("./nmap.png").default} />
 
 > What is the 403/forbidden web page?
 
@@ -24,7 +24,7 @@ Open the web page in the browser and check the source code.
 
 Other pages return a 404 error.
 
-<Image src="/images/writeups/thm/2023/crylo/homepage.png" />
+<Image src={require("./homepage.png").default} />
 
 Nothing seems to be interesting, so we can try to enumerate the website with gobuster.
 
@@ -34,7 +34,7 @@ It is important to set the `-s` flag to search for at least the 403 status code.
 gobuster dir -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php,txt,html,css,js -q -s "200,403" -u [URL]
 ```
 
-<Image src="/images/writeups/thm/2023/crylo/gobuster.png" />
+<Image src={require("./gobuster.png").default} />
 
 ## Task 2 - Injection
 
@@ -46,7 +46,7 @@ It is a common name for the default user of a web application.
 
 We can try to login with common credentials, but nothing tried works.
 
-<Image src="/images/writeups/thm/2023/crylo/login.png" />
+<Image src={require("./login.png").default} />
 
 Looking to the response we can see that the final text cannot be parsed directly.
 
@@ -54,7 +54,7 @@ However, the client understands it perfectly and shows the result.
 
 It is possible to look to the code to find how it works.
 
-<Image src="/images/writeups/thm/2023/crylo/code-login.png" />
+<Image src={require("./code-login.png").default} />
 
 The client decrypts the response using the CryptoJS library.
 
@@ -62,7 +62,7 @@ The response is encrypted using the AES algorithm with the CBC mode and a hardco
 
 Using Cyberchef it is possible to convert the response and see its content.
 
-<Image src="/images/writeups/thm/2023/crylo/decrypt-response.png" />
+<Image src={require("./decrypt-response.png").default} />
 
 Now that the request is known, we can try sqlmap to see if it is vulnerable to SQL injection.
 
@@ -103,7 +103,7 @@ hashid -m hash.txt
 hashcat -m 10000 -a 0 hash.txt /usr/share/wordlists/rockyou.txt
 ```
 
-<Image src="/images/writeups/thm/2023/crylo/hashcat.png" />
+<Image src={require("./hashcat.png").default} />
 
 ## Task 3 - Encryption
 
@@ -113,7 +113,7 @@ Look in `/static/js/validation.js` to find the answer.
 
 The library can be easily recognized by the capitalized name of the variable.
 
-<Image src="/images/writeups/thm/2023/crylo/encryption.png" />
+<Image src={require("./encryption.png").default} />
 
 > Which JSON parameter was used to validate the pin?
 
@@ -121,7 +121,7 @@ Look in `/static/js/validation.js` to find the answer.
 
 There is a specific if statement for the pin parameter.
 
-<Image src="/images/writeups/thm/2023/crylo/pin-set.png" />
+<Image src={require("./pin-set.png").default} />
 
 > Which encryption method is used?
 

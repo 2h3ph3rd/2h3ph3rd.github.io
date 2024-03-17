@@ -1,11 +1,10 @@
 # Traverse
 
-> Challenge your secure coding skills to restore a compromised website
-
 A writeup for the room [Traverse](https://tryhackme.com/room/traverse) on TryHackMe.
 
-<Image src="https://tryhackme-images.s3.amazonaws.com/room-icons/d2c1e819d8409b3bee8e15c688a3f088.png" width="256" />
+> Challenge your secure coding skills to restore a compromised website
 
+<Image src="https://tryhackme-images.s3.amazonaws.com/room-icons/d2c1e819d8409b3bee8e15c688a3f088.png" width="256" />
 
 This room is about a compromised website that needs to be restored.
 

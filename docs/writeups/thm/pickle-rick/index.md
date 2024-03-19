@@ -6,21 +6,7 @@ A writeup for the room [Pickle Rick](https://tryhackme.com/room/picklerick) on T
 
 <Image src="https://i.imgur.com/o9pyhyU.jpg" width="256" />
 
-> What is the first ingredient that Rick needs?
-
-mr. meeseek hair
-
-> What is the second ingredient in Rick’s potion?
-
-1 jerry tear
-
-> What is the last and final ingredient?
-
-fleeb juice
-
-## Walkthrough
-
-### First ingredient
+## First ingredient
 
 By opening the given link we can find a simple homepage without any external links.
 
@@ -60,7 +46,7 @@ However, commands like cat, head and tail are blocked.
 By searching online for alternatives to cat, we can find `less` that works.
 The output will tell the first ingredient.
 
-### Second ingredient
+## Second ingredient
 
 Inside the file `clue.txt` there is a hint to obtain the second ingredient.
 
@@ -80,7 +66,7 @@ less /home/rick/second\ ingredients
 
 <Image src={require("./second.png").default} />
 
-### Third ingredient
+## Third ingredient
 
 The third ingredient could be inside the root folder. As we are not root, we need to escalate privileges.
 

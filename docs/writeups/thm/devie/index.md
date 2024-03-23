@@ -4,7 +4,7 @@ A writeup for the room [Devie](https://tryhackme.com/room/devie) on TryHackMe.
 
 > A developer has asked you to do a vulnerability check on their system.
 
-<Image src={require("./logo.png").default} width="256" />
+<Image src={require("./logo.png").default} height="256" />
 
 ### Scanning
 

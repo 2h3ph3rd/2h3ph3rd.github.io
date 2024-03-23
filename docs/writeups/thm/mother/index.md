@@ -4,7 +4,7 @@ A writeup for the room [Mother](https://tryhackme.com/room/codeanalysis) on TryH
 
 > Exploit flaws found in Mother's code to reveal its secrets.
 
-<Image src={require("./logo.png").default} width="256" />
+<Image src={require("./logo.png").default} height="256" />
 
 ### What is the number of the emergency command override?
 

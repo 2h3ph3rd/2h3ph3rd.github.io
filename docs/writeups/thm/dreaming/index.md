@@ -4,7 +4,7 @@ A writeup for the room [Dreaming](https://tryhackme.com/room/dreaming) on TryHac
 
 > Solve the riddle that dreams have woven.
 
-<Image src={require("./logo.png").default} width="256" />
+<Image src={require("./logo.png").default} height="256" />
 
 Apart from an initial small web vulnerability, all flags require basic privilege escalation techniques and to work with Python scripts.
 

@@ -4,7 +4,7 @@ A writeup for the room [Probe](https://tryhackme.com/room/probe) on TryHackMe.
 
 > Use your baseline scanning skills to enumerate a secure network.
 
-<Image src={require("./logo.png").default} width="256" />
+<Image src={require("./logo.png").default} height="256" />
 
 This room requires an intermediate knowledge of nmap and other scanning tools such as gobuster, nikto, and wpscan.
 

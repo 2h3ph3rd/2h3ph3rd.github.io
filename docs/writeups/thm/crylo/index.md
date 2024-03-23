@@ -4,7 +4,7 @@ A writeup for the room [Crylo](https://tryhackme.com/room/crylo4a) on TryHackMe.
 
 > Learn about the CryptoJS library and JavaScript-based client-side encryption and decryption.
 
-<Image src={require("./logo.png").default} width="256" />
+<Image src={require("./logo.png").default} height="256" />
 
 ## Task 1 - Enumeration
 

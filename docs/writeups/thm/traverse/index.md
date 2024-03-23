@@ -4,7 +4,7 @@ A writeup for the room [Traverse](https://tryhackme.com/room/traverse) on TryHac
 
 > Challenge your secure coding skills to restore a compromised website
 
-<Image src={require("./logo.png").default} width="256" />
+<Image src={require("./logo.png").default} height="256" />
 
 This room is about a compromised website that needs to be restored.
 

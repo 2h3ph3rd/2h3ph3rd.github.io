@@ -4,7 +4,7 @@ A writeup for the room [Cat Pictures 2](https://tryhackme.com/room/catpictures2)
 
 > Now with more Cat Pictures!
 
-<Image src="https://tryhackme-images.s3.amazonaws.com/room-icons/4c424fa649d64938ae8282b14e4299ac.png" width="256" />
+<Image src={require("./logo.png").default} width="256" />
 
 Main parts of the room:
 

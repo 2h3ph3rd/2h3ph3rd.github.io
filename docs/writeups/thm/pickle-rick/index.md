@@ -4,7 +4,7 @@ A writeup for the room [Pickle Rick](https://tryhackme.com/room/picklerick) on T
 
 > A Rick and Morty CTF. Help turn Rick back into a human!
 
-<Image src="https://i.imgur.com/o9pyhyU.jpg" width="256" />
+<Image src={require("./logo.jpeg").default} width="256" />
 
 ## First ingredient
 

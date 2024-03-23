@@ -4,7 +4,7 @@ A writeup for the room [Flip](https://tryhackme.com/room/flip) on TryHackMe.
 
 > Hey, do a flip!
 
-<Image src="https://tryhackme-images.s3.amazonaws.com/room-icons/30129d71d291d86c1976d56c3333d8f7.png" width="256" />
+<Image src={require("./logo.png").default} width="256" />
 
 The room requires knowledge of bit flipping attacks on cryptographic algorithms such as AES and the CBC mode of operation.
 

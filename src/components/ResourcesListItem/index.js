@@ -33,14 +33,14 @@ function GenerateHeader(resource) {
 
 function GenerateFooter(resource) {
   let tags = [
-    <span class="badge badge--primary margin-right--xs">
+    <span className="badge badge--primary margin-right--xs">
       {resource.category}
     </span>,
   ]
   resource.tags.forEach((tag) => {
     tags = [
       ...tags,
-      <span class="badge badge--secondary margin-right--xs">{tag}</span>,
+      <span className="badge badge--secondary margin-right--xs">{tag}</span>,
     ]
   })
   return tags
@@ -62,14 +62,14 @@ export default function ResourcesListItem({ resource }) {
   let tags = GenerateFooter(resource)
 
   return (
-    <a href={resource.url} class="nolink" target="_blank">
+    <a href={resource.url} className="nolink" target="_blank">
       <div className={clsx('card zoom-effect', styles.card)}>
         {image}
-        <div class="card__body">
+        <div className="card__body">
           {header}
           {description}
         </div>
-        <div class="card__footer">{tags}</div>
+        <div className="card__footer">{tags}</div>
       </div>
     </a>
   )

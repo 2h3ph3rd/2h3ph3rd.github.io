@@ -9,10 +9,10 @@ export default function () {
   const { siteConfig } = useDocusaurusContext()
   return (
     <Layout>
-      <div class="hero shadow--lw">
-        <div class="container">
-          <h1 class="hero__title">🔗 Resources</h1>
-          <p class="hero__subtitle">
+      <div className="hero shadow--lw">
+        <div className="container">
+          <h1 className="hero__title">🔗 Resources</h1>
+          <p className="hero__subtitle">
             A collection of awesome resources for programming, security, and
             devops topics
           </p>

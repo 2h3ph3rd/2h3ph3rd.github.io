@@ -8,13 +8,13 @@ import HomepageFeedItem from '../HomepageFeedItem'
 export default function HomepageFeed() {
   let items = feed.slice(0, 8)
   return (
-    <div class="container">
-      <div class="row padding-bottom--lg">
-        <h1 className={styles.title}>Latest articles</h1>
+    <div className="container">
+      <div className="row padding-bottom--lg">
+        <h1 classNameName={styles.title}>Latest articles</h1>
       </div>
-      <div class="row margin-bottom--xl">
+      <div className="row margin-bottom--xl">
         {items.map((item, idx) => (
-          <div class="col col--3 margin-bottom--md">
+          <div className="col col--3 margin-bottom--md">
             <HomepageFeedItem idx={idx} item={item} />
           </div>
         ))}

@@ -5,10 +5,10 @@ import styles from './styles.module.css'
 export default function FooterWrapper(props) {
   return (
     <>
-      {/* <div class="hero shadow--lw hero--dark padding-top--xl">
-        <div class="container">
-          <div class="row">
-            <div class="col col--4">
+      {/* <div className="hero shadow--lw hero--dark padding-top--xl">
+        <div className="container">
+          <div className="row">
+            <div className="col col--4">
               <p>
                 <b>Links</b>
               </p>
@@ -22,12 +22,12 @@ export default function FooterWrapper(props) {
                 <a className={styles.link} href="/resources">Resources</a>
               </p>
             </div>
-            <div class="col col--4">
+            <div className="col col--4">
               <p>
                 <a className={styles.link} href="/docs/security">Source</a>
               </p>
             </div>
-            <div class="col col--4"></div>
+            <div className="col col--4"></div>
           </div>
         </div>
       </div> */}

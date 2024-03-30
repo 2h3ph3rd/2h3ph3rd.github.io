@@ -12,7 +12,7 @@ export default function () {
       <div className="container padding-vert--lg">
         <div className="row">
           {resources.map((resource, idx) => (
-            <div class="col col--3 margin-bottom--md">
+            <div className="col col--3 margin-bottom--md">
               <ResourcesListItem key={idx} resource={resource} />
             </div>
           ))}

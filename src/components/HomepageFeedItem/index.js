@@ -15,19 +15,19 @@ function getDescription(descrition) {
 
 export default function HomepageFeedItem({ item }) {
   return (
-    <a href={item.url} target="_blank" class="nolink">
+    <a href={item.url} target="_blank" className="nolink">
       <div className={clsx('card zoom-effect shadow--tl', styles.card)}>
-        <div class="card__image">
+        <div className="card__image">
           <img
             src={item.image}
             title="Logo Title Text 1"
             className={styles.image}
           />
         </div>
-        <div class="card__body">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col">
+        <div className="card__body">
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col">
                 <h3>{item.title}</h3>
                 <p>{getDescription(item.description)}</p>
               </div>

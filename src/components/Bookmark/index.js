@@ -10,14 +10,14 @@ export default function ({ url, title }) {
   parser.remove();
 
   return (
-    <a href={url} target="_blank" class="no-link">
-      <div class="card shadow--tl zoom-effect">
-        <div class="card__header">
-          <div class="avatar">
-            <img class="avatar__photo" src={favicon} />
-            <div class="avatar__intro">
-              <div class="avatar__name">{title}</div>
-              <small class="avatar__subtitle">
+    <a href={url} target="_blank" className="no-link">
+      <div className="card shadow--tl zoom-effect">
+        <div className="card__header">
+          <div className="avatar">
+            <img className="avatar__photo" src={favicon} />
+            <div className="avatar__intro">
+              <div className="avatar__name">{title}</div>
+              <small className="avatar__subtitle">
                 {url}
               </small>
             </div>

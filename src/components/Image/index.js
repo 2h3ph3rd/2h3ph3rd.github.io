@@ -21,8 +21,8 @@ export default function ({ src, width, height, caption, source }) {
 
   return (
     <p align="center">
-      <a href={src} target="_blank" class="no-link">
-        <img src={src} width={width} height={height} class="zoom-effect" />
+      <a href={src} target="_blank" className="no-link">
+        <img src={src} width={width} height={height} className="zoom-effect" />
       </a>
       {caption}{source}
     </p>

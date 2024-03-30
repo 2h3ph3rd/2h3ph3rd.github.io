@@ -9,11 +9,11 @@ function mobileVersion() {
       <div className="container">
         <div className="row">
           <div className="col col--12 padding--sm text--center">
-            <h1 className="hero__title">
+            <p className="hero__title">
               Hey there!
               <br />
               I'm Francesco <span className={styles.hand}>👋</span>
-            </h1>
+            </p>
           </div>
         </div>
       </div>
@@ -30,13 +30,15 @@ function desktopVersion() {
         <div className="row">
           <div className="col col--5 padding--xl text--center">
             <h1 className="hero__title">
-              Hey there!
-              <br />
-              I'm Francesco <span className={styles.hand}>👋</span>
+              <span className={styles.title}>
+                Hey there!
+                <br />
+                I'm Francesco <span className={styles.hand}>👋</span>
+              </span>
             </h1>
           </div>
           <div className="col col--5 col--offset-1">
-            <Svg className={styles.headerImage} />
+            <Svg className={styles.image} />
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ({ src, width, height, source }) {
+export default function ({ src, width, height, caption, source }) {
   if (width == undefined) {
     width = 'auto'
   }
@@ -20,11 +20,11 @@ export default function ({ src, width, height, source }) {
   }
 
   return (
-    <p align="center" class="zoom-effect">
+    <p align="center">
       <a href={src} target="_blank" class="no-link">
-        <img src={src} width={width} height={height} />
+        <img src={src} width={width} height={height} class="zoom-effect" />
       </a>
-      {source}
+      {caption}{source}
     </p>
   )
 }

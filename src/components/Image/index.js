@@ -1,7 +1,6 @@
 import React from 'react'
 
-export default function ({ children, src, width, height }) {
-  let caption = '';
+export default function ({ src, width, height, source }) {
   if (width == undefined) {
     width = 'auto'
   }
@@ -10,14 +9,22 @@ export default function ({ children, src, width, height }) {
     height = 'auto'
   }
 
-  if (children) {
-    caption = <p style={{ fontSize: '0.8em' }}>{children}</p>
+  if (source) {
+    source = (
+      <p>
+        <small>
+          [<a href={source} target="_blank">source</a>]
+        </small>
+      </p>
+    )
   }
 
   return (
-    <p align="center">
-      <img src={src} width={width} height={height}></img>
-      {caption}
+    <p align="center" class="zoom-effect">
+      <a href={src} target="_blank" class="no-link">
+        <img src={src} width={width} height={height} />
+      </a>
+      {source}
     </p>
   )
 }

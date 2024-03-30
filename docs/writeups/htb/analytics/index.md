@@ -2,7 +2,7 @@
 
 A writeup for the machine [Analytics](https://app.hackthebox.com/machines/Analytics) on Hack The Box.
 
-<Image src={require("./banner.png").default} width="700" />
+<Image src={require("./banner.png").default} height="500" />
 
 ## Footprinting
 
@@ -114,7 +114,7 @@ After logging in, we can find the user flag inside the home directory.
 cat user.txt
 ```
 
-<Image src={require("./user-flag.png").default} />
+<Image src={require("./user-flag.png").default} height="512" />
 
 ## Root flag
 

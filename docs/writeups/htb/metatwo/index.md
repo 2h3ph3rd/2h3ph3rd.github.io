@@ -2,7 +2,7 @@
 
 A writeup for the machine [MetaTwo](https://app.hackthebox.com/machines/MetaTwo) on Hack The Box.
 
-<Image src={require("./banner.png").default} width="700" />
+<Image src={require("./banner.png").default} height="500" />
 
 ## Footprinting
 

@@ -2,6 +2,7 @@ package feed
 
 import (
 	"encoding/xml"
+	"log"
 	"regexp"
 
 	"2h3ph3rd.github.io/tools/common"
@@ -50,6 +51,8 @@ func getMediumFeed() (feed MediumFeed, err error) {
 	if err := xml.Unmarshal(result, &feed); err != nil {
 		return feed, err
 	}
+
+	log.Println(len(feed.Channel.Items))
 
 	return feed, err
 }

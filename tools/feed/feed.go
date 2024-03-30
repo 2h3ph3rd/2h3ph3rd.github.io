@@ -15,7 +15,7 @@ type Article struct {
 	scraper.Metadata
 }
 
-// Generate
+// Generate creates a new feed.json file
 func Generate() error {
 	mediumFeed, err := getMediumFeed()
 	if err != nil {
@@ -24,7 +24,7 @@ func Generate() error {
 
 	mediumFeed.clean()
 
-	feed, err := NewFeedFromMediumFeed(mediumFeed)
+	feed, err := newFeed(mediumFeed)
 	if err != nil {
 		return err
 	}
@@ -34,7 +34,8 @@ func Generate() error {
 	return nil
 }
 
-func NewFeedFromMediumFeed(mediumFeed MediumFeed) (Feed, error) {
+// newFeed creates a new feed
+func newFeed(mediumFeed MediumFeed) (Feed, error) {
 	f := Feed{}
 	for _, item := range mediumFeed.Channel.Items {
 		metadata, err := scraper.Scrape(item.Link)

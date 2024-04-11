@@ -1,4 +1,4 @@
-# 🐚 SSH
+# SSH (22)
 
 Secure Shell (SSH) is a cryptographic network protocol for operating network services securely over an unsecured network.
 

@@ -1,12 +1,10 @@
-# 🔎 Scanning
-
-## Nmap
+# Nmap
 
 :::tip
 Start with a fast scan to check for open ports and than run a full scan only on them.
 :::
 
-Fast scan, requires sudo priviliges:
+Fast scan, requires priviliges:
 
 ```bash
 nmap -sS <HOST>
@@ -35,7 +33,7 @@ nmap -sS -p- 10.10.1.1
 
 ### TCP scan
 
-TCP scan is the default scan type when nmap is run without sudo priviliges.
+TCP scan is the default scan type when nmap is run without priviliges.
 
 ```bash
 nmap -sT <HOST>
@@ -50,7 +48,7 @@ Each port is checked through a complete three-way handshake.
 
 ### SYN scan
 
-SYN scan is the default scan type when nmap is run with sudo priviliges.
+SYN scan is the default scan type when nmap is run with priviliges.
 
 ```bash
 nmap -sS <HOST>

@@ -1,4 +1,4 @@
-# 📞 Telnet
+# Telnet (23)
 
 Telnet is the predecessor of SSH.
 

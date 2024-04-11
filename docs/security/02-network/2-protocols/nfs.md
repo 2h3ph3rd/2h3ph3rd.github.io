@@ -1,4 +1,4 @@
-# 🗂️ NFS
+# NFS (2049)
 
 Network File System (NFS) is a distributed file system protocol that allows to share remote directories over a network.
 
@@ -10,15 +10,15 @@ The client is responsible for mounting the shared directory, and accessing the f
 
 ## Commands
 
-### List shares on a server
+### List available shares
 
 ```bash
-/usr/sbin/showmount -e <IP>
+showmount -e TARGET_IP
 ```
 
 ### Mount a share
 
 ```bash
 mkdir /tmp/mount
-mount -t nfs <IP>:<SHARE> /tmp/mount
+mount -t nfs TARGET_IP:SHARE_NAME /tmp/mount
 ```

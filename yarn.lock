@@ -16,6 +16,7 @@ __metadata:
     docusaurus-plugin-sass: "npm:^0.2.5"
     node-sass: "npm:^9.0.0"
     prism-react-renderer: "npm:^2.3.1"
+    raw-loader: "npm:^4.0.2"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     react-gist: "npm:^1.2.4"
@@ -12746,6 +12747,18 @@ __metadata:
     iconv-lite: "npm:0.4.24"
     unpipe: "npm:1.0.0"
   checksum: 10c0/5dad5a3a64a023b894ad7ab4e5c7c1ce34d3497fc7138d02f8c88a3781e68d8a55aa7d4fd3a458616fa8647cc228be314a1c03fb430a07521de78b32c4dd09d2
+  languageName: node
+  linkType: hard
+
+"raw-loader@npm:^4.0.2":
+  version: 4.0.2
+  resolution: "raw-loader@npm:4.0.2"
+  dependencies:
+    loader-utils: "npm:^2.0.0"
+    schema-utils: "npm:^3.0.0"
+  peerDependencies:
+    webpack: ^4.0.0 || ^5.0.0
+  checksum: 10c0/981ebe65e1cee7230300d21ba6dcd8bd23ea81ef4ad2b167c0f62d93deba347f27921d330be848634baab3831cf9f38900af6082d6416c2e937fe612fa6a74ff
   languageName: node
   linkType: hard
 

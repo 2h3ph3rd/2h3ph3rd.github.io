@@ -31,7 +31,9 @@ The key is 5 characters long, as can be seen in the code due to the k=5 paramete
 The flag on the other hand is 40 characters long, because the encoded flag is 80 hexadecimal characters long.
 
 The first four characters of the plaintext are known as 'THM\{'.
-These can be used to retrieve the first four characters of the key by XORing the plaintext with the known characters.
+These can be used to retrieve the first four characters of the key by XORing them with the encoded flag.
+
+The XOR operation is commutative and reversible, so x = y ^ z is equivalent to y = x ^ z.
 
 Since the length of the key is a perfect divisor of the length of the flag, the last character of the key is also known as the last character of the flag '\}'.
 

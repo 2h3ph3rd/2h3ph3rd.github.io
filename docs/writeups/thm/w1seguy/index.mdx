@@ -1,0 +1,44 @@
+import CodeBlock from '@theme/CodeBlock'
+import Script from '!!raw-loader!./script.py'
+
+# W1seGuy
+
+A writeup for the room [W1seGuy](https://tryhackme.com/r/room/w1seguy) on TryHackMe.
+
+> A w1se guy 0nce said, the answer is usually as plain as day.
+
+<Image src={require('./logo.png').default} height="256" />
+
+## Get those flags!
+
+### Analyzing the code
+
+The code provided in the room executes a simple encryption algorithm.
+
+A first flag is read from an external file and then encrypted using a key.
+The operation is performed by XORing between the flag and the key, repeating the key if it is shorter than the flag.
+
+The encoded flag is then printed in hexadecimal format. This means that each byte of the flag is represented by two hexadecimal characters.
+
+The machine then asks for the key and, if it is correct, returns a second flag.
+
+<Image src={require('./1-run.png').default} />
+
+### Exploiting the encryption
+
+The key is 5 characters long, as can be seen in the code due to the k=5 parameter.
+
+The flag on the other hand is 40 characters long, because the encoded flag is 80 hexadecimal characters long.
+
+The first four characters of the plaintext are known as 'THM\{'.
+These can be used to retrieve the first four characters of the key by XORing the plaintext with the known characters.
+
+Since the length of the key is a perfect divisor of the length of the flag, the last character of the key is also known as the last character of the flag '\}'.
+
+<Image src={require('./2-exploit.png').default} />
+
+### The final script
+
+The following script can be used to retrieve the key and the final flag:
+
+<CodeBlock language="py">{Script}</CodeBlock>

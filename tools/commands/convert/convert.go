@@ -40,6 +40,7 @@ func checkFolder(path string) error {
 
 	for _, entry := range entries {
 		if entry.IsDir() {
+			// Recursively check subfolders
 			subpath := fmt.Sprintf("%s/%s", path, entry.Name())
 			if err := checkFolder(subpath); err != nil {
 				return err
@@ -52,6 +53,7 @@ func checkFolder(path string) error {
 		}
 
 		if slices.Contains(imageExtensions, nameSplitted[1]) {
+			// Convert image to webp
 			if err := convertImage(path, nameSplitted[0], nameSplitted[1]); err != nil {
 				return err
 			}
@@ -63,13 +65,18 @@ func checkFolder(path string) error {
 
 // convertImage converts the image to avif format
 func convertImage(path, name, ext string) error {
-	imagePath := fmt.Sprintf("%s/%s.%s", path, name, ext)
-	convertedImagePath := fmt.Sprintf("%s/%s.webp", path, name)
-	cmd := exec.Command("convert", imagePath, convertedImagePath)
+	imageFile := fmt.Sprintf("%s.%s", name, ext)
+	newImageFile := fmt.Sprintf("%s.webp", name)
+
+	imagePath := fmt.Sprintf("%s/%s", path, imageFile)
+	newImagePath := fmt.Sprintf("%s/%s", path, newImageFile)
+
+	cmd := exec.Command("convert", imagePath, newImagePath)
 	if err := cmd.Run(); err != nil {
 		return err
 	}
 
+	// Find and read markdown file to replace image path
 	mdFilePath := fmt.Sprintf("%s/index.md", path)
 	if !common.FileExists(mdFilePath) {
 
@@ -84,11 +91,13 @@ func convertImage(path, name, ext string) error {
 		return err
 	}
 
-	newMdFileContent := strings.ReplaceAll(string(mdFileContent), fmt.Sprintf("%s.%s", name, ext), fmt.Sprintf("%s.webp", name))
+	// Replace image path in markdown file
+	newMdFileContent := strings.ReplaceAll(string(mdFileContent), imageFile, newImageFile)
 	if err := os.WriteFile(mdFilePath, []byte(newMdFileContent), 0644); err != nil {
 		return err
 	}
 
+	// Remove old image
 	cmd = exec.Command("rm", imagePath)
 	if err := cmd.Run(); err != nil {
 		return err

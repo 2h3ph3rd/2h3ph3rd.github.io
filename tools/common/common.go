@@ -95,3 +95,8 @@ func WriteJsonPretty(path string, data interface{}) {
 		panic(err)
 	}
 }
+
+func FileExists(path string) bool {
+	_, err := os.Stat(path)
+	return !os.IsNotExist(err)
+}

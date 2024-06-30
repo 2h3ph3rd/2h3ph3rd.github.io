@@ -4,7 +4,7 @@ A writeup for the room [Publisher](https://tryhackme.com/r/room/publisher) on Tr
 
 > Test your enumeration skills on this boot-to-root machine.
 
-<Image src={require("./logo.avif").default} height="256" />
+<Image src={require("./logo.webp").default} height="256" />
 
 ## What is the user flag?
 
@@ -18,7 +18,7 @@ nmap -sS TARGET_IP
 
 The scan reveals two open ports: 22 (SSH) and 80 (HTTP).
 
-<Image src={require("./1-1-nmap.avif").default} height="256" />
+<Image src={require("./1-1-nmap.webp").default} height="256" />
 
 ### Enumerating the web server with gobuster
 

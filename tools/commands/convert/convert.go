@@ -12,7 +12,7 @@ import (
 	"2h3ph3rd.github.io/tools/common"
 )
 
-var imageExtensions = []string{"jpg", "jpeg", "png", "webp", "gif"}
+var imageExtensions = []string{"jpg", "jpeg", "png", "gif", "svg", "avif"}
 
 func Convert() error {
 	log.Println("Converting images...")
@@ -26,11 +26,13 @@ func Convert() error {
 	return nil
 }
 
-var ErrMissingMarkdownFile = errors.New("Cannot find markdown file")
+var ErrMissingMarkdownFile = errors.New("cannot find markdown file")
 
 // checkFolder checks the folder for images and converts them to avif format
 // this operation is done recursively to check all subfolders
 func checkFolder(path string) error {
+	log.Println(path)
+
 	entries, err := os.ReadDir(path)
 	if err != nil {
 		return err

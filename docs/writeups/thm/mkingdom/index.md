@@ -4,7 +4,7 @@ A writeup for the room [mKingdom](https://tryhackme.com/room/mkingdom) on TryHac
 
 > Beginner-friendly box inspired by a certain mustache man.
 
-<Image src={require("./logo.webp").default} height="256" />
+<!-- <Image src={require("./logo.webp").default} height="256" /> -->
 
 ## What is user.txt?
 

@@ -4,7 +4,7 @@ A writeup for the room [Airplane](https://tryhackme.com/room/include) on TryHack
 
 > Are you ready to fly?
 
-<Image src={require("./logo.svg").default} height="256" />
+<Image src={require("./logo.webp").default} height="256" />
 
 ### What is user.txt
 

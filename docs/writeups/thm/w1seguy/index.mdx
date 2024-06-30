@@ -7,7 +7,7 @@ A writeup for the room [W1seGuy](https://tryhackme.com/r/room/w1seguy) on TryHac
 
 > A w1se guy 0nce said, the answer is usually as plain as day.
 
-<Image src={require('./logo.png').default} height="256" />
+<Image src={require('./logo.webp').default} height="256" />
 
 ## Get those flags!
 
@@ -22,7 +22,7 @@ The encoded flag is then printed in hexadecimal format. This means that each byt
 
 The machine then asks for the key and, if it is correct, returns a second flag.
 
-<Image src={require('./1-run.png').default} />
+<Image src={require('./1-run.webp').default} />
 
 ### Exploiting the encryption
 
@@ -37,7 +37,7 @@ The XOR operation is commutative and reversible, so x = y ^ z is equivalent to y
 
 Since the length of the key is a perfect divisor of the length of the flag, the last character of the key is also known as the last character of the flag '\}'.
 
-<Image src={require('./2-exploit.png').default} />
+<Image src={require('./2-exploit.webp').default} />
 
 ### The final script
 

@@ -2,7 +2,7 @@
 
 A writeup for the machine [Soccer](https://app.hackthebox.com/machines/Soccer) on Hack The Box.
 
-<Image src={require("./banner.png").default} height="500" />
+<Image src={require("./banner.webp").default} height="500" />
 
 ## Footprinting
 
@@ -14,7 +14,7 @@ Use nmap to scan for services.
 nmap -sS <IP>
 ```
 
-<Image src={require("./nmap-scan.png").default} />
+<Image src={require("./nmap-scan.webp").default} />
 
 We can see three services: ssh, http, and one on port 9091 used for websockets.
 
@@ -22,7 +22,7 @@ We can see three services: ssh, http, and one on port 9091 used for websockets.
 
 If we look on the website there is only a simple homepage with no other links.
 
-<Image src={require("./website.png").default} />
+<Image src={require("./website.webp").default} />
 
 ### Website enumeration
 
@@ -32,7 +32,7 @@ By enumerating the main website using gobuster we can find a subdomain called ti
 gobuster dir -u soccer.htb -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
 ```
 
-<Image src={require("./gobuster.png").default} />
+<Image src={require("./gobuster.webp").default} />
 
 ## User flag
 
@@ -53,7 +53,7 @@ password: 12345
 
 [https://github.com/prasathmani/tinyfilemanager/wiki/Security-and-User-Management](https://github.com/prasathmani/tinyfilemanager/wiki/Security-and-User-Management)
 
-<Image src={require("./tiny.png").default} />
+<Image src={require("./tiny.webp").default} />
 
 ### Exploiting the file upload vulnerability in Tiny
 
@@ -61,7 +61,7 @@ Because it is a php server and we can upload file, we can obtain a reverse shell
 
 [https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php](https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php)
 
-<Image src={require("./upload.png").default} />
+<Image src={require("./upload.webp").default} />
 
 ### Inside the system
 
@@ -71,7 +71,7 @@ Also, no vulnerabilities are found with tools like LinPeas or LinEnum.
 
 By looking in the available files we can find in the nginx config that there is an additional website as soc-player.soccer.htb.
 
-<Image src={require("./nginx.png").default} />
+<Image src={require("./nginx.webp").default} />
 
 ### Second website
 
@@ -81,7 +81,7 @@ By trying different inputs we can see that the message "Tickets exists" is show 
 
 This is a blind sql injection vulnerability.
 
-<Image src={require("./sqli.png").default} />
+<Image src={require("./sqli.webp").default} />
 
 ### SQLMap over websocket
 
@@ -118,13 +118,13 @@ sqlmap -u "http://localhost:5000/?id=1" --batch -D soccer_db --tables
 sqlmap -u "http://localhost:5000/?id=1" -D soccer_db -T accounts -C username,email,password --dump
 ```
 
-<Image src={require("./sqlmap.png").default} />
+<Image src={require("./sqlmap.webp").default} />
 
 ### User flag
 
 We can enter inside the system using ssh and the credentials found in the database. It is possible in this way to read the user flag.
 
-<Image src={require("./user.png").default} />
+<Image src={require("./user.webp").default} />
 
 ## Root flag
 
@@ -140,7 +140,7 @@ Once inside the system for privilige escalation we can run LinPeas. Move it usin
 
 In the final output of LinPeas we can see that there is a possible vulnerability with dstat.
 
-<Image src={require("./linpeas.png").default} />
+<Image src={require("./linpeas.webp").default} />
 
 ### Exploiting dstat
 
@@ -171,4 +171,4 @@ Now we can run bash as root and read the flag.
 bash -p
 ```
 
-<Image src={require("./root.png").default} />
+<Image src={require("./root.webp").default} />

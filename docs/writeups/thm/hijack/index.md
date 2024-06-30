@@ -4,7 +4,7 @@ A writeup for the room [Hijack](https://tryhackme.com/room/hijack) on TryHackMe.
 
 > Misconfigs conquered, identities claimed.
 
-<Image src={require("./logo.png").default} height="256" />
+<Image src={require("./logo.webp").default} height="256" />
 
 ## Footprinting
 
@@ -16,7 +16,7 @@ We start by running an Nmap scan to discover open ports and services running on 
 nmap -sC MACHINE_IP
 ```
 
-<Image src={require("./01-nmap.png").default} />
+<Image src={require("./01-nmap.webp").default} />
 
 The scan reveals the following open ports and services:
 
@@ -40,17 +40,17 @@ But it doesn't work.
 
 We can visit the website hosted on the target machine.
 
-<Image src={require("./02-website.png").default} />
+<Image src={require("./02-website.webp").default} />
 
 The website is a simple page with a login/signup form and a link to the admin page.
 
 If we try to login with random credentials, we get an error message.
 
-<Image src={require("./03-login.png").default} />
+<Image src={require("./03-login.webp").default} />
 
 We can sign up for an account.
 
-<Image src={require("./04-signup.png").default} />
+<Image src={require("./04-signup.webp").default} />
 
 However, even in this case there is nothing else we can do.
 
@@ -77,7 +77,7 @@ The mounting is successful, but we can't access the shared folder.
 
 If we try to list the contents of the shared folder, we get a permission denied error.
 
-<Image src={require("./05-nfs.png").default} />
+<Image src={require("./05-nfs.webp").default} />
 
 ## What is the user flag?
 
@@ -103,7 +103,7 @@ ls -al /mnt/share_folder
 cat /mnt/share_folder/for_employees.txt
 ```
 
-<Image src={require("./06-nfs-user.png").default} />
+<Image src={require("./06-nfs-user.webp").default} />
 
 Inside the shared folder we can see a file called for_employees.txt.
 
@@ -113,7 +113,7 @@ Inside it we can find the credentials for the FTP user.
 ftpuser:W3stV1rg1n14M0un741nM4m4
 ```
 
-<Image src={require("./07-ftp-credentials.png").default} />
+<Image src={require("./07-ftp-credentials.webp").default} />
 
 ### Accessing the FTP server
 
@@ -137,7 +137,7 @@ Remember to always check for hidden files.
 ls -al
 ```
 
-<Image src={require("./08-ftp-content.png").default} />
+<Image src={require("./08-ftp-content.webp").default} />
 
 We can see two hidden files that seem interesting: `.from_admin.txt` and `.passwords_list.txt`.
 
@@ -146,9 +146,9 @@ get .from_admin.txt
 get .passwords_list.txt
 ```
 
-<Image src={require("./09-ftp-get.png").default} />
+<Image src={require("./09-ftp-get.webp").default} />
 
-<Image src={require("./10-ftp-content.png").default} />
+<Image src={require("./10-ftp-content.webp").default} />
 
 ### Finding a way to bypass the rate limiter
 
@@ -158,7 +158,7 @@ Inside the notes from the admin, it is explained that there is a rate limit on t
 
 This means that we can't try all the passwords in the list using brute force.
 
-<Image src={require("./11-rate-limiter.png").default} />
+<Image src={require("./11-rate-limiter.webp").default} />
 
 With 150 passwords in the list, and a constant delay of five minutes every five attempts, it would take 150 minutes to try all the passwords!
 
@@ -170,19 +170,19 @@ We can try to see how authentication is handled inside the website by creating a
 
 If we inspect the network tab in the browser, we can see that the website uses a cookie to store the session.
 
-<Image src={require("./12-cookie.png").default} />
+<Image src={require("./12-cookie.webp").default} />
 
 The content of the cookie is clearly a base64 encoded string.
 
 We can try to decode the cookie and see its content with CyberChef.
 
-<Image src={require("./13-cookie-decoded.png").default} />
+<Image src={require("./13-cookie-decoded.webp").default} />
 
 The content is simply the username followed by a colon and the MD5 hash of the password.
 
 [https://crackstation.net/](https://crackstation.net/)
 
-<Image src={require("./14-password.png").default} />
+<Image src={require("./14-password.webp").default} />
 
 ### Testing the passwords
 
@@ -223,7 +223,7 @@ for password in passwords:
     break
 ```
 
-<Image src={require("./15-admin-password.png").default} />
+<Image src={require("./15-admin-password.webp").default} />
 
 ### Command injection in the admin panel
 
@@ -239,7 +239,7 @@ Some characters are blocked like ; or || but && is not.
 p && ls
 ```
 
-<Image src={require("./16-admin-panel.png").default} />
+<Image src={require("./16-admin-panel.webp").default} />
 
 ### Reverse shell
 
@@ -271,11 +271,11 @@ The only user inside the machine is `rick`.
 
 Looking in the `/var/www` folder, we can see that there is a file called `config.php`.
 
-<Image src={require("./17-files.png").default} />
+<Image src={require("./17-files.webp").default} />
 
 Inside the file, we can see the MySQL credentials for the user rick.
 
-<Image src={require("./18-mysql-credentials.png").default} />
+<Image src={require("./18-mysql-credentials.webp").default} />
 
 ### Connecting with SSH
 
@@ -348,7 +348,7 @@ We can now compile the library.
 gcc -shared -o /tmp/libexpat.so.1 hijack.c
 ```
 
-<Image src={require("./19-ld-preload-trick.png").default} />
+<Image src={require("./19-ld-preload-trick.webp").default} />
 
 ### Root shell
 
@@ -360,4 +360,4 @@ We can now run the binary again.
 
 We can see that we are now root and the final flag is inside the root folder.
 
-<Image src={require("./20-whoami.png").default} />
+<Image src={require("./20-whoami.webp").default} />

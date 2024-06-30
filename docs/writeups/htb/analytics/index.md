@@ -2,7 +2,7 @@
 
 A writeup for the machine [Analytics](https://app.hackthebox.com/machines/Analytics) on Hack The Box.
 
-<Image src={require("./banner.png").default} height="500" />
+<Image src={require("./banner.webp").default} height="500" />
 
 ## Footprinting
 
@@ -21,7 +21,7 @@ nmap -sS <HOST>
 80 -> HTTP
 ```
 
-<Image src={require("./nmap.png").default} />
+<Image src={require("./nmap.webp").default} />
 
 ### Web server
 
@@ -33,7 +33,7 @@ echo "10.10.11.233 analytics.htb" >> /etc/hosts
 
 The web server is running a simple website with an home page and a login page.
 
-<Image src={require("./homepage.png").default} />
+<Image src={require("./homepage.webp").default} />
 
 If we try to open the login page we are redirected to a new subdomain `data.analytics.htb`.
 
@@ -41,7 +41,7 @@ After updating again the hosts file, we can access the login page.
 
 The login page is running a `Metabase` instance, an open-source web analytics platform.
 
-<Image src={require("./login.png").default} />
+<Image src={require("./login.webp").default} />
 
 ## User flag
 
@@ -51,7 +51,7 @@ If we look to the source code of the login page, we can find some interesting in
 
 One of the details contains the version of the `Metabase` instance.
 
-<Image src={require("./metabase-version.png").default} />
+<Image src={require("./metabase-version.webp").default} />
 
 By searching online for this specifc version, we can find a RCE vulnerability and an Metasploit exploit for it.
 
@@ -74,7 +74,7 @@ After running the exploit, we can get a reverse shell as the `metabase` user.
 whoami
 ```
 
-<Image src={require("./reverse-shell.png").default} />
+<Image src={require("./reverse-shell.webp").default} />
 
 ### From metabase to user
 
@@ -98,7 +98,7 @@ echo $META_USER
 echo $META_PASS
 ```
 
-<Image src={require("./env-vars.png").default} />
+<Image src={require("./env-vars.webp").default} />
 
 ### Accessing with SSH
 
@@ -114,7 +114,7 @@ After logging in, we can find the user flag inside the home directory.
 cat user.txt
 ```
 
-<Image src={require("./user-flag.png").default} height="512" />
+<Image src={require("./user-flag.webp").default} height="512" />
 
 ## Root flag
 
@@ -140,7 +140,7 @@ To do so, we can start by checking the version of the operating system.
 cat /etc/os-release
 ```
 
-<Image src={require("./ubuntu-version.png").default} />
+<Image src={require("./ubuntu-version.webp").default} />
 
 By searching online we can see that this version is vulnerable to the OverlayFS vulnerability.
 
@@ -159,5 +159,5 @@ setcap cap_setuid+eip l/python3;mount -t overlay overlay -o rw,lowerdir=l,upperd
 
 Be careful, it should be run as a single command or run it through a script.
 
-<Image src={require("./root.png").default} />
+<Image src={require("./root.webp").default} />
 

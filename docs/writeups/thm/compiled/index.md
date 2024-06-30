@@ -4,7 +4,7 @@ A writeup for the room [Compiled](https://tryhackme.com/room/compiled) on TryHac
 
 > Strings can only help you so far.
 
-<Image src={require("./logo.png").default} height="256" />
+<Image src={require("./logo.webp").default} height="256" />
 
 ### Analyzing the binary
 

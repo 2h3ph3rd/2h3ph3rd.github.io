@@ -1,6 +1,6 @@
 # Cat Pictures 2
 
-A writeup for the room [Cat Pictures 2](https://tryhackme.com/room/catpictures2) on TryHackMe.
+A writeup for the room [Cat Pictures 2](https://tryhackme.com/r/room/catpictures2) on TryHackMe.
 
 > Now with more Cat Pictures!
 

@@ -1,6 +1,6 @@
 # Dreaming
 
-A writeup for the room [Dreaming](https://tryhackme.com/room/dreaming) on TryHackMe.
+A writeup for the room [Dreaming](https://tryhackme.com/r/room/dreaming) on TryHackMe.
 
 > Solve the riddle that dreams have woven.
 
@@ -81,7 +81,6 @@ ssh lucien@MACHINE_IP
 It works and we are finally inside the system as Lucien and we can read the first flag.
 
 <Image src={require("./10-lucien-flag.webp").default} />
-
 
 ### What is the Death Flag?
 

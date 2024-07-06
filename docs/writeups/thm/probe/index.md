@@ -1,6 +1,6 @@
 # Probe
 
-A writeup for the room [Probe](https://tryhackme.com/room/probe) on TryHackMe.
+A writeup for the room [Probe](https://tryhackme.com/r/room/probe) on TryHackMe.
 
 > Use your baseline scanning skills to enumerate a secure network.
 
@@ -159,4 +159,3 @@ gobuster dir -u http://MACHINE_IP:8000/ -w /usr/share/wordlists/dirb/big.txt
 ```
 
 <Image src={require("./17-gobuster.webp").default} />
-

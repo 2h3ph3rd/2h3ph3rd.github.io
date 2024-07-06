@@ -1,6 +1,6 @@
 # Traverse
 
-A writeup for the room [Traverse](https://tryhackme.com/room/traverse) on TryHackMe.
+A writeup for the room [Traverse](https://tryhackme.com/r/room/traverse) on TryHackMe.
 
 > Challenge your secure coding skills to restore a compromised website
 
@@ -60,7 +60,7 @@ By opening the email_dump.txt file, it is possible to see the following message:
 
 <Image src={require("./email.webp").default} />
 
-In the [SSDLC](https://https://tryhackme.com/room/securesdlc) room on TryHackMe it is explained that the first phase of SSDLC is planning:
+In the [SSDLC](https://https://tryhackme.com/r/room/securesdlc) room on TryHackMe it is explained that the first phase of SSDLC is planning:
 
 <Image src={require("./password.webp").default} />
 

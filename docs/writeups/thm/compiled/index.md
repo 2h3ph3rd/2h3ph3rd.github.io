@@ -1,6 +1,6 @@
 # Compiled
 
-A writeup for the room [Compiled](https://tryhackme.com/room/compiled) on TryHackMe.
+A writeup for the room [Compiled](https://tryhackme.com/r/room/compiled) on TryHackMe.
 
 > Strings can only help you so far.
 
@@ -8,7 +8,7 @@ A writeup for the room [Compiled](https://tryhackme.com/room/compiled) on TryHac
 
 ### Analyzing the binary
 
-Only a binary is provided, which means that the flag must be inside the file. 
+Only a binary is provided, which means that the flag must be inside the file.
 
 This type of challenge is called a "reverse engineering" challenge, where the goal is to understand how the binary works and extract the flag from it.
 
@@ -59,7 +59,7 @@ Now, what should we enter next?
 
 If you look at the code after scanf, there are two strcmp:
 
-- The first one is misleading: it returns a bad message whether the given input is __dso_handle.
-- The second strcmp is the password: the input must be equal to the string _init to show the success message.
+- The first one is misleading: it returns a bad message whether the given input is \_\_dso_handle.
+- The second strcmp is the password: the input must be equal to the string \_init to show the success message.
 
-Thus, the final password consists of the first part of the format string REDACTED followed by _init
+Thus, the final password consists of the first part of the format string REDACTED followed by \_init

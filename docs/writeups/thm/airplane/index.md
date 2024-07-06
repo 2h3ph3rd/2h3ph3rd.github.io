@@ -1,6 +1,6 @@
 # Airplane
 
-A writeup for the room [Airplane](https://tryhackme.com/room/include) on TryHackMe.
+A writeup for the room [Airplane](https://tryhackme.com/r/room/include) on TryHackMe.
 
 > Are you ready to fly?
 

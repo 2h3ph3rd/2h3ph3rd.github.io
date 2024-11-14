@@ -9,10 +9,10 @@
       "dns"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=data.iana.org",
-    "created_at": "1690398376518",
+    "created_at": "1731600708052",
     "title": "List of approved TLDs",
     "description": "Official list of approved TLDs from IANA",
-    "image": "/images/gradients/gradient-07.jpg"
+    "image": "/images/gradients/gradient-08.jpg"
   },
   {
     "url": "https://training.play-with-kubernetes.com/kubernetes-workshop/",
@@ -23,10 +23,10 @@
       "training"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=training.play-with-kubernetes.com",
-    "created_at": "1690398377931",
+    "created_at": "1731600709310",
     "title": "Kubernetes for Beginners",
     "description": "Learn docker through online trainings in training.play-with-docker.com",
-    "image": "/images/gradients/gradient-08.jpg"
+    "image": "/images/gradients/gradient-06.jpg"
   },
   {
     "url": "https://k8slens.dev",
@@ -38,10 +38,10 @@
       "tools"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=k8slens.dev",
-    "created_at": "1690398378181",
+    "created_at": "1731600710432",
     "title": "K8S Lens",
-    "description": "Lens IDE for Kubernetes. The only system you’ll ever need to take control of your Kubernetes clusters. It's open source and free. Download it today!",
-    "image": "https://k8slens.dev/images/lens-og.png"
+    "description": "Lens IDE for Kubernetes. The only system you’ll ever need to take control of your Kubernetes clusters. Download it today!",
+    "image": "https://cdn.sanity.io/images/67awagrd/production/8f263a654decd9cf97d32938b89742bf85ffcfce-1200x630.png"
   },
   {
     "url": "https://github.com/uber-go/guide",
@@ -53,10 +53,10 @@
       "guide"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=github.com",
-    "created_at": "1690398379071",
+    "created_at": "1731600711358",
     "title": "uber-go/guide",
     "description": "The Uber Go Style Guide. Contribute to uber-go/guide development by creating an account on GitHub.",
-    "image": "https://opengraph.githubassets.com/e9f355abf543e794a0568b5ad5eb5155cc95eb4585bcc861cd506ae86702a9c8/uber-go/guide"
+    "image": "https://opengraph.githubassets.com/bb6b6a757925f516296386ecdb3e60865a4734c70c7e36e229efe4682364c688/uber-go/guide"
   },
   {
     "url": "https://tryhackme.com",
@@ -68,7 +68,7 @@
       "challenges"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=tryhackme.com",
-    "created_at": "1690398379409",
+    "created_at": "1731600711824",
     "title": "TryHackMe",
     "description": "An online platform for learning and teaching cyber security, all through your browser.",
     "image": "https://tryhackme.com/img/meta/default.png"
@@ -83,10 +83,10 @@
       "challenges"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=hackthebox.eu",
-    "created_at": "1690398379839",
+    "created_at": "1731600712383",
     "title": "Hack The Box",
-    "description": "From beginners to experts, this is where hackers level up! Join today and learn how to hack.",
-    "image": "https://www.hackthebox.eu/images/landingv3/home/og-homepage.jpg"
+    "description": "HTB is the leading Cybersecurity Performance Center for advanced frontline teams to aspiring security professionals \u0026 students. Start driving peak cyber performance.",
+    "image": "https://www.hackthebox.com/images/landingv3/og/og-home-page.jpg"
   },
   {
     "url": "https://hackthissite.org/",
@@ -97,7 +97,7 @@
       "ctf"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=hackthissite.org",
-    "created_at": "1690398385126",
+    "created_at": "1731600717542",
     "title": "HackThisSite",
     "description": "HackThisSite.org is a free, safe and legal training ground for hackers to test and expand their ethical hacking skills with challenges, CTFs, and more.",
     "image": "https://data.htscdn.org/images/hackthissite-meta-card.png"
@@ -112,10 +112,10 @@
       "tools"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=snyk.io",
-    "created_at": "1690398381586",
+    "created_at": "1731600713743",
     "title": "Snyk",
-    "description": "Snyk helps software-driven businesses develop fast and stay secure. Continuously find and fix vulnerabilities for npm, Maven, NuGet, RubyGems, PyPI and more. ",
-    "image": "https://snyk.io//_next/static/media/default-snyk.6bb9b598.jpg"
+    "description": "Enable developers to build securely from the start while giving security teams complete visibility and comprehensive controls.",
+    "image": "https://snyk.io//_next/static/media/default-snyk.8953a9bd.jpg"
   },
   {
     "url": "https://codeium.com/",
@@ -127,10 +127,10 @@
       "ai"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=codeium.com",
-    "created_at": "1690398381814",
+    "created_at": "1731600714518",
     "title": "Codeium",
-    "description": "Codeium offers best in class AI code completion \u0026 search — all for free. It supports over 70+ languages and integrates with your favorite IDEs, with lightning fast speeds and state-of-the-art suggestion quality.",
-    "image": "https://codeium.com/static/images/site_card.png"
+    "description": "Codeium offers best in class AI code completion, search, and chat — all for free. It supports over 70+ languages and integrates with your favorite IDEs, with lightning fast speeds and state-of-the-art suggestion quality.",
+    "image": "https://exafunction.github.io/public/images/site_card.png"
   },
   {
     "url": "https://docusaurus.community",
@@ -142,7 +142,7 @@
       "javascript"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=docusaurus.community",
-    "created_at": "1690398382494",
+    "created_at": "1731600715120",
     "title": "docusaurus.community",
     "description": "Docusaurus community knowledge sharing and plugin directory.",
     "image": "https://docusaurus.community/img/docusaurus-social-card.jpg"
@@ -157,7 +157,7 @@
       "pentesting"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=github.com",
-    "created_at": "1690398383220",
+    "created_at": "1731600715717",
     "title": "Payloads All The Things",
     "description": "Attack payloads only 📦. Payload Box has 9 repositories available. Follow their code on GitHub.",
     "image": "https://avatars.githubusercontent.com/u/54147719?s=280\u0026v=4"
@@ -171,9 +171,9 @@
       "tools"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=keybr.com",
-    "created_at": "1690398383550",
+    "created_at": "1731600715981",
     "title": "Keybr",
-    "description": "Teaching the world to type at the speed of thought! Typing lessons that work.",
+    "description": "Take a typing speed and accuracy test, practice typing lessons, learn to type faster.",
     "image": "https://www.keybr.com/cover.png"
   },
   {
@@ -185,7 +185,7 @@
       "pentesting"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=bugcrowd.com",
-    "created_at": "1690398384705",
+    "created_at": "1731600716702",
     "title": "Bugcrowd",
     "description": "Bugcrowd teams with elite security researchers to reduce risk \u0026 improve security ROI through our bug bounty, pen testing, \u0026 vulnerability disclosure programs.",
     "image": "https://www.bugcrowd.com/wp-content/uploads/2022/05/og_simple_generic.jpg"
@@ -199,10 +199,10 @@
       "ctf"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=challenge.fi",
-    "created_at": "1690398385364",
+    "created_at": "1731600717838",
     "title": "Generation Z Hack Challenge",
     "description": "A collection of challenges for learning and practicing security from the finnish Generation Z Hack Challenge.",
-    "image": "https://challenge.fi/img/facebook_share_image.jpg"
+    "image": "https://challenge.fi/img/facebook_share_image.png"
   },
   {
     "url": "https://training.olicyber.it",
@@ -213,7 +213,7 @@
       "ctf"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=training.olicyber.it",
-    "created_at": "1690398385595",
+    "created_at": "1731600718372",
     "title": "OliCyber.IT",
     "description": "Le Olimpiadi Italiane di Cybersicurezza sono il primo programma di addestramento e competizione in cybersecurity interamente dedicato agli studenti degli istituti superiori di secondo grado.",
     "image": "https://olicyber.it/assets/loghi/logo-social.png"
@@ -227,9 +227,9 @@
       "ctf"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=cryptohack.org",
-    "created_at": "1690398386021",
+    "created_at": "1731600718688",
     "title": "CryptoHack",
-    "description": "A fun, free platform to learn about cryptography through solving challenges and cracking insecure code. Can you reach the top of the leaderboard?",
+    "description": "A free, fun platform to learn about cryptography through solving challenges and cracking insecure code. Can you reach the top of the leaderboard?",
     "image": "https://cryptohack.org/static/img/banner.png"
   },
   {
@@ -241,10 +241,10 @@
       "ctf"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=cryptopals.com",
-    "created_at": "1690398387004",
+    "created_at": "1731600718890",
     "title": "Cryptopals challenges",
     "description": "A collection of challenges for learning and practicing cryptography.",
-    "image": "/images/gradients/gradient-08.jpg"
+    "image": "/images/gradients/gradient-17.jpeg"
   },
   {
     "url": "http://sparksandflames.com/files/x86InstructionChart.html",
@@ -255,10 +255,10 @@
       "cheat sheet"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=sparksandflames.com",
-    "created_at": "1690398387838",
+    "created_at": "1731600719569",
     "title": "x86 Instruction Chart",
     "description": "A chart of x86 instructions with operation codes and descriptions.",
-    "image": "/images/gradients/gradient-17.jpeg"
+    "image": "/images/gradients/gradient-06.jpg"
   },
   {
     "url": "https://syscall.sh",
@@ -269,10 +269,10 @@
       "cheat sheet"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=syscall.sh",
-    "created_at": "1690398388118",
+    "created_at": "1731600719960",
     "title": "Linux System Call Table",
     "description": "Linux System Calls and Call Conventions for most architechtures",
-    "image": "/images/gradients/gradient-14.jpg"
+    "image": "/images/gradients/gradient-07.jpg"
   },
   {
     "url": "https://github.com/dnSpy/dnSpy",
@@ -283,10 +283,10 @@
       "tools"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=github.com",
-    "created_at": "1690398388895",
+    "created_at": "1731600720645",
     "title": "dnSpy",
     "description": ".NET debugger and assembly editor. Contribute to dnSpy/dnSpy development by creating an account on GitHub.",
-    "image": "https://opengraph.githubassets.com/edd6d6644b870eaf2e7e6345be055bf597ece838329c02422c1f306cfa33dbb2/dnSpy/dnSpy"
+    "image": "/images/gradients/gradient-08.jpg"
   },
   {
     "url": "https://www.typing.academy",
@@ -297,7 +297,7 @@
       "tools"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=typing.academy",
-    "created_at": "1690398389339",
+    "created_at": "1731600721164",
     "title": "Typing Academy",
     "description": "Learn typing with our online typing practice and typing speed test. Just try it - it's free!",
     "image": "https://www.typing.academy/app/source/public/images/octopus.png"
@@ -310,10 +310,10 @@
       "cheat sheet"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=vimsheet.com",
-    "created_at": "1690398389595",
+    "created_at": "1731600721687",
     "title": "A Great Vim Cheat Sheet",
     "description": "A Great Vim Cheat Sheet",
-    "image": "/images/gradients/gradient-18.jpeg"
+    "image": "/images/gradients/gradient-06.jpg"
   },
   {
     "url": "https://owasp.org",
@@ -324,7 +324,7 @@
       "tools"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=owasp.org",
-    "created_at": "1690398389883",
+    "created_at": "1731600721988",
     "title": "OWASP",
     "description": "OWASP Foundation, the Open Source Foundation for Application Security on the main website for The OWASP Foundation. OWASP is a nonprofit foundation that works to improve the security of software.",
     "image": "https://owasp.org/www--site-theme/favicon.ico"
@@ -338,10 +338,10 @@
       "tools"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=stylelint.io",
-    "created_at": "1690398390072",
+    "created_at": "1731600722337",
     "title": "Stylelint",
     "description": "A mighty CSS linter that helps you avoid errors and enforce conventions.",
-    "image": "/images/gradients/gradient-10.jpg"
+    "image": "/images/gradients/gradient-03.jpg"
   },
   {
     "url": "https://semgrep.dev",
@@ -351,10 +351,9 @@
       "tools"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=semgrep.dev",
-    "created_at": "1690398391085",
+    "created_at": "1731600722466",
     "title": "Semgrep",
-    "description": "Semgrep is a fast, open source static analysis tool for finding bugs, detecting vulnerabilities in third-party dependencies, and enforcing code standards.\n\nStart scanning for free!",
-    "image": "https://a.storyblok.com/f/151984/1200x628/fff4211e18/semgrep-twitter-card-thumbnail-original.png"
+    "image": "https://semgrep.dev/assets/content/global/blog-thumbnail-default.png"
   },
   {
     "url": "https://crackstation.net",
@@ -366,10 +365,10 @@
       "tools"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=crackstation.net",
-    "created_at": "1690398391477",
+    "created_at": "1731600722924",
     "title": "CrackStation",
     "description": "A password hash cracker.",
-    "image": "/images/gradients/gradient-19.jpeg"
+    "image": "/images/gradients/gradient-06.jpg"
   },
   {
     "url": "https://portswigger.net",
@@ -379,7 +378,7 @@
       "tools"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=portswigger.net",
-    "created_at": "1690398391971",
+    "created_at": "1731600723299",
     "title": "PortSwigger",
     "description": "PortSwigger offers tools for web application security, testing, \u0026 scanning. Choose from a range of security tools, \u0026 identify the very latest vulnerabilities.",
     "image": "https://portswigger.net/content/images/logos/portswigger-twittercardlogo.png"
@@ -392,10 +391,10 @@
       "tools"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=exploit-db.com",
-    "created_at": "1690398393139",
+    "created_at": "1731600723821",
     "title": "Exploit Database",
     "description": "The Exploit Database - Exploits, Shellcode, 0days, Remote Exploits, Local Exploits, Web Apps, Vulnerability Reports, Security Articles, Tutorials and more.",
-    "image": "/images/gradients/gradient-18.jpeg"
+    "image": "/images/gradients/gradient-15.jpg"
   },
   {
     "url": "https://projectworlds.in",
@@ -405,7 +404,7 @@
       "tools"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=projectworlds.in",
-    "created_at": "1690398393922",
+    "created_at": "1731600725909",
     "title": "Project Worlds",
     "description": "Projectworlds Free learning videos and free projects to Learn programming languages like C,C++,Java, PHP , Android, Kotlin, and other computer subjects like Data Structure, DBMS, SQL. etc",
     "image": "https://projectworlds.in/wp-content/uploads/2018/10/projectworlds-copy.png"
@@ -419,10 +418,10 @@
       "ctf"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=crackmes.one",
-    "created_at": "1690398395259",
+    "created_at": "1731600726165",
     "title": "Crackmes",
     "description": "A collection of challenges for learning and practicing reverse engineering.",
-    "image": "/images/gradients/gradient-09.jpg"
+    "image": "/images/gradients/gradient-16.jpeg"
   },
   {
     "url": "https://www.root-me.org/?lang=en",
@@ -432,10 +431,10 @@
       "ctf"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=root-me.org",
-    "created_at": "1690398395480",
+    "created_at": "1731600726516",
     "title": "Root Me",
     "description": "Root Me is a platform for everyone to test and improve knowledge in computer security and hacking.",
-    "image": "/images/gradients/gradient-12.jpg"
+    "image": "/images/gradients/gradient-09.jpg"
   },
   {
     "url": "https://malwareunicorn.org",
@@ -446,7 +445,7 @@
       "ctf"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=malwareunicorn.org",
-    "created_at": "1690398396704",
+    "created_at": "1731600726923",
     "title": "malwareunicorn.org",
     "description": "Provides workshops and resources for reverse engineering in the infosec space.",
     "image": "https://malwareunicorn.org/re101/img/dc346360cad65528.gif"
@@ -460,7 +459,7 @@
       "tools"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=any.run",
-    "created_at": "1690398396895",
+    "created_at": "1731600727175",
     "title": "ANY.RUN",
     "description": "Cloud-based malware analysis service. Take your information security to the next level. Analyze suspicious and malicious activities using our innovative tools.",
     "image": "https://any.run/img/logo-anyrun.png"
@@ -475,10 +474,10 @@
       "wordpress"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=wpscan.com",
-    "created_at": "1690398397449",
+    "created_at": "1731600728217",
     "title": "WPScan",
-    "description": "A WordPress vulnerability database for WordPress core security vulnerabilities, plugin vulnerabilities and theme vulnerabilities.",
-    "image": "https://wpscan.com/wpscan_logo.png"
+    "description": "WPScan is an enterprise vulnerability database for WordPress. Be the first to know about vulnerabilities affecting your WordPress core, plugins \u0026 themes.",
+    "image": "https://wpscan.com/wp-content/uploads/2023/10/cover.png?w=640"
   },
   {
     "url": "https://cve.mitre.org/",
@@ -490,10 +489,10 @@
       "search"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=cve.mitre.org",
-    "created_at": "1690398398093",
+    "created_at": "1731600728840",
     "title": "CVE",
     "description": "The mission of the CVE® Program is to identify, define, and catalog publicly disclosed cybersecurity vulnerabilities.",
-    "image": "/images/gradients/gradient-10.jpg"
+    "image": "/images/gradients/gradient-17.jpeg"
   },
   {
     "url": "https://nvd.nist.gov/vuln/search",
@@ -505,9 +504,9 @@
       "search"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=nvd.nist.gov",
-    "created_at": "1690398398733",
+    "created_at": "1731600738845",
     "title": "NVD search",
-    "image": "/images/gradients/gradient-17.jpeg"
+    "image": "/images/gradients/gradient-07.jpg"
   },
   {
     "url": "https://www.wappalyzer.com/",
@@ -519,10 +518,10 @@
       "extension"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=wappalyzer.com",
-    "created_at": "1690398400647",
+    "created_at": "1731600741013",
     "title": "Wappalyzer",
     "description": "Find out the technology stack of any website. Create lists of websites and contacts by the technologies they use.",
-    "image": "/images/gradients/gradient-18.jpeg"
+    "image": "/images/gradients/gradient-08.jpg"
   },
   {
     "url": "https://en.wikipedia.org/wiki/List_of_file_signatures",
@@ -533,7 +532,7 @@
       "database"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=en.wikipedia.org",
-    "created_at": "1690398400845",
+    "created_at": "1731600741215",
     "title": "List of file signatures",
     "image": "/images/gradients/gradient-04.jpg"
   },
@@ -546,10 +545,10 @@
       "training"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=university.alchemy.com",
-    "created_at": "1690398401558",
+    "created_at": "1731600741946",
     "title": "Alchemy University",
-    "description": "Fast track your web3 career through courses, projects and code. Totally free.",
-    "image": "https://university.alchemypreview.com/metatag_image.png"
+    "description": "Fast track your web3 development journey with courses, projects, and code. Learn Solidity, Ethereum development, Javascript and more. Try for free today!",
+    "image": "https://www.alchemy.com/university/twitter-image.png?cf2a65da5859952b"
   },
   {
     "url": "https://www.whois.com/whois",
@@ -561,7 +560,7 @@
       "lookup"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=whois.com",
-    "created_at": "1690398402284",
+    "created_at": "1731600742749",
     "title": "Whois.com - Free Whois Lookup",
     "description": "Whois Domain Name \u0026 IP lookup service to search the whois database for verified registration information",
     "image": "https://www.whois.com/images/og.png"
@@ -577,10 +576,10 @@
       "samba"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=github.com",
-    "created_at": "1690398403691",
+    "created_at": "1731600744201",
     "title": "CiscoCXSecurity/enum4linux",
-    "description": "enum4Linux is a Linux alternative to enum.exe for enumerating data from Windows and Samba hosts - GitHub - CiscoCXSecurity/enum4linux: enum4Linux is a Linux alternative to enum.exe for enumerating ...",
-    "image": "https://opengraph.githubassets.com/f88a3382c5e7d9a7d56e8a5746332e1ec0f3205ec76109a1e1aff30de8f41b3f/CiscoCXSecurity/enum4linux"
+    "description": "enum4Linux is a Linux alternative to enum.exe for enumerating data from Windows and Samba hosts - CiscoCXSecurity/enum4linux",
+    "image": "https://opengraph.githubassets.com/11c35fabb5057133cd44a9cd6f6fc408f16be8dd9d17aa8bc714cf24c8572f72/CiscoCXSecurity/enum4linux"
   },
   {
     "url": "https://github.com/blackploit/hash-identifier",
@@ -591,10 +590,10 @@
       "identification"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=github.com",
-    "created_at": "1690398405022",
+    "created_at": "1731600745642",
     "title": "blackploit/hash-identifier",
-    "description": "Software to identify the different types of hashes used to encrypt data and especially passwords - GitHub - blackploit/hash-identifier: Software to identify the different types of hashes used to en...",
-    "image": "https://opengraph.githubassets.com/f41f90e808ab1548c572e26a12f0e484151c3267a363af255c49402ab513bf40/blackploit/hash-identifier"
+    "description": "Software to identify the different types of hashes used to encrypt data and especially passwords - blackploit/hash-identifier",
+    "image": "https://opengraph.githubassets.com/e761dd1367973d027dac627c1e02344dceda4dc5e12e42721bfca5384b8b17cd/blackploit/hash-identifier"
   },
   {
     "url": "https://shattered.io/",
@@ -605,9 +604,9 @@
       "sha1"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=shattered.io",
-    "created_at": "1690398405521",
+    "created_at": "1731600746558",
     "title": "Shattered",
-    "image": "/images/gradients/gradient-08.jpg"
+    "image": "/images/gradients/gradient-14.jpg"
   },
   {
     "url": "https://www.mscs.dal.ca/~selinger/md5collision/",
@@ -618,7 +617,7 @@
       "md5"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=mscs.dal.ca",
-    "created_at": "1690398405896",
+    "created_at": "1731600747329",
     "title": "MD5 Collision Demo",
     "image": "/images/gradients/gradient-04.jpg"
   },
@@ -631,10 +630,10 @@
       "tools"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=threatbook.io",
-    "created_at": "1690398406806",
+    "created_at": "1731600748705",
     "title": "ThreatBook",
     "description": "ThreatBook CTI makes a better understanding of threat intelligence.",
-    "image": "/images/gradients/gradient-13.jpg"
+    "image": "/images/gradients/gradient-03.jpg"
   },
   {
     "url": "https://urlscan.io/",
@@ -645,10 +644,10 @@
       "tools"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=urlscan.io",
-    "created_at": "1690398407003",
+    "created_at": "1731600749114",
     "title": "urlscan.io",
     "description": "urlscan.io - Website scanner for suspicious and malicious URLs",
-    "image": "/images/gradients/gradient-14.jpg"
+    "image": "/images/gradients/gradient-04.jpg"
   },
   {
     "url": "https://github.com/vanhauser-thc/thc-hydra",
@@ -659,10 +658,10 @@
       "tools"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=github.com",
-    "created_at": "1690398408717",
+    "created_at": "1731600749831",
     "title": "vanhauser-thc/thc-hydra",
     "description": "hydra. Contribute to vanhauser-thc/thc-hydra development by creating an account on GitHub.",
-    "image": "https://opengraph.githubassets.com/1d9c4723d85883709130321604b020c871ca28716f557ad8af590825bad98088/vanhauser-thc/thc-hydra"
+    "image": "https://opengraph.githubassets.com/a497eba26f3a542e280f2b252c16611ec404d8b4ceb2c2d5baf683c51cdcbc58/vanhauser-thc/thc-hydra"
   },
   {
     "url": "https://hyperskill.org",
@@ -674,10 +673,10 @@
       "development"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=hyperskill.org",
-    "created_at": "1690398409502",
+    "created_at": "1731600750658",
     "title": "Hyperskill",
-    "description": "Get theory, practice coding and move beyond programming challenges to building your own working projects. Join over 600 000 learners at Hyperskill.",
-    "image": "https://hyperskill.org/static/hyperskill-hypercover.png"
+    "description": "700,000 learners used Hyperskill to step up their programming game and get a job in tech. Dive into coding with projects that mirror real-world challenges.",
+    "image": "https://cdn.prod.website-files.com/646bbfc4c8c88c7c71128456/646e8a599ee046abdf337387_hyperskill-hypercover.png"
   },
   {
     "url": "https://roadmap.sh/cyber-security",
@@ -687,9 +686,9 @@
       "learning"
     ],
     "favicon": "https://www.google.com/s2/favicons?domain=roadmap.sh",
-    "created_at": "1690398409708",
+    "created_at": "1731600750879",
     "title": "Roadmap to become a Cyber Security Expert",
     "description": "Community driven, articles, resources, guides, interview questions, quizzes for cyber security. Learn to become a modern Cyber Security Expert by following the steps, skills, resources and guides listed in this roadmap.",
-    "image": "https://roadmap.sh/images/og-img.png"
+    "image": "https://roadmap.sh/og/roadmap/cyber-security"
   }
 ]

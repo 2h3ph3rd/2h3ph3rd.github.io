@@ -79,24 +79,6 @@ const config = {
         },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'securitySidebar',
-            position: 'left',
-            label: '🔒 Security',
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'writeupsSidebar',
-            position: 'left',
-            label: '📝 Writeups',
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'aiSidebar',
-            position: 'left',
-            label: '🧠 AI',
-          },
-          {
             href: '/resources',
             label: '🔗 Resources',
             position: 'left',

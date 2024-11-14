@@ -42,6 +42,7 @@ gobuster dns -d cherryontop.thm -w /usr/share/wordlists/dirb/common.txt
 ```
 
 <Image src={require("./5-gobuster-dir.webp").default} />
+<Image src={require("./6-gobuster-dns.webp").default} />
 
 Nothing useful is found with the gobuster scans.
 
@@ -69,3 +70,10 @@ http://cherryontop.thm/content.php?facts=1&user=I52WK43U
 
 ## What is the root flag?
 
+```
+
+```
+
+```
+
+```

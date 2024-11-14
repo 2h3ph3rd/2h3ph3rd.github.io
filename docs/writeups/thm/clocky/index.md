@@ -1,6 +1,6 @@
 # Clocky
 
-A writeup for the room [Clocky](https://tryhackme.com/r/room/clocky) on TryHackMe.
+A writeup for the room [Clocky](https://tryhackme.com/room/clocky) on TryHackMe.
 
 > Time is an illusion.
 

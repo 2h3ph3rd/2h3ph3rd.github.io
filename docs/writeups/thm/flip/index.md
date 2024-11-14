@@ -1,6 +1,6 @@
 # Flip
 
-A writeup for the room [Flip](https://tryhackme.com/r/room/flip) on TryHackMe.
+A writeup for the room [Flip](https://tryhackme.com/room/flip) on TryHackMe.
 
 > Hey, do a flip!
 

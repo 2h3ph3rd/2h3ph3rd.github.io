@@ -1,6 +1,6 @@
 # Mother
 
-A writeup for the room [Mother](https://tryhackme.com/r/room/codeanalysis) on TryHackMe.
+A writeup for the room [Mother](https://tryhackme.com/room/codeanalysis) on TryHackMe.
 
 > Exploit flaws found in Mother's code to reveal its secrets.
 
@@ -67,7 +67,7 @@ The result:
 
 ```
 Mother
-FOR SCIENCE OFFICER EYES ONLY
+FOR SCIENCE OFFICER EYES ONLY 
 SPECIAL ORDER 937 [............
 
 PRIORITIY 1 ****** ENSURE RETURN OF ORGANISM FOR ANALYSIS****]
@@ -103,13 +103,13 @@ This will return the contents of the secret.txt file.
 
 ### What is Mother's secret?
 
-All endpoints implemented in the routes file, including the mother endpoint, are vulnerable to path traversal.
+All endpoints implemented in the routes file, including the mother endpoint, are vulnerable to path traversal. 
 
 The user can insert any value and it will be concatenated to the base path without any sanitization.
 
 ```js
-let file_path = req.body.file_path
-const filePath = `./public/${file_path}`
+let file_path = req.body.file_path;
+const filePath = `./public/${file_path}`;
 ```
 
 So, if we send something like ../../../../../opt/m0th3r the value of filePath will be:

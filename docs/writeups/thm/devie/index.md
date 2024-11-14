@@ -1,6 +1,6 @@
 # Devie
 
-A writeup for the room [Devie](https://tryhackme.com/r/room/devie) on TryHackMe.
+A writeup for the room [Devie](https://tryhackme.com/room/devie) on TryHackMe.
 
 > A developer has asked you to do a vulnerability check on their system.
 

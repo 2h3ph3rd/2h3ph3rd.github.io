@@ -1,6 +1,6 @@
 # Include
 
-A writeup for the room [Include](https://tryhackme.com/r/room/include) on TryHackMe.
+A writeup for the room [Include](https://tryhackme.com/room/include) on TryHackMe.
 
 > Use your server exploitation skills to take control of a web app.
 

@@ -1,6 +1,6 @@
 # mKingdom
 
-A writeup for the room [mKingdom](https://tryhackme.com/r/room/mkingdom) on TryHackMe.
+A writeup for the room [mKingdom](https://tryhackme.com/room/mkingdom) on TryHackMe.
 
 > Beginner-friendly box inspired by a certain mustache man.
 

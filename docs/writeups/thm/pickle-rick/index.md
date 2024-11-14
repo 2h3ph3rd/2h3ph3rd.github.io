@@ -1,6 +1,6 @@
 # Pickle Rick
 
-A writeup for the room [Pickle Rick](https://tryhackme.com/r/room/picklerick) on TryHackMe.
+A writeup for the room [Pickle Rick](https://tryhackme.com/room/picklerick) on TryHackMe.
 
 > A Rick and Morty CTF. Help turn Rick back into a human!
 

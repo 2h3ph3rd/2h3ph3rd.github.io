@@ -14,17 +14,17 @@ We can start by running a nmap scan to see what ports are open.
 nmap -sC TARGET_IP
 ```
 
-<Image src={require("./1-nmap.webp").default} />
+<Image src={require("./1-nmap.png").default} />
 
 The scan reveals that port 22 and 80 are open. We can visit the site and see what it has to offer.
 
-<Image src={require("./2-home.webp").default} />
+<Image src={require("./2-home.png").default} />
 
 The site is only a static page with no login page and most of the links are fake.
 
 There is a video on the page that gives a hint suggesting there is an hidden subdomain.
 
-<Image src={require("./3-home-video.webp").default} />
+<Image src={require("./3-home-video.png").default} />
 
 We can run a gobuster scan to see if there are any hidden directories or subdomains.
 
@@ -34,14 +34,14 @@ Remember to change your hosts file to include the target IP and the domain name 
 vi /etc/hosts
 ```
 
-<Image src={require("./4-hosts.webp").default} />
+<Image src={require("./4-hosts.png").default} />
 
 ```sh
 gobuster dir -u http://TARGET_IP -w /usr/share/wordlists/dirb/common.txt
 gobuster dns -d cherryontop.thm -w /usr/share/wordlists/dirb/common.txt
 ```
 
-<Image src={require("./5-gobuster-dir.webp").default} />
+<Image src={require("./5-gobuster-dir.png").default} />
 
 Nothing useful is found with the gobuster scans.
 

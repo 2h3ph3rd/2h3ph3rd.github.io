@@ -1,6 +1,6 @@
 # Linear Regression
 
-> Given a set of inputs it produces a continuos output
+<!-- > Given a set of inputs it produces a continuos output
 
 Linear Regression is a machine learning algorithm that is used to predict the value of a dependent variable based on one or more independent variables.
 
@@ -24,4 +24,4 @@ Where $y$ is the dependent variable, $x$ is the independent variable, $w$ is the
 
 $$
 J(w,\ b) = \frac{1}{2m} \sum_{i=1}^{m} (\hat{y}^{(i)} - y^{(i)})^2
-$$
+$$ -->

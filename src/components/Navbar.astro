@@ -1,0 +1,33 @@
+---
+import "../styles/global.css";
+---
+
+<nav
+  id="navbar"
+  class="sticky top-6 mx-8 mt-6 flex items-center justify-between rounded-xl bg-gray-800 p-4 text-gray-100 shadow-lg transition-all duration-300"
+>
+  <!-- Logo / Brand -->
+  <div id="navbar-title" class="text-2xl font-bold">MyPortfolio</div>
+
+  <!-- Menu Items -->
+  <ul class="flex space-x-6">
+    <li><a href="#home" class="hover:text-primary">Home</a></li>
+    <li><a href="#projects" class="hover:text-primary">Projects</a></li>
+    <li><a href="#about" class="hover:text-primary">About</a></li>
+    <li><a href="#contact" class="hover:text-primary">Contact</a></li>
+  </ul>
+</nav>
+
+<script>
+  const navbar = document.getElementById("navbar");
+  const title = document.getElementById("navbar-title");
+
+  window.addEventListener("scroll", () => {
+    if (!navbar || !title) return;
+    if (window.scrollY > 0) {
+      navbar.classList.replace("mx-8", "mx-24");
+    } else {
+      navbar.classList.replace("mx-24", "mx-8");
+    }
+  });
+</script>

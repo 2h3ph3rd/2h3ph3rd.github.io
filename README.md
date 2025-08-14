@@ -2,7 +2,7 @@
 
 [![Website](https://img.shields.io/badge/Website-GitHub%20Pages-blue?style=flat&logo=github&logoColor=white)](https://2h3ph3rd.github.io)
 &nbsp;
-![Workflow Status](https://github.com/2h3ph3rd/2h3ph3rd.github.io/actions/workflows/deploy.yml/badge.svg)
+[![Deployment](https://github.com/2h3ph3rd/2h3ph3rd.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/2h3ph3rd/2h3ph3rd.github.io/actions/workflows/deploy.yml)
 &nbsp;
 [![Built with Astro](https://astro.badg.es/v2/built-with-astro/tiny.svg)](https://astro.build)
 

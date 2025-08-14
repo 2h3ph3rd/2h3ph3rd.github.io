@@ -4,7 +4,7 @@ import "../styles/global.css";
 
 <nav
   id="navbar"
-  class="sticky top-6 mx-8 mt-6 flex items-center justify-between rounded-xl bg-gray-800 p-4 text-gray-100 shadow-lg transition-all duration-300"
+  class="fixed top-8 right-8 left-8 z-50 flex items-center justify-between rounded-xl bg-gray-800 p-4 text-gray-100 shadow-lg transition-all duration-300"
 >
   <!-- Logo / Brand -->
   <div id="navbar-title" class="text-2xl font-bold">MyPortfolio</div>
@@ -20,14 +20,15 @@ import "../styles/global.css";
 
 <script>
   const navbar = document.getElementById("navbar");
-  const title = document.getElementById("navbar-title");
 
   window.addEventListener("scroll", () => {
-    if (!navbar || !title) return;
+    if (!navbar) return;
     if (window.scrollY > 0) {
-      navbar.classList.replace("mx-8", "mx-24");
+      navbar.classList.replace("left-8", "left-24");
+      navbar.classList.replace("right-8", "right-24");
     } else {
-      navbar.classList.replace("mx-24", "mx-8");
+      navbar.classList.replace("left-24", "left-8");
+      navbar.classList.replace("right-24", "right-8");
     }
   });
 </script>

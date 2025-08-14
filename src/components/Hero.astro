@@ -7,9 +7,9 @@ import "../styles/global.css";
     class="container mx-auto flex h-full flex-col items-center justify-between md:flex-row"
   >
     <!-- Left: Terminal Card -->
-    <div class="mb-8 w-full md:mb-0 md:w-1/2">
+    <div class="mb-8 h-96 w-full md:mb-0 md:w-1/2">
       <div
-        class="overflow-hidden rounded-xl bg-gray-900 font-mono text-gray-100 shadow-2xl"
+        class="flex h-full flex-col overflow-hidden rounded-xl bg-gray-900 font-mono text-gray-100 shadow-2xl"
       >
         <!-- Header -->
         <div class="flex items-center justify-between bg-gray-800 px-6 py-3">
@@ -23,24 +23,31 @@ import "../styles/global.css";
 
         <!-- Content -->
         <div
-          class="relative w-full max-w-full space-y-3 overflow-hidden p-6 text-base"
+          class="terminal flex w-full flex-col space-y-2 rounded-xl p-6 font-mono text-gray-100"
         >
-          <p class="animate-type w-full overflow-hidden whitespace-nowrap">
-            <span class="text-primary">$</span> echo "Hi there! I'm Francesco 👋"
+          <p>
+            <span class="typed text-primary" data-text="$"></span>
+            <span
+              class="typed"
+              data-text=' echo "Hi there! I&apos;m Francesco aka 2h3ph3rd! 👋"'
+            ></span>
           </p>
-          <p class="animate-type w-full overflow-hidden whitespace-nowrap">
-            Hi there! I'm Francesco 👋
+          <p>
+            <span
+              class="typed"
+              data-text="Hi there! I'm Francesco aka 2h3ph3rd! 👋"></span>
           </p>
-          <p class="animate-type w-full overflow-hidden whitespace-nowrap">
-            <span class="text-primary">$</span> ls -la
+          <p>
+            <span class="typed text-primary" data-text="$"></span>
+            <span class="typed" data-text=" ls -la"></span>
           </p>
           <pre
-            class="animate-type w-full overflow-x-auto rounded-lg bg-gray-900 p-4 text-base">
-total 12
+            class="typed whitespace-pre"
+            data-text=`total 12
 drwxr-xr-x  4 user  staff  128 Aug 13 10:00 .
 drwxr-xr-x 12 user  staff  384 Aug 13 09:50 ..
 -rw-r--r--  1 user  staff   32 Aug 13 10:00 index.astro
--rw-r--r--  1 user  staff  256 Aug 13 09:59 README.md
+-rw-r--r--  1 user  staff  256 Aug 13 09:59 README.md`>
           </pre>
         </div>
       </div>
@@ -56,3 +63,59 @@ drwxr-xr-x 12 user  staff  384 Aug 13 09:50 ..
     </div>
   </div>
 </section>
+
+<script>
+  function typeLine(element, text, callback) {
+    let i = 0;
+
+    // create blinking cursor
+    const cursor = document.createElement("span");
+    cursor.textContent = "|";
+    cursor.className = "cursor";
+    element.appendChild(cursor);
+
+    function typeChar() {
+      if (i < text.length) {
+        cursor.insertAdjacentText("beforebegin", text[i]);
+        i++;
+        setTimeout(typeChar, 20 + Math.random() * 20);
+      } else {
+        cursor.remove(); // remove cursor after typing this line
+        if (callback) callback();
+      }
+    }
+
+    typeChar();
+  }
+
+  // select all lines
+  const typedElements = document.querySelectorAll(".typed");
+
+  function typeLines(index = 0) {
+    if (index >= typedElements.length) return;
+    const el = typedElements[index];
+    const text = el.dataset.text;
+    typeLine(el, text, () => typeLines(index + 1));
+  }
+
+  typeLines();
+</script>
+
+<style>
+  .cursor {
+    display: inline-block;
+    width: 1ch;
+    animation: blink 1s steps(2, start) infinite;
+  }
+
+  @keyframes blink {
+    0%,
+    50% {
+      opacity: 1;
+    }
+    50.1%,
+    100% {
+      opacity: 0;
+    }
+  }
+</style>

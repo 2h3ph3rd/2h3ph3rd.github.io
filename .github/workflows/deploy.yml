@@ -3,9 +3,9 @@ name: Deployment
 on:
   push:
     branches: [master]
+  schedule:
+    - cron: "0 9 * * MON"
   workflow_dispatch:
-  # schedule:
-  #   - cron: "0 9 * * MON"
 
 permissions:
   contents: read

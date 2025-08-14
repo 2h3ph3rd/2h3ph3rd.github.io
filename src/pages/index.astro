@@ -4,10 +4,14 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Technologies from "../components/Technologies.astro";
 import Footer from "../components/Footer.astro";
+import Profiles from "../components/Profiles.astro";
 ---
 
 <Layout>
   <Header />
-  <Technologies />
+  <div class="mx-48 mt-6 flex space-x-4">
+    <Technologies />
+    <Profiles />
+  </div>
   <Footer />
 </Layout>

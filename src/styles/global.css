@@ -61,5 +61,9 @@
 }
 
 .technology-text {
-  @apply text-gray-300;
+  @apply font-semibold text-gray-300;
+}
+
+.profile-icon {
+  @apply h-12 w-12;
 }

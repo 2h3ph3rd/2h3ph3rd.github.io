@@ -1,0 +1,54 @@
+---
+import "../styles/global.css";
+import Project from "./Project.astro";
+
+import RSSParser from "rss-parser";
+
+const parser = new RSSParser();
+const feed = await parser.parseURL("https://medium.com/feed/@2h3ph3rd");
+
+const articles = feed.items
+  .map((item) => {
+    if (!item.content || !item.title || !item.link) {
+      return undefined;
+    }
+
+    const imgMatch = item.content.match(/<img[^>]+src="([^">]+)"/);
+    const thumbnail = imgMatch ? imgMatch[1] : "/default-thumbnail.jpg";
+
+    let contentSnippet = "";
+    if (item.contentSnippet) {
+      contentSnippet = item.contentSnippet
+        .replace(/\s*Continue reading on .* »$/i, "")
+        .trim();
+    }
+
+    return {
+      title: item.title ?? "",
+      link: item.link ?? "",
+      description: contentSnippet ?? "",
+      thumbnail: thumbnail ?? "/default-thumbnail.jpg",
+    };
+  })
+  .filter((article) => article !== undefined);
+---
+
+<div class="glassy-card mx-48 mt-8 py-8">
+  <h2 class="py-3 text-center text-2xl font-bold tracking-tight text-gray-100">
+    Projects
+  </h2>
+  <p class="text-center text-gray-300">Check out some of my projects</p>
+</div>
+
+<div class="mx-48 mt-8 grid grid-cols-1 gap-4 2xl:grid-cols-4">
+  {
+    articles.map((article) => (
+      <Project
+        title={article.title}
+        description={article.description}
+        thumbnail={article.thumbnail}
+        link={article.link}
+      />
+    ))
+  }
+</div>

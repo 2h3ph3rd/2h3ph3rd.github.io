@@ -1,0 +1,27 @@
+---
+import "../styles/global.css";
+---
+
+<div
+  id="cursor-halo"
+  class="pointer-events-none fixed z-50 h-14 w-14 scale-100 rounded-full bg-blue-400/40 opacity-100 shadow-xl blur-2xl transition-all duration-300"
+>
+</div>
+
+<script></script>
+
+<style>
+  #cursor-halo {
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+</style>

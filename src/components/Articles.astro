@@ -1,13 +1,13 @@
 ---
 import "../styles/global.css";
 import Article from "./Article.astro";
-
+import PinnedArticles from "../data/pinned_articles.json";
 import RSSParser from "rss-parser";
 
 const parser = new RSSParser();
 const feed = await parser.parseURL("https://medium.com/feed/@2h3ph3rd");
 
-const articles = feed.items
+const feedArticles = feed.items
   .map((item) => {
     if (!item.content || !item.title || !item.link) {
       return undefined;
@@ -16,21 +16,30 @@ const articles = feed.items
     const imgMatch = item.content.match(/<img[^>]+src="([^">]+)"/);
     const thumbnail = imgMatch ? imgMatch[1] : "/default-thumbnail.jpg";
 
-    let contentSnippet = "";
+    let description = "";
     if (item.contentSnippet) {
-      contentSnippet = item.contentSnippet
+      description = item.contentSnippet
         .replace(/\s*Continue reading on .* »$/i, "")
         .trim();
     }
 
+    let date = new Date();
+    if (item.pubDate) {
+      date = new Date(item.pubDate);
+    }
+
     return {
       title: item.title ?? "",
-      link: item.link ?? "",
-      contentSnippet: contentSnippet ?? "",
+      description: description,
       thumbnail: thumbnail ?? "/default-thumbnail.jpg",
+      date: date,
+      link: item.link ?? "",
+      pinned: false,
     };
   })
   .filter((article) => article !== undefined);
+
+const articles = [...PinnedArticles, ...feedArticles];
 ---
 
 <div class="glassy-card mx-48 mt-8 py-8">
@@ -38,18 +47,22 @@ const articles = feed.items
     Latest Articles
   </h2>
   <p class="text-center text-gray-300">
-    Check out my latest articles on Medium.
+    Check out my latest articles on Medium
   </p>
 </div>
 
-<div class="mx-48 mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
+<div
+  class="mx-4 mt-8 grid grid-cols-1 gap-4 lg:mx-16 2xl:mx-48 2xl:grid-cols-2"
+>
   {
     articles.map((article) => (
       <Article
         title={article.title}
-        description={article.contentSnippet}
+        description={article.description}
         thumbnail={article.thumbnail}
+        date={article.date}
         link={article.link}
+        pinned={article.pinned}
       />
     ))
   }

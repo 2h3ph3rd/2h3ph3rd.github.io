@@ -1,0 +1,18 @@
+[
+    {
+        "title": "My Journey to the CEH Practical v12",
+        "description": "A personal review of the exam and some tips on how to best prepare for it",
+        "thumbnail": "https://miro.medium.com/v2/resize:fit:1100/format:webp/0*Lqq1W40pSkDQXnld.jpg",
+        "date": "Jul 25, 2025",
+        "link": "https://2h3ph3rd.medium.com/my-journey-to-the-ceh-practical-v12-bd8a85c22742",
+        "pinned": true
+    },
+    {
+        "title": "Privilege Escalation With fail2ban",
+        "description": "A quick start guide for privilege escalation with fail2ban",
+        "thumbnail": "https://miro.medium.com/v2/resize:fit:1100/format:webp/0*JU7iSKvIC8RsTwon.jpg",
+        "date": "Apr 15, 2025",
+        "link": "https://2h3ph3rd.medium.com/privilege-escalation-with-fail2ban-a8c7b7041cc8",
+        "pinned": true
+    }
+]

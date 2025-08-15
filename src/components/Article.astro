@@ -5,14 +5,19 @@ export interface Props {
   title: string;
   description: string;
   thumbnail: string;
+  date: Date;
   link: string;
+  pinned: boolean;
 }
 
-const { title, description, thumbnail, link } = Astro.props;
+const { title, description, thumbnail, date, link, pinned } = Astro.props;
 ---
 
 <a href={link} target="_blank" rel="noopener noreferrer">
-  <div class="glassy-card flex w-full overflow-hidden">
+  <div
+    class="glassy-card relative flex w-full overflow-hidden rounded-2xl bg-gray-800"
+  >
+    <!-- Thumbnail -->
     <div class="h-32 w-32 flex-shrink-0 bg-white">
       <img
         src={thumbnail}
@@ -21,9 +26,37 @@ const { title, description, thumbnail, link } = Astro.props;
       />
     </div>
 
-    <div class="flex flex-col justify-center p-4">
-      <h3 class="mb-3 text-xl font-semibold text-gray-100">{title}</h3>
-      <p class="mt-1 text-sm text-gray-300">{description}</p>
+    <!-- Article details -->
+    <div class="flex min-w-0 flex-col justify-center p-4">
+      <h3 class="mt-1 truncate text-xl font-semibold text-gray-100">{title}</h3>
+      <p class="mt-3 truncate text-sm text-gray-300">{description}</p>
+      <p class="mt-3 text-xs text-gray-300">
+        {
+          typeof date === "string"
+            ? date
+            : date.toLocaleDateString("en-US", {
+                month: "short",
+                day: "numeric",
+                year: "numeric",
+              })
+        }
+      </p>
     </div>
+
+    <!-- Pinned icon -->
+    {
+      pinned && (
+        <div class="absolute top-3 right-3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 text-white"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path d="M10 2l2 6h6l-4.8 4.4L15 18l-5-3.2L5 18l1.8-5.6L2 8h6l2-6z" />
+          </svg>
+        </div>
+      )
+    }
   </div>
 </a>

@@ -1,0 +1,11 @@
+[
+    {
+        "title": "Project 1",
+        "description": "Description for project 1",
+        "link": "https://example.com/project1",
+        "website": "https://example.com",
+        "technologies": [
+            "go"
+        ]
+    }
+]

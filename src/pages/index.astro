@@ -1,19 +1,23 @@
 ---
 import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
+import Halo from "../components/Halo.astro";
 import Header from "../components/Header.astro";
 import Technologies from "../components/Technologies.astro";
 import Footer from "../components/Footer.astro";
 import Profiles from "../components/Profiles.astro";
-import Blog from "../components/Blog.astro";
+import Projects from "../components/Projects.astro";
+import Articles from "../components/Articles.astro";
 ---
 
 <Layout>
+  <Halo />
   <Header />
   <div class="mx-48 mt-6 flex space-x-4">
     <Technologies />
     <Profiles />
   </div>
-  <Blog />
+  <Projects />
+  <Articles />
   <Footer />
 </Layout>

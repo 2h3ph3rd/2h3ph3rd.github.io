@@ -2,7 +2,8 @@
 import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
 import Halo from "../components/Halo.astro";
-import Header from "../components/Header.astro";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
 import Technologies from "../components/Technologies.astro";
 import Footer from "../components/Footer.astro";
 import Profiles from "../components/Profiles.astro";
@@ -12,12 +13,15 @@ import Articles from "../components/Articles.astro";
 
 <Layout>
   <Halo />
-  <Header />
-  <div class="mx-48 mt-6 flex space-x-4">
+  <header class="flex min-h-screen flex-col">
+    <Navbar />
+    <Hero />
+  </header>
+  <section class="mx-48 mt-6 flex space-x-4">
     <Technologies />
     <Profiles />
-  </div>
-  <Projects />
+  </section>
   <Articles />
+  <Projects />
   <Footer />
 </Layout>

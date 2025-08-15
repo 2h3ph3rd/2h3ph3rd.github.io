@@ -1,49 +1,90 @@
 ---
+import fs from "node:fs";
+import path from "node:path";
 import "../styles/global.css";
 import Article from "./Article.astro";
 import PinnedArticles from "../data/pinned_articles.json";
 import RSSParser from "rss-parser";
 
-const parser = new RSSParser();
-const feed = await parser.parseURL("https://medium.com/feed/@2h3ph3rd");
+const CACHE_FILE = path.resolve("./src/data/cached_articles.json");
+const CACHE_TTL = 1000 * 60 * 60 * 24; // 24h
 
-const feedArticles = feed.items
-  .map((item) => {
-    if (!item.content || !item.title || !item.link) {
-      return undefined;
+let feedArticles = [];
+
+// Check if cache exists and is fresh
+if (fs.existsSync(CACHE_FILE)) {
+  const cacheData = JSON.parse(fs.readFileSync(CACHE_FILE, "utf-8"));
+  const lastFetch = new Date(cacheData.lastFetch).getTime();
+  const now = Date.now();
+
+  if (now - lastFetch < CACHE_TTL) {
+    feedArticles = cacheData.articles;
+  }
+}
+
+if (feedArticles.length === 0) {
+  try {
+    const parser = new RSSParser();
+    const feed = await parser.parseURL("https://medium.com/feed/@2h3ph3rd");
+
+    feedArticles = feed.items
+      .map((item) => {
+        if (!item.content || !item.title || !item.link) return undefined;
+
+        const imgMatch = item.content.match(/<img[^>]+src="([^">]+)"/);
+        const thumbnail = imgMatch ? imgMatch[1] : "";
+
+        let description = "";
+        if (item.contentSnippet) {
+          description = item.contentSnippet
+            .replace(/\s*Continue reading on .* »$/i, "")
+            .trim();
+        }
+
+        let date = "";
+        if (item.pubDate) {
+          date = new Date(item.pubDate).toLocaleDateString("en-US", {
+            month: "short",
+            day: "numeric",
+            year: "numeric",
+          });
+        }
+
+        return {
+          title: item.title ?? "",
+          description,
+          thumbnail: thumbnail,
+          date,
+          link: item.link ?? "",
+          pinned: false,
+        };
+      })
+      .filter(Boolean);
+
+    // Save to cache
+    fs.writeFileSync(
+      CACHE_FILE,
+      JSON.stringify(
+        { lastFetch: new Date().toISOString(), articles: feedArticles },
+        null,
+        2,
+      ),
+    );
+  } catch (err) {
+    console.error("Failed to fetch feed:", err);
+    // If fetch fails but cache exists, fallback to cache
+    if (fs.existsSync(CACHE_FILE)) {
+      const cacheData = JSON.parse(fs.readFileSync(CACHE_FILE, "utf-8"));
+      feedArticles = cacheData.articles || [];
     }
-
-    const imgMatch = item.content.match(/<img[^>]+src="([^">]+)"/);
-    const thumbnail = imgMatch ? imgMatch[1] : "/default-thumbnail.jpg";
-
-    let description = "";
-    if (item.contentSnippet) {
-      description = item.contentSnippet
-        .replace(/\s*Continue reading on .* »$/i, "")
-        .trim();
-    }
-
-    let date = new Date();
-    if (item.pubDate) {
-      date = new Date(item.pubDate);
-    }
-
-    return {
-      title: item.title ?? "",
-      description: description,
-      thumbnail: thumbnail ?? "/default-thumbnail.jpg",
-      date: date,
-      link: item.link ?? "",
-      pinned: false,
-    };
-  })
-  .filter((article) => article !== undefined);
+  }
+}
 
 const articles = [...PinnedArticles, ...feedArticles];
 ---
 
-<div class="glassy-card mx-48 mt-8 py-8">
-  <h2 class="py-3 text-center text-2xl font-bold tracking-tight text-gray-100">
+<div class="glassy-card mx-48 mt-16 py-8">
+  <h2 class="mb-3 text-center text-2xl font-bold tracking-tight text-gray-100">
     Latest Articles
   </h2>
   <p class="text-center text-gray-300">

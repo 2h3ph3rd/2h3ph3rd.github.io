@@ -1,11 +1,25 @@
 [
     {
-        "title": "Project 1",
-        "description": "Description for project 1",
-        "link": "https://example.com/project1",
-        "website": "https://example.com",
-        "technologies": [
-            "go"
-        ]
+        "title": "CEH Practical Guide",
+        "description": "A guide for the CEH Practical exam",
+        "link": "https://github.com/2h3ph3rd/ceh-practical-guide",
+        "website": "https://2h3ph3rd.github.io/ceh-practical-guide"
+    },
+    {
+        "title": "HTB Cyber Apocalypse CTF 2023",
+        "description": "Writeups for the HTB Cyber Apocalypse CTF 2023",
+        "link": "https://github.com/2h3ph3rd/ctf-cyber-apocalypse-2023"
+    },
+    {
+        "title": "BioAlign",
+        "description": "A web app for string alignment algorithms used in bioinformatics courses",
+        "link": "https://github.com/2h3ph3rd/bio-align",
+        "website": "https://2h3ph3rd.github.io/bio-align"
+    },
+    {
+        "title": "Quasar Extension Pack",
+        "description": "Unofficial extension pack with recommended extensions by Quasar",
+        "link": "https://github.com/2h3ph3rd/quasar-extension-pack",
+        "website": "https://marketplace.visualstudio.com/items?itemName=francescopastore.quasar-extension-pack"
     }
 ]

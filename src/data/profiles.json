@@ -1,0 +1,18 @@
+[
+    {
+        "icon": "/profiles/github.webp",
+        "link": "https://github.com/2h3ph3rd"
+    },
+    {
+        "icon": "/profiles/medium.webp",
+        "link": "https://2h3ph3rd.medium.com"
+    },
+    {
+        "icon": "/profiles/thm.webp",
+        "link": "https://tryhackme.com/p/2h3ph3rd"
+    },
+    {
+        "icon": "/profiles/htb.webp",
+        "link": "https://app.hackthebox.com/profile/699431"
+    }
+]

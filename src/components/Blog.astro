@@ -7,20 +7,30 @@ import RSSParser from "rss-parser";
 const parser = new RSSParser();
 const feed = await parser.parseURL("https://medium.com/feed/@2h3ph3rd");
 
-const articles = feed.items.map((item) => {
-  const imgMatch = item.content.match(/<img[^>]+src="([^">]+)"/);
-  const thumbnail = imgMatch ? imgMatch[1] : "/default-thumbnail.jpg";
-  let contentSnippet = item.contentSnippet || "";
-  contentSnippet = contentSnippet
-    .replace(/\s*Continue reading on .* »$/i, "")
-    .trim();
-  return {
-    title: item.title,
-    link: item.link,
-    contentSnippet: contentSnippet,
-    thumbnail,
-  };
-});
+const articles = feed.items
+  .map((item) => {
+    if (!item.content || !item.title || !item.link) {
+      return undefined;
+    }
+
+    const imgMatch = item.content.match(/<img[^>]+src="([^">]+)"/);
+    const thumbnail = imgMatch ? imgMatch[1] : "/default-thumbnail.jpg";
+
+    let contentSnippet = "";
+    if (item.contentSnippet) {
+      contentSnippet = item.contentSnippet
+        .replace(/\s*Continue reading on .* »$/i, "")
+        .trim();
+    }
+
+    return {
+      title: item.title ?? "",
+      link: item.link ?? "",
+      contentSnippet: contentSnippet ?? "",
+      thumbnail: thumbnail ?? "/default-thumbnail.jpg",
+    };
+  })
+  .filter((article) => article !== undefined);
 ---
 
 <div class="glassy-card mx-48 mt-8 py-8">
@@ -30,17 +40,17 @@ const articles = feed.items.map((item) => {
   <p class="text-center text-gray-300">
     Check out my latest articles on Medium.
   </p>
+</div>
 
-  <div class="mx-48 mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
-    {
-      articles.map((article) => (
-        <Article
-          title={article.title}
-          description={article.contentSnippet}
-          thumbnail={article.thumbnail}
-          link={article.link}
-        />
-      ))
-    }
-  </div>
+<div class="mx-48 mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
+  {
+    articles.map((article) => (
+      <Article
+        title={article.title}
+        description={article.contentSnippet}
+        thumbnail={article.thumbnail}
+        link={article.link}
+      />
+    ))
+  }
 </div>

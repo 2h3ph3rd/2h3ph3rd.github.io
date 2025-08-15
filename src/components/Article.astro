@@ -8,20 +8,22 @@ export interface Props {
   link: string;
 }
 
-const { title, description, thumbnail } = Astro.props;
+const { title, description, thumbnail, link } = Astro.props;
 ---
 
-<div class="glassy-card flex w-full overflow-hidden">
-  <div class="h-32 w-32 flex-shrink-0 bg-white">
-    <img
-      src={thumbnail}
-      alt="Article Thumbnail"
-      class="h-full w-full object-cover object-center"
-    />
-  </div>
+<a href={link} target="_blank" rel="noopener noreferrer">
+  <div class="glassy-card flex w-full overflow-hidden">
+    <div class="h-32 w-32 flex-shrink-0 bg-white">
+      <img
+        src={thumbnail}
+        alt="Article Thumbnail"
+        class="h-full w-full object-cover object-center"
+      />
+    </div>
 
-  <div class="flex flex-col justify-center p-4">
-    <h3 class="mb-3 text-xl font-semibold text-gray-100">{title}</h3>
-    <p class="mt-1 text-sm text-gray-300">{description}</p>
+    <div class="flex flex-col justify-center p-4">
+      <h3 class="mb-3 text-xl font-semibold text-gray-100">{title}</h3>
+      <p class="mt-1 text-sm text-gray-300">{description}</p>
+    </div>
   </div>
-</div>
+</a>

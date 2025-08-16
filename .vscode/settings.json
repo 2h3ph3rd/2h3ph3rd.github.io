@@ -7,7 +7,8 @@
         "config",
         "project",
         "home",
-        "articles"
+        "articles",
+        "package.json"
     ],
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "[javascript]": {

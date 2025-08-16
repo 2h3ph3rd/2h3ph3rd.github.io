@@ -21,19 +21,26 @@ import "../styles/global.css";
     <li><a href="#about" class="hover:text-primary">About</a></li>
     <li><a href="#contact" class="hover:text-primary">Contact</a></li>
   </ul>
+
+  <!-- Theme Switcher -->
+  <button
+    id="theme-toggle"
+    class="ml-6 flex cursor-pointer items-center justify-center rounded-lg p-2 transition hover:bg-gray-700 dark:hover:bg-gray-700"
+  >
+    <img
+      id="light-icon"
+      src="/icons/light.webp"
+      alt="Light Mode"
+      class="hidden h-6 w-6"
+    />
+    <img
+      id="dark-icon"
+      src="/icons/dark.webp"
+      alt="Dark Mode"
+      class="h-6 w-6"
+    />
+  </button>
 </nav>
 
-<script>
-  const navbar = document.getElementById("navbar");
-
-  window.addEventListener("scroll", () => {
-    if (!navbar) return;
-    if (window.scrollY > 0) {
-      navbar.classList.replace("left-8", "left-24");
-      navbar.classList.replace("right-8", "right-24");
-    } else {
-      navbar.classList.replace("left-24", "left-8");
-      navbar.classList.replace("right-24", "right-8");
-    }
-  });
-</script>
+<script src="/src/scripts/theme.js" type="module"></script>
+<script src="/src/scripts/navbar.js" type="module"></script>

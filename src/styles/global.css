@@ -50,19 +50,3 @@
   background-color: rgba(255, 255, 255, 0.15);
   transform: translateY(-2px);
 }
-
-.technology-card {
-  @apply inline-flex items-center space-x-3 rounded-lg bg-gray-500 px-3 py-2 text-white shadow-md transition hover:bg-gray-700;
-}
-
-.technology-icon {
-  @apply h-8 w-8;
-}
-
-.technology-text {
-  @apply font-semibold text-gray-300;
-}
-
-.profile-icon {
-  @apply h-12 w-12;
-}

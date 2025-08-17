@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import technologies from "../data/technologies.json";
 ---
 
 <div class="glassy-card flex-1 items-start space-y-4 p-4 shadow-lg">
@@ -8,75 +9,13 @@ import "../styles/global.css";
   </h5>
 
   <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
-    <!-- TODO: Add technology card component -->
-    <div class="technology-card">
-      <img src="/technologies/go.webp" alt="Go" class="technology-icon" />
-      <span class="technology-text">Go</span>
-    </div>
-
-    <div class="technology-card">
-      <img
-        src="/technologies/python.webp"
-        alt="Python"
-        class="technology-icon"
-      />
-      <span class="technology-text">Python</span>
-    </div>
-
-    <div class="technology-card">
-      <img
-        src="/technologies/javascript.webp"
-        alt="Javascript"
-        class="technology-icon"
-      />
-      <span class="technology-text">Javascript</span>
-    </div>
-
-    <div class="technology-card">
-      <img src="/technologies/node.webp" alt="Node" class="technology-icon" />
-      <span class="technology-text">Node</span>
-    </div>
-
-    <div class="technology-card">
-      <img src="/technologies/redis.webp" alt="Redis" class="technology-icon" />
-      <span class="technology-text">Redis</span>
-    </div>
-
-    <div class="technology-card">
-      <img
-        src="/technologies/postgres.webp"
-        alt="Postgres"
-        class="technology-icon"
-      />
-      <span class="technology-text">Postgres</span>
-    </div>
-
-    <div class="technology-card">
-      <img src="/technologies/mongo.webp" alt="Mongo" class="technology-icon" />
-      <span class="technology-text">Mongo</span>
-    </div>
-
-    <div class="technology-card">
-      <img
-        src="/technologies/docker.webp"
-        alt="Docker"
-        class="technology-icon"
-      />
-      <span class="technology-text">Docker</span>
-    </div>
-
-    <div class="technology-card">
-      <img
-        src="/technologies/kubernetes.webp"
-        alt="Kubernetes"
-        class="technology-icon"
-      />
-      <span class="technology-text">Kubernetes</span>
-    </div>
-
-    <div class="technology-card">
-      <img src="/technologies/s3.webp" alt="S3" class="technology-icon" />
-      <span class="technology-text">S3</span>
-    </div>
+    {
+      technologies.map((tech) => (
+        <div class="inline-flex items-center space-x-3 rounded-lg bg-gray-500 px-3 py-2 text-white shadow-md transition hover:bg-gray-700">
+          <img src={tech.thumbnail} alt={tech.name} class="h-8 w-8" />
+          <span class="font-semibold text-gray-300">{tech.name}</span>
+        </div>
+      ))
+    }
   </div>
 </div>

@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Go",
+        "thumbnail": "/technologies/go.webp"
+    },
+    {
+        "name": "Python",
+        "thumbnail": "/technologies/python.webp"
+    },
+    {
+        "name": "Javascript",
+        "thumbnail": "/technologies/javascript.webp"
+    },
+    {
+        "name": "Node",
+        "thumbnail": "/technologies/node.webp"
+    },
+    {
+        "name": "Redis",
+        "thumbnail": "/technologies/redis.webp"
+    },
+    {
+        "name": "Postgres",
+        "thumbnail": "/technologies/postgres.webp"
+    },
+    {
+        "name": "Mongo",
+        "thumbnail": "/technologies/mongo.webp"
+    },
+    {
+        "name": "Docker",
+        "thumbnail": "/technologies/docker.webp"
+    },
+    {
+        "name": "Kubernetes",
+        "thumbnail": "/technologies/kubernetes.webp"
+    },
+    {
+        "name": "S3",
+        "thumbnail": "/technologies/s3.webp"
+    }
+]

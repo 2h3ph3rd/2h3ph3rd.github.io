@@ -7,21 +7,22 @@ import profiles from "../data/profiles.json";
   <h5 class="py-3 text-center text-2xl font-bold tracking-tight text-gray-100">
     Profiles
   </h5>
-
-  <div class="flex items-center justify-center gap-8">
-    {
-      profiles.map((profile) => (
-        <a href={profile.link} target="_blank" rel="noopener noreferrer">
-          <img src={profile.icon} alt={profile.link} class="h-12 w-12" />
-        </a>
-      ))
-    }
-  </div>
-  <div class="mt-8 flex items-center justify-center">
-    <img
-      src="https://tryhackme-badges.s3.amazonaws.com/2h3ph3rd.png"
-      alt="THM Badge"
-      class="h-22"
-    />
+  <div class="flex flex-1 flex-col items-center justify-center space-y-12">
+    <div class="mt-6 flex items-center justify-center gap-8">
+      {
+        profiles.map((profile) => (
+          <a href={profile.link} target="_blank" rel="noopener noreferrer">
+            <img src={profile.icon} alt={profile.link} class="h-12 w-12" />
+          </a>
+        ))
+      }
+    </div>
+    <div class="flex justify-center">
+      <img
+        src="https://tryhackme-badges.s3.amazonaws.com/2h3ph3rd.png"
+        alt="THM Badge"
+        class="h-22"
+      />
+    </div>
   </div>
 </div>

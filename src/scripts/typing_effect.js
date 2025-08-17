@@ -1,5 +1,7 @@
 const typedElements = Array.from(document.querySelectorAll(".typed"));
 
+let timeouts = [];
+
 function typeLine(element, text, callback) {
   let i = 0;
   const cursor = document.createElement("span");
@@ -11,7 +13,7 @@ function typeLine(element, text, callback) {
     if (i < text.length) {
       cursor.insertAdjacentText("beforebegin", text[i]);
       i++;
-      setTimeout(typeChar, 13 + Math.random() * 20);
+      timeouts.push(setTimeout(typeChar, 13 + Math.random() * 20));
     } else {
       cursor.remove();
       if (callback) callback();
@@ -37,6 +39,8 @@ const observer = new IntersectionObserver(
         if (entry.target === typedElements[0]) {
           // Clear all lines
           typedElements.forEach((el) => (el.textContent = ""));
+          timeouts.forEach((timeout) => clearTimeout(timeout));
+          timeouts = [];
           typeLinesSequential(); // start typing sequentially
         }
       }

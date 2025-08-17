@@ -7,7 +7,7 @@ import "../styles/global.css";
     class="container mx-auto flex h-full flex-col items-center justify-between lg:flex-row"
   >
     <!-- Left: Terminal Card -->
-    <div class="no-halo h-96 w-full px-8 lg:w-1/2 lg:pr-24">
+    <div class="no-halo hidden h-96 w-full px-8 lg:block lg:w-1/2 lg:pr-24">
       <div
         class="flex h-full flex-col overflow-hidden rounded-xl bg-gray-900 font-mono text-gray-100 shadow-2xl"
       >
@@ -61,26 +61,70 @@ drwxr-xr-x 12 fra  users  384 Aug 13 09:50 ..
         class="h-auto max-w-full rounded-lg"
       />
     </div>
+
+    <!-- Mobile Terminal -->
+    <div class="no-halo h-96 w-full px-8 lg:hidden">
+      <div
+        class="flex h-full flex-col overflow-hidden rounded-xl bg-gray-900 font-mono text-gray-100 shadow-2xl"
+      >
+        <!-- Header -->
+        <div class="flex items-center justify-between bg-gray-800 px-6 py-3">
+          <span class="text-sm font-semibold text-gray-300">Terminal</span>
+          <div class="flex space-x-3">
+            <span class="h-4 w-4 rounded-full bg-green-500"></span>
+            <span class="h-4 w-4 rounded-full bg-yellow-400"></span>
+            <span class="h-4 w-4 rounded-full bg-orange-500"></span>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div
+          class="terminal flex w-full flex-col space-y-2 rounded-xl p-6 font-mono text-gray-100"
+        >
+          <p>
+            <span class="text-primary">$</span>
+            <span>echo "Hi there!"</span>
+          </p>
+          <p>
+            <span>Hi there!</span>
+          </p>
+          <p>
+            <span class="text-primary">$</span>
+            <span>echo "I&apos;m Francesco 👋"</span>
+          </p>
+          <p>
+            <span>I'm Francesco 👋</span>
+          </p>
+          <p>
+            <span class="text-primary">$</span>
+            <span>ls</span>
+          </p>
+          <p>
+            <span>index.astro README.md</span>
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <script src="/src/scripts/typing_effect.js" type="module"></script>
+
+  <style>
+    .cursor {
+      display: inline-block;
+      width: 1ch;
+      animation: blink 1s steps(2, start) infinite;
+    }
+
+    @keyframes blink {
+      0%,
+      50% {
+        opacity: 1;
+      }
+      50.1%,
+      100% {
+        opacity: 0;
+      }
+    }
+  </style>
 </section>
-
-<script src="/src/scripts/typing_effect.js" type="module"></script>
-
-<style>
-  .cursor {
-    display: inline-block;
-    width: 1ch;
-    animation: blink 1s steps(2, start) infinite;
-  }
-
-  @keyframes blink {
-    0%,
-    50% {
-      opacity: 1;
-    }
-    50.1%,
-    100% {
-      opacity: 0;
-    }
-  }
-</style>

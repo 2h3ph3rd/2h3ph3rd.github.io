@@ -3,15 +3,20 @@ import "../styles/global.css";
 import projects from "../data/projects.json";
 ---
 
-<div class="glassy-card mx-4 mt-16 py-8 lg:mx-16 2xl:mx-48" id="projects">
+<div
+  class="no-halo glassy-card mx-4 mt-16 py-8 lg:mx-16 2xl:mx-48"
+  id="projects"
+>
   <h2 class="mb-3 text-center text-2xl font-bold tracking-tight text-gray-100">
     Projects
   </h2>
-  <p class="text-center text-gray-300">A collection of some of my projects</p>
+  <p class="text-center text-gray-300">
+    Selected projects from my GitHub repositories
+  </p>
 </div>
 
 <div
-  class="mx-4 mt-8 grid grid-cols-1 items-stretch gap-4 lg:mx-16 2xl:mx-48 2xl:grid-cols-4"
+  class="no-halo mx-4 mt-8 grid grid-cols-1 items-stretch gap-4 lg:mx-16 2xl:mx-48 2xl:grid-cols-4"
 >
   {
     projects.map((project) => (

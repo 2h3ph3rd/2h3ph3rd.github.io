@@ -7,7 +7,7 @@ import FetchedArticles from "../data/fetched_articles.json";
 const articles = [...PinnedArticles, ...FetchedArticles.articles];
 ---
 
-<div class="glassy-card mx-4 mt-16 py-8 lg:mx-16 2xl:mx-48" id="articles">
+<div class="glassy-card mx-4 mt-16 py-8 lg:mx-16 2xl:mx-48 no-halo" id="articles">
   <h2 class="mb-3 text-center text-2xl font-bold tracking-tight text-gray-100">
     Latest Articles
   </h2>
@@ -17,7 +17,7 @@ const articles = [...PinnedArticles, ...FetchedArticles.articles];
 </div>
 
 <div
-  class="mx-4 mt-8 grid grid-cols-1 gap-4 lg:mx-16 2xl:mx-48 2xl:grid-cols-2 items-stretch"
+  class="no-halo mx-4 mt-8 grid grid-cols-1 gap-4 lg:mx-16 2xl:mx-48 2xl:grid-cols-2 items-stretch"
 >
   {
     articles.map((article) => (

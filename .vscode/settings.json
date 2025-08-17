@@ -9,7 +9,8 @@
         "home",
         "articles",
         "package.json",
-        "navbar"
+        "navbar",
+        "font"
     ],
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "[javascript]": {

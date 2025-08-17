@@ -12,7 +12,9 @@
         "navbar",
         "font",
         "theme",
-        "effects"
+        "effects",
+        "responsive",
+        "animations"
     ],
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "[javascript]": {

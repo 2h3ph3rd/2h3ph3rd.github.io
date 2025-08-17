@@ -1,7 +1,7 @@
+const typedElements = Array.from(document.querySelectorAll(".typed"));
+
 function typeLine(element, text, callback) {
   let i = 0;
-
-  // create blinking cursor
   const cursor = document.createElement("span");
   cursor.textContent = "|";
   cursor.className = "cursor";
@@ -11,9 +11,9 @@ function typeLine(element, text, callback) {
     if (i < text.length) {
       cursor.insertAdjacentText("beforebegin", text[i]);
       i++;
-      setTimeout(typeChar, 20 + Math.random() * 20);
+      setTimeout(typeChar, 13 + Math.random() * 20);
     } else {
-      cursor.remove(); // remove cursor after typing this line
+      cursor.remove();
       if (callback) callback();
     }
   }
@@ -21,14 +21,31 @@ function typeLine(element, text, callback) {
   typeChar();
 }
 
-// select all lines
-const typedElements = document.querySelectorAll(".typed");
-
-function typeLines(index = 0) {
+// Sequential typing for multiple lines
+function typeLinesSequential(index = 0) {
   if (index >= typedElements.length) return;
   const el = typedElements[index];
-  const text = el.dataset.text;
-  typeLine(el, text, () => typeLines(index + 1));
+  typeLine(el, el.dataset.text, () => typeLinesSequential(index + 1));
 }
 
-typeLines();
+// Scroll observer to restart typing in order
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Only trigger when the first line enters viewport
+        if (entry.target === typedElements[0]) {
+          // Clear all lines
+          typedElements.forEach((el) => (el.textContent = ""));
+          typeLinesSequential(); // start typing sequentially
+        }
+      }
+    });
+  },
+  {
+    threshold: 0.5,
+  },
+);
+
+// Observe only the first element for triggering restart
+observer.observe(typedElements[0]);

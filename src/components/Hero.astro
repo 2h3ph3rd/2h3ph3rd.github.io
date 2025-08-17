@@ -106,25 +106,27 @@ drwxr-xr-x 12 fra  users  384 Aug 13 09:50 ..
       </div>
     </div>
   </div>
-
-  <script src="/src/scripts/typing_effect.js" type="module"></script>
-
-  <style>
-    .cursor {
-      display: inline-block;
-      width: 1ch;
-      animation: blink 1s steps(2, start) infinite;
-    }
-
-    @keyframes blink {
-      0%,
-      50% {
-        opacity: 1;
-      }
-      50.1%,
-      100% {
-        opacity: 0;
-      }
-    }
-  </style>
 </section>
+
+<script>
+  import "/src/scripts/typing_effect.js";
+</script>
+
+<style>
+  .cursor {
+    display: inline-block;
+    width: 1ch;
+    animation: blink 1s steps(2, start) infinite;
+  }
+
+  @keyframes blink {
+    0%,
+    50% {
+      opacity: 1;
+    }
+    50.1%,
+    100% {
+      opacity: 0;
+    }
+  }
+</style>

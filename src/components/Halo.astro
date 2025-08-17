@@ -4,7 +4,7 @@ import "../styles/global.css";
 
 <div
   id="cursor-halo-container"
-  class="pointer-events-none fixed z-50 opacity-0 transition-opacity duration-200"
+  class="hidden lg:pointer-events-none lg:fixed lg:z-50 lg:block lg:opacity-0 lg:transition-opacity lg:duration-200"
 >
   <div class="halo-layer layer1"></div>
   <div class="halo-layer layer2"></div>
@@ -12,50 +12,7 @@ import "../styles/global.css";
 </div>
 
 <script>
-  const haloContainer = document.getElementById("cursor-halo-container");
-  let mouseX = 0,
-    mouseY = 0;
-  let haloX = 0,
-    haloY = 0;
-  let angle = 0;
-  let active = false;
-
-  document.addEventListener("mousemove", (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-
-    // Hide halo if the target or any parent has .no-halo
-    const target = e.target as Element | null;
-    if (target && target.closest && target.closest(".no-halo")) {
-      if (active && haloContainer) {
-        haloContainer.style.opacity = "0";
-        active = false;
-      }
-    } else {
-      if (!active && haloContainer) {
-        haloContainer.style.opacity = "1";
-        active = true;
-      }
-    }
-  });
-
-  function animate() {
-    if (active) {
-      haloX += (mouseX - haloX) * 0.15;
-      haloY += (mouseY - haloY) * 0.15;
-
-      if (!haloContainer) return;
-
-      const offsetX = Math.sin(angle) * 8;
-      const offsetY = Math.cos(angle) * 8;
-      angle += 0.05;
-
-      haloContainer.style.transform = `translate(${haloX - 40 + offsetX}px, ${haloY - 40 + offsetY}px)`;
-    }
-    requestAnimationFrame(animate);
-  }
-
-  animate();
+  import "/src/scripts/halo_effect.js";
 </script>
 
 <style>

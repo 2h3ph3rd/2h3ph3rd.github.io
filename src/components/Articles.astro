@@ -1,89 +1,14 @@
 ---
-import fs from "node:fs";
-import path from "node:path";
 import "../styles/global.css";
+import "../scripts/fetch_articles.js";
 import Article from "./Article.astro";
 import PinnedArticles from "../data/pinned_articles.json";
-import RSSParser from "rss-parser";
+import FetchedArticles from "../data/fetched_articles.json";
 
-const CACHE_FILE = path.resolve("./src/data/cached_articles.json");
-const CACHE_TTL = 1000 * 60 * 60 * 24; // 24h
-
-let feedArticles = [];
-
-// Check if cache exists and is fresh
-if (fs.existsSync(CACHE_FILE)) {
-  const cacheData = JSON.parse(fs.readFileSync(CACHE_FILE, "utf-8"));
-  const lastFetch = new Date(cacheData.lastFetch).getTime();
-  const now = Date.now();
-
-  if (now - lastFetch < CACHE_TTL) {
-    feedArticles = cacheData.articles;
-  }
-}
-
-if (feedArticles.length === 0) {
-  try {
-    const parser = new RSSParser();
-    const feed = await parser.parseURL("https://medium.com/feed/@2h3ph3rd");
-
-    feedArticles = feed.items
-      .map((item) => {
-        if (!item.content || !item.title || !item.link) return undefined;
-
-        const imgMatch = item.content.match(/<img[^>]+src="([^">]+)"/);
-        const thumbnail = imgMatch ? imgMatch[1] : "";
-
-        let description = "";
-        if (item.contentSnippet) {
-          description = item.contentSnippet
-            .replace(/\s*Continue reading on .* »$/i, "")
-            .trim();
-        }
-
-        let date = "";
-        if (item.pubDate) {
-          date = new Date(item.pubDate).toLocaleDateString("en-US", {
-            month: "short",
-            day: "numeric",
-            year: "numeric",
-          });
-        }
-
-        return {
-          title: item.title ?? "",
-          description,
-          thumbnail: thumbnail,
-          date,
-          link: item.link ?? "",
-          pinned: false,
-        };
-      })
-      .filter(Boolean);
-
-    // Save to cache
-    fs.writeFileSync(
-      CACHE_FILE,
-      JSON.stringify(
-        { lastFetch: new Date().toISOString(), articles: feedArticles },
-        null,
-        2,
-      ),
-    );
-  } catch (err) {
-    console.error("Failed to fetch feed:", err);
-    // If fetch fails but cache exists, fallback to cache
-    if (fs.existsSync(CACHE_FILE)) {
-      const cacheData = JSON.parse(fs.readFileSync(CACHE_FILE, "utf-8"));
-      feedArticles = cacheData.articles || [];
-    }
-  }
-}
-
-const articles = [...PinnedArticles, ...feedArticles];
+const articles = [...PinnedArticles, ...FetchedArticles.articles];
 ---
 
-<div class="glassy-card mx-48 mt-16 py-8">
+<div class="glassy-card mx-48 mt-16 py-8" id="articles">
   <h2 class="mb-3 text-center text-2xl font-bold tracking-tight text-gray-100">
     Latest Articles
   </h2>

@@ -10,15 +10,16 @@ import projects from "../data/projects.json";
   <p class="text-center text-gray-300">A collection of some of my projects</p>
 </div>
 
-<div class="mx-48 mt-8 grid grid-cols-1 gap-4 2xl:grid-cols-4">
+<div class="mx-48 mt-8 grid grid-cols-1 items-stretch gap-4 2xl:grid-cols-4">
   {
     projects.map((project) => (
-      <div class="glassy-card relative flex w-full flex-col p-4 pb-14">
+      <div class="glassy-card relative flex h-full flex-col p-4">
         <h3 class="mt-1 text-xl font-semibold text-gray-100">
           {project.title}
         </h3>
-        <p class="mt-3 text-sm text-gray-300">{project.description}</p>
-        <div class="absolute bottom-4 left-4 flex space-x-4">
+        <p class="mt-3 mb-6 text-sm text-gray-300">{project.description}</p>
+
+        <div class="mt-auto flex space-x-4">
           <a href={project.link} target="_blank" rel="noopener noreferrer">
             <img src="/icons/github.webp" alt="GitHub" class="h-6" />
           </a>

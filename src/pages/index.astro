@@ -2,7 +2,6 @@
 import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
 import Halo from "../components/Halo.astro";
-import Navbar from "../components/Navbar.astro";
 import Hero from "../components/Hero.astro";
 import Technologies from "../components/Technologies.astro";
 import Footer from "../components/Footer.astro";
@@ -14,7 +13,6 @@ import Articles from "../components/Articles.astro";
 <Layout>
   <Halo />
   <header class="flex min-h-screen flex-col">
-    <Navbar />
     <Hero />
   </header>
   <section class="mx-48 mt-6 flex space-x-4">
@@ -25,3 +23,26 @@ import Articles from "../components/Articles.astro";
   <Projects />
   <Footer />
 </Layout>
+
+<script>
+  let lastPulse = 0;
+
+  document.addEventListener("scroll", () => {
+    const now = Date.now();
+    if (now - lastPulse > 300) {
+      lastPulse = now;
+
+      const cards = document.querySelectorAll(".glassy-card");
+      const randomCard = cards[Math.floor(Math.random() * cards.length)];
+
+      if (randomCard) {
+        randomCard.classList.add("pulse");
+        randomCard.addEventListener(
+          "animationend",
+          () => randomCard.classList.remove("pulse"),
+          { once: true },
+        );
+      }
+    }
+  });
+</script>

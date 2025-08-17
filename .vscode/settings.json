@@ -11,7 +11,8 @@
         "package.json",
         "navbar",
         "font",
-        "theme"
+        "theme",
+        "effects"
     ],
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "[javascript]": {

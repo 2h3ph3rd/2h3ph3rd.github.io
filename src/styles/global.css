@@ -50,7 +50,63 @@ body {
     transform 0.3s ease;
 }
 
+/* Light border animation */
+.glassy-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: inherit;
+  background: linear-gradient(
+    270deg,
+    rgba(0, 102, 255, 0.4),
+    rgba(0, 255, 255, 0.3),
+    rgba(0, 102, 255, 0.4)
+  );
+  background-size: 400% 400%;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: borderMove 6s linear infinite;
+}
+
+.glassy-card:hover::before {
+  opacity: 1;
+}
+
+.glassy-card > * {
+  position: relative;
+  z-index: 1;
+}
+
 .glassy-card:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.05);
+}
+
+@keyframes borderMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulseEnlarge {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.glassy-card.pulse {
+  animation: pulseEnlarge 0.6s ease;
 }
